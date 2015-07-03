@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentTop="true"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout_buttonsup"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/hours_up"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="33"
+            android:src="@drawable/icon_up" />
+
+        <ImageButton
+            android:id="@+id/minutes_up"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="33"
+            android:src="@drawable/icon_up" />
+
+        <ImageButton
+            android:id="@+id/seconds_up"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="33"
+            android:src="@drawable/icon_up" />
+    </LinearLayout>
+
+    <com.floridaseabee.wodjournal.AutoResizeTextView
+        android:id="@+id/timer_textview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout_buttonsup"
+        android:clickable="true"
+        android:ellipsize="none"
+        android:gravity="center"
+        android:maxLines="1"
+        android:paddingBottom="1dp"
+        android:paddingTop="1dp"
+        android:text="@string/timer_zero"
+        android:textSize="91sp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout_buttonsdown"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timer_textview"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/hours_down"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="33"
+            android:src="@drawable/icon_down" />
+
+        <ImageButton
+            android:id="@+id/minutes_down"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="33"
+            android:src="@drawable/icon_down" />
+
+        <ImageButton
+            android:id="@+id/seconds_down"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="33"
+            android:src="@drawable/icon_down" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/spacer"
+        android:layout_width="fill_parent"
+        android:layout_height="15dp"
+        android:layout_below="@id/linearLayout_buttonsdown" />
+
+    <LinearLayout
+        android:id="@+id/controls"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spacer"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/startpausecount"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="33"
+            android:src="@drawable/icon_play" />
+
+        <ImageButton
+            android:id="@+id/stopcount"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="33"
+            android:enabled="false"
+            android:src="@drawable/icon_stop" />
+
+        <ImageButton
+            android:id="@+id/reset"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="33"
+            android:src="@drawable/icon_reset" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/spacer1"
+        android:layout_width="fill_parent"
+        android:layout_height="15dp"
+        android:layout_below="@id/controls" />
+
+    <com.floridaseabee.wodjournal.AutoResizeTextView
+        android:id="@+id/timer_countdown_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spacer1"
+        android:clickable="true"
+        android:ellipsize="none"
+        android:gravity="center"
+        android:maxLines="1"
+        android:paddingBottom="1dp"
+        android:paddingTop="1dp"
+        android:text="@string/count_start"
+        android:textSize="130sp"
+        android:visibility="gone" />
+
+</RelativeLayout><!-- From: file:/C:/projects/WODJournal/wODJournal/src/main/res/layout/countdown_timer_layout.xml -->

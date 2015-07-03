@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentTop="true"
+    android:orientation="vertical" >
+
+ 
+    <com.floridaseabee.wodjournal.AutoResizeTextView
+        android:id="@+id/countuptimer_textview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:ellipsize="none"
+        android:gravity="center"
+        android:maxLines="1"
+        android:paddingBottom="1dp"
+        android:paddingTop="1dp"
+        android:text="@string/timer_zero"
+        android:textSize="91sp" />
+
+    <View
+        android:id="@+id/countupspacer"
+        android:layout_width="fill_parent"
+        android:layout_height="15dp"
+        android:layout_below="@id/countuptimer_textview" />
+
+    <LinearLayout
+        android:id="@+id/countupcontrols"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/countupspacer"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/startpausecount"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="33"
+            android:src="@drawable/icon_play" />
+
+        <ImageButton
+            android:id="@+id/stopcount"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="33"
+            android:enabled="false"
+            android:src="@drawable/icon_stop" />
+
+        <ImageButton
+            android:id="@+id/reset"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="33"
+            android:src="@drawable/icon_reset" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/countupspacer1"
+        android:layout_width="fill_parent"
+        android:layout_height="15dp"
+        android:layout_below="@id/countupcontrols" />
+
+    <com.floridaseabee.wodjournal.AutoResizeTextView
+        android:id="@+id/timer_countup_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/countupspacer1"
+        android:clickable="true"
+        android:ellipsize="none"
+        android:gravity="center"
+        android:maxLines="1"
+        android:paddingBottom="1dp"
+        android:paddingTop="1dp"
+        android:text="@string/count_start"
+        android:textSize="120sp"
+        android:visibility="gone" />
+
+</RelativeLayout>
+<!-- From: file:/C:/projects/WODJournal/wODJournal/src/main/res/layout/countup_timer_layout.xml -->

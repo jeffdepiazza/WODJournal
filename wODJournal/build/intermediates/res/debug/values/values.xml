@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/projects/WODJournal/wODJournal/src/main/res/values/arrays.xml -->
+    <eat-comment/>
+    <string-array name="theme_code">
+        <item>Light</item>
+        <item>Dark</item>
+    </string-array>
+    <string-array name="theme_name">
+        <item>Holo Light</item>
+        <item>Holo Dark</item>
+    </string-array>
+    <!-- From: file:/C:/projects/WODJournal/wODJournal/build/intermediates/exploded-aar/WODJournal/aFileChooser/unspecified/res/values/values.xml -->
+    <eat-comment/>
+    <bool name="use_activity">true</bool>
+    <bool name="use_provider">false</bool>
+    <!-- From: file:/C:/projects/WODJournal/wODJournal/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <color name="Violet">#AA66CC</color>
+    <!-- From: file:/C:/projects/WODJournal/wODJournal/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <color name="black">#ffffff</color>
+    <!-- From: file:/C:/projects/WODJournal/wODJournal/build/intermediates/exploded-aar/WODJournal/library/unspecified/res/values/values.xml -->
+    <eat-comment/>
+    <color name="caldroid_black">#000000</color>
+    <color name="caldroid_darker_gray">#aaa</color>
+    <color name="caldroid_gray">#CCC</color>
+    <color name="caldroid_holo_blue_dark">#ff0099cc</color>
+    <color name="caldroid_holo_blue_light">#ff33b5e5</color>
+    <color name="caldroid_lighter_gray">#ddd</color>
+    <color name="caldroid_sky_blue">#FFA3E8F7</color>
+    <color name="caldroid_transparent">#00000000</color>
+    <color name="caldroid_white">#FFFFFF</color>
+    <!-- From: file:/C:/projects/WODJournal/wODJournal/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <color name="grey">#585858</color>
+    <color name="red">#fb0101</color>
+    <!-- From: file:/C:/projects/WODJournal/wODJournal/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- From: file:/C:/projects/WODJournal/wODJournal/build/intermediates/exploded-aar/WODJournal/aFileChooser/unspecified/res/values/values.xml -->
+    <eat-comment/>
+    <dimen name="list_item_padding">16dp</dimen>
+    <dimen name="list_padding">0dp</dimen>
+    <!-- From: file:/C:/projects/WODJournal/wODJournal/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="AMRAP_text">AMRAP</string>
+    <string name="Countdown_label">Countdown</string>
+    <string name="Countup_label">Countup</string>
+    <string name="Graph_This">Graph</string>
+    <string name="NoItemsFound">No entries found.</string>
+    <string name="NothingToDisplay">Nothing To Display</string>
+    <string name="ThemeSetDialog">Choose a Theme</string>
+    <string name="ThemeSetSummary">Database Backup</string>
+    <string name="ThemeSetTitle">Set the Title theme</string>
+    <string name="accessory_only">Weight Only/Accessory</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_utilities">Utilities</string>
+    <string name="add_container">Add WOD Container at end</string>
+    <string name="add_entry">Insert entry</string>
+    <string name="add_movement">Add Movement at end</string>
+    <string name="add_movement_entry_text">Add Movement entry</string>
+    <string name="add_new">Add New</string>
+    <string name="amrap_text">minute</string>
+    <string name="app_name">WOD Journal</string>
+    <string name="backup_filename_beginning">WJ_Backup_</string>
+    <string name="cancel">Cancel</string>
+    <!-- From: file:/C:/projects/WODJournal/wODJournal/build/intermediates/exploded-aar/WODJournal/aFileChooser/unspecified/res/values/values.xml -->
+    <eat-comment/>
+    <string name="choose_file">Select a file</string>
+    <!-- From: file:/C:/projects/WODJournal/wODJournal/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="comments_text">Comments</string>
+    <string name="count_start">3</string>
+    <string name="delete_container">Delete selected WOD Container</string>
+    <string name="delete_entry">Delete entry</string>
+    <string name="delete_movement">Delete selected Movement</string>
+    <string name="edit_container">Edit selected WOD Container</string>
+    <string name="edit_entry">Edit entry</string>
+    <string name="edit_movement">Edit selected Movement</string>
+    <string name="edit_spinner_type">Movement Type:</string>
+    <string name="edit_weight_text">Weight</string>
+    <string name="edit_wod_spinner_type">Container Type:</string>
+    <!-- From: file:/C:/projects/WODJournal/wODJournal/build/intermediates/exploded-aar/WODJournal/aFileChooser/unspecified/res/values/values.xml -->
+    <eat-comment/>
+    <string name="empty_directory">Empty Directory</string>
+    <!-- From: file:/C:/projects/WODJournal/wODJournal/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="enter_filename">Enter .xml backup file name:</string>
+    <!-- From: file:/C:/projects/WODJournal/wODJournal/build/intermediates/exploded-aar/WODJournal/aFileChooser/unspecified/res/values/values.xml -->
+    <eat-comment/>
+    <string name="error_selecting_file">Error selecting File</string>
+    <!-- From: file:/C:/projects/WODJournal/wODJournal/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="file_dialog_title">Enter filename for Database Backup </string>
+    <string name="filelocation">Location: </string>
+    <string name="finished_in">Finished in:</string>
+    <string name="header1summary">Allows ability to change the overall application theme.</string>
+    <string name="header1title">Set Application Theme</string>
+    <string name="header2summary">Backup your database to external storage or xml</string>
+    <string name="header2title">Database Backup</string>
+    <string name="insert_container">Insert WOD Container here</string>
+    <string name="insert_movement">Insert Movement here</string>
+    <!-- From: file:/C:/projects/WODJournal/wODJournal/build/intermediates/exploded-aar/WODJournal/aFileChooser/unspecified/res/values/values.xml -->
+    <eat-comment/>
+    <string name="internal_storage">Internal storage</string>
+    <!-- From: file:/C:/projects/WODJournal/wODJournal/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="isweight">Weight only workout</string>
+    <string name="length_text">Length:</string>
+    <string name="length_units">m</string>
+    <string name="movement_number_text">Number of reps in movement:</string>
+    <string name="movement_text">Movement:</string>
+    <string name="named_workout_text">Named Workout:</string>
+    <string name="noPRsfound">No Records found.</string>
+    <string name="ok">Save</string>
+    <string name="or_text">OR</string>
+    <string name="percentage">%</string>
+    <string name="percentage_text">Percentage</string>
+    <string name="personal_records_text">Personal Records</string>
+    <string name="pr_date_text">Accomplished on:</string>
+    <string name="rep_max">RM</string>
+    <string name="repmax_text">Rep Max</string>
+    <string name="reps_text">Reps</string>
+    <string name="rounds_finished">Rounds Finished</string>
+    <string name="rounds_text">Rounds</string>
+    <string name="schema_too_high">Schema version on restore database is higher than expected.  Expecting max </string>
+    <string name="seperator">X</string>
+    <string name="sets_text">Sets</string>
+    <string name="staggered_rounds_text">Staggered Rounds:</string>
+    <!-- From: file:/C:/projects/WODJournal/wODJournal/build/intermediates/exploded-aar/WODJournal/aFileChooser/unspecified/res/values/values.xml -->
+    <eat-comment/>
+    <string name="storage_removed">Storage was removed or unmounted.</string>
+    <!-- From: file:/C:/projects/WODJournal/wODJournal/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="time_completed_text">Time Completed:</string>
+    <string name="time_text">sec.</string>
+    <string name="timed_time_units">min.</string>
+    <string name="timed_type_hint">AMRAP/Tabata/etc.</string>
+    <string name="timer_zero">00:00:00</string>
+    <string name="utilities_backup_summary1">Will take the existing database and copy out of internal storage to external storage under the WODJournal directory</string>
+    <string name="utilities_backup_summary2">Copy the existing database to a .xml file for ability to import into another application</string>
+    <string name="utilities_backup_summary3">Copy the existing database to an Excel formatted file</string>
+    <string name="utilities_backup_title1">Backup to external storage</string>
+    <string name="utilities_backup_title2">Backup to .xml</string>
+    <string name="utilities_backup_title3">Backup to Excel</string>
+    <string name="utilities_headers_summary1">Backup to external storage or .xml file</string>
+    <string name="utilities_headers_summary2">Restore from external storage or .xml file</string>
+    <string name="utilities_headers_title1">Backup</string>
+    <string name="utilities_headers_title2">Restore</string>
+    <string name="utilities_restore_summary1">Will take an existing database backup and restore it to internal storage, OVERWRITTING ANY EXISTING DATA</string>
+    <string name="utilities_restore_summary2">Will take a WODJournal .xml file and restore to the database, OVERWRITTING ANY EXISTING DATA.</string>
+    <string name="utilities_restore_title1">Restore from external storage</string>
+    <string name="utilities_restore_title2">Restore from .xml</string>
+    <string name="utilities_xml_export_progress_message">Exporting XML to </string>
+    <string name="utilities_xml_export_progress_title">Export database to XML</string>
+    <string name="utilities_xml_restore_progress_message">Restoring XML from </string>
+    <string name="utilities_xml_restore_progress_title">Restore database from XML</string>
+    <string name="weight_units">lbs.</string>
+    <string name="wod_named_text">WOD Name:</string>
+    <string name="workout_search_advanced_go">Advanced Search Go</string>
+    <string name="workout_search_advanced_textview">Advanced Search:</string>
+    <string name="workout_search_text">Workout Search</string>
+    <string name="workout_search_textview">Search:</string>
+    <string name="xml_dialog_title">Enter filename for XML Backup </string>
+    <!-- From: file:/C:/projects/WODJournal/wODJournal/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <style name="AppTheme" parent="android:Theme.Holo.Light">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    <!-- From: file:/C:/projects/WODJournal/wODJournal/build/intermediates/exploded-aar/WODJournal/aFileChooser/unspecified/res/values/values.xml -->
+    <eat-comment/>
+    <style name="fileChooserName">
+        <item name="android:drawablePadding">@dimen/list_item_padding</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:paddingLeft">@dimen/list_item_padding</item>
+        <item name="android:paddingRight">@dimen/list_item_padding</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+    </style>
+</resources>

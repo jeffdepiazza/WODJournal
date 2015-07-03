@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/add_movement_entry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_movement_entry_text"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/add_entry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_entry" />
+
+    <Button
+        android:id="@+id/insert_entry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_entry" />
+
+    <Button
+        android:id="@+id/edit_entry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_entry" />
+
+    <Button
+        android:id="@+id/delete_entry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/delete_entry" />
+
+</LinearLayout><!-- From: file:/C:/projects/WODJournal/wODJournal/src/main/res/layout/insert_add_edit_delete_dialog.xml -->
