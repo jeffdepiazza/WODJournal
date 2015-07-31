@@ -19,7 +19,7 @@ public class Calendar_Holder_Fragment extends Fragment implements
 		super.onActivityCreated(savedInstanceState);
 		setRetainInstance(true);
 		current_date = getArguments().getString(KEY_DATE, null);
-		Log.v("Calendar_Holder_Fragment", "Current date " + current_date);
+		Log.v("CalendarHolder_Fragment", "Current date " + current_date);
 		FindWODsinDayAsync();
 	}
 
@@ -35,14 +35,14 @@ public class Calendar_Holder_Fragment extends Fragment implements
 		Calendar_Holder_Fragment f = new Calendar_Holder_Fragment();
 
 		Bundle args = new Bundle();
-		Log.v("Calendar Holder Fragment newInstance", current_date);
+		Log.v("HolderFragmentnewInstan", current_date);
 		args.putString(KEY_DATE, current_date);
 		f.setArguments(args);
 		return (f);
 	}
 
 	public void returnNoWorkoutsforDayFound() {
-		Log.v("Calendar Holder fragment",
+		Log.v("Calendar Holder fragmen",
 				"noworkouts found in db helper, now in fragment about to pass to activity listener");
 		listener.NoWorkoutsForDayFound();
 

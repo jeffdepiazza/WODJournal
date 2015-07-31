@@ -65,6 +65,7 @@
     <string name="amrap_text">minute</string>
     <string name="app_name">WOD Journal</string>
     <string name="backup_filename_beginning">WJ_Backup_</string>
+    <string name="calendar_delete_dialog_text">Are you sure you want to delete all workouts information that occured on </string>
     <string name="cancel">Cancel</string>
     <!-- From: file:/C:/projects/WODJournal/wODJournal/build/intermediates/exploded-aar/WODJournal/aFileChooser/unspecified/res/values/values.xml -->
     <eat-comment/>

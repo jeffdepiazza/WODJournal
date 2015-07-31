@@ -190,7 +190,7 @@ public class CaldroidFragment extends DialogFragment {
 	 * textColorForDateMap holds color for text for each date
 	 */
 	
-	protected HashMap<DateTime, Integer> textColorForDateTimeMap = new HashMap<DateTime, Integer>();;
+	protected HashMap<DateTime, Integer> textColorForDateTimeMap = new HashMap<DateTime, Integer>();
 
 	/**
 	 * First column of calendar is Sunday
@@ -858,7 +858,7 @@ public class CaldroidFragment extends DialogFragment {
 						//		.convertDateTimeToDate(dateTime);
 						//caldroidListener.onSelectDate(date, view);
 					}
-					Log.v(" in fragment current date","" + dateTime.getYear() + " " + dateTime.getMonth() + " " + dateTime.getDay() + " ");
+					Log.v("fragment current date","" + dateTime.getYear() + " " + dateTime.getMonth() + " " + dateTime.getDay() + " ");
 					Calendar newCalendar = Calendar.getInstance();
 					int year =  dateTime.getYear();
 					int month = dateTime.getMonth();
@@ -868,7 +868,7 @@ public class CaldroidFragment extends DialogFragment {
 					Log.v("in fragment", "day =" + dateTime.getDay());
 					newCalendar.set(year, month-1, day);
 					//Date date = CalendarHelper.convertDateTimeToDate(dateTime);
-					Log.v(" in fragment current date ", " passing to listener actual" + newCalendar.get(Calendar.YEAR) + "-" + newCalendar.get(Calendar.MONTH) + "-" + newCalendar.get(Calendar.DAY_OF_MONTH));
+					Log.v("fragment current date ", " passing to listener actual" + newCalendar.get(Calendar.YEAR) + "-" + newCalendar.get(Calendar.MONTH) + "-" + newCalendar.get(Calendar.DAY_OF_MONTH));
 					caldroidListener.onSelectDate(year, month, day, view);
 				}
 			};
@@ -902,12 +902,19 @@ public class CaldroidFragment extends DialogFragment {
 											.indexOf(dateTime) != -1)) {
 								return false;
 							}
-						}
-						Date date = CalendarHelper
-								.convertDateTimeToDate(dateTime);
-						caldroidListener.onLongClickDate(date, view);
+						}Calendar newCalendar = Calendar.getInstance();
+						int year =  dateTime.getYear();
+						int month = dateTime.getMonth();
+						int day = dateTime.getDay();
+						Log.v("in fragment", "year =" + dateTime.getYear());
+						Log.v("in fragment", "month =" + dateTime.getMonth());
+						Log.v("in fragment", "day =" + dateTime.getDay());
+						newCalendar.set(year, month-1, day);
+						Log.v("fragment current date ", " passing to listener actual" + newCalendar.get(Calendar.YEAR) + "-" + newCalendar.get(Calendar.MONTH) + "-" + newCalendar.get(Calendar.DAY_OF_MONTH));
+						//Date date = CalendarHelper.convertDateTimeToDate(dateTime);
+						caldroidListener.onLongClickDate(year, month, day, view);
 					}
-
+					Log.v("caldroid fragment", "inside onitemlongclicklistener");
 					return true;
 				}
 			};

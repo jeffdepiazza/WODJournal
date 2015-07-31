@@ -193,6 +193,17 @@ public class Utilities_Activity extends Activity implements Utilities_File_Picke
 	}
 
 	@Override
+	public void onResume() {
+		super.onResume();
+		progress_dialog = utilities_holder_fragment.get_progress_dialog();
+		if (!(progress_dialog == null) && show_progress_dialog) {
+            Log.v("Utilities Activity", "on Resume - restoring dialog");
+            progress_dialog.show();
+		}
+		Log.v("Utilities Activity", "on Resume");
+	}
+
+	@Override
 	public void onSaveInstanceState(Bundle state) {
 		super.onSaveInstanceState(state);
 		Log.v("Utilties Activity", " on Save instance state");
@@ -204,6 +215,7 @@ public class Utilities_Activity extends Activity implements Utilities_File_Picke
 												// showing the second screen, so
 												// don't bother
 		if (progress_dialog != null) {
+			Log.v("utilities activity", "storing progress dialog");
 			state.putBoolean("PROGRESS_BAR_UP", show_progress_dialog);
 			utilities_holder_fragment.set_progress_dialog(progress_dialog);
 			progress_dialog.dismiss();
@@ -277,7 +289,12 @@ public class Utilities_Activity extends Activity implements Utilities_File_Picke
 
 	public static void set_progress_dialog(int current_progress) {
 		// Log.v("utilities activity", "current progress " + current_progress);
-		progress_dialog.setProgress(current_progress);
+		// we test for null here in case the screen is off and we get a null ponter exception
+		// as the progress dialog does not exist anymore when the screen is off as the activity
+		// has been halted.
+		if (!(progress_dialog == null )) {
+			progress_dialog.setProgress(current_progress);
+		}
 	}
 
 	@Override
@@ -316,7 +333,7 @@ public class Utilities_Activity extends Activity implements Utilities_File_Picke
 						}
 						Toast.makeText(this, "File Selected: " + path, Toast.LENGTH_LONG).show();
 					} catch (Exception e) {
-						Log.e("FileSelectorTestActivity", "File select error", e);
+						Log.v("FileSelectorTesActivity", "File select error", e);
 					}
 				}
 			}

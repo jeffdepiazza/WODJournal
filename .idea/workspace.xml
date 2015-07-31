@@ -1,10 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidConfiguredLogFilters">
+    <filters>
+      <filter>
+        <option name="logLevel" value="verbose" />
+        <option name="logMessagePattern" value="" />
+        <option name="logTagPattern" value="" />
+        <option name="name" value="wodjournal" />
+        <option name="packageNamePattern" value="com.floridaseabee.wodjournal" />
+        <option name="pid" value="" />
+      </filter>
+    </filters>
+  </component>
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="wodjournal" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="1139738a-5cc6-4a58-a4c3-72e5c446e90d" name="Default" comment="" />
+    <list default="true" id="d1216288-649c-4441-bb41-e0d3e6d795d5" name="Default" comment="Updated to Android Studio 1.3.0 and it lost the GIT settings so its going to be seen as yet another complete rebaseline.  On the bright side, we were able to complete the delete day within the Calendar as well as fixing some dialog issues within the Utilities activity to ensure that the dialog doesn't loose its status if either the screen is rotated or the the app is stopped in the background and restarted.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/Calendar_Delete_Dialog.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wODJournal/src/main/res/layout/calendar_delete_dialog.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/classes/debug/com/roomorama/caldroid/CaldroidFragment$1.class" afterPath="$PROJECT_DIR$/library/build/intermediates/classes/debug/com/roomorama/caldroid/CaldroidFragment$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/classes/release/com/roomorama/caldroid/CaldroidFragment$1.class" afterPath="$PROJECT_DIR$/library/build/intermediates/classes/release/com/roomorama/caldroid/CaldroidFragment$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/classes/debug/com/roomorama/caldroid/CaldroidFragment$2.class" afterPath="$PROJECT_DIR$/library/build/intermediates/classes/debug/com/roomorama/caldroid/CaldroidFragment$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/classes/release/com/roomorama/caldroid/CaldroidFragment$2.class" afterPath="$PROJECT_DIR$/library/build/intermediates/classes/release/com/roomorama/caldroid/CaldroidFragment$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/classes/debug/com/roomorama/caldroid/CaldroidFragment$3.class" afterPath="$PROJECT_DIR$/library/build/intermediates/classes/debug/com/roomorama/caldroid/CaldroidFragment$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/classes/release/com/roomorama/caldroid/CaldroidFragment$3.class" afterPath="$PROJECT_DIR$/library/build/intermediates/classes/release/com/roomorama/caldroid/CaldroidFragment$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/classes/debug/com/roomorama/caldroid/CaldroidFragment$4.class" afterPath="$PROJECT_DIR$/library/build/intermediates/classes/debug/com/roomorama/caldroid/CaldroidFragment$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/classes/release/com/roomorama/caldroid/CaldroidFragment$4.class" afterPath="$PROJECT_DIR$/library/build/intermediates/classes/release/com/roomorama/caldroid/CaldroidFragment$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/classes/debug/com/roomorama/caldroid/CaldroidFragment$5.class" afterPath="$PROJECT_DIR$/library/build/intermediates/classes/debug/com/roomorama/caldroid/CaldroidFragment$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/classes/release/com/roomorama/caldroid/CaldroidFragment$5.class" afterPath="$PROJECT_DIR$/library/build/intermediates/classes/release/com/roomorama/caldroid/CaldroidFragment$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/classes/debug/com/roomorama/caldroid/CaldroidFragment$6.class" afterPath="$PROJECT_DIR$/library/build/intermediates/classes/debug/com/roomorama/caldroid/CaldroidFragment$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/classes/release/com/roomorama/caldroid/CaldroidFragment$6.class" afterPath="$PROJECT_DIR$/library/build/intermediates/classes/release/com/roomorama/caldroid/CaldroidFragment$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/classes/debug/com/roomorama/caldroid/CaldroidFragment$DatePageChangeListener.class" afterPath="$PROJECT_DIR$/library/build/intermediates/classes/debug/com/roomorama/caldroid/CaldroidFragment$DatePageChangeListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/classes/release/com/roomorama/caldroid/CaldroidFragment$DatePageChangeListener.class" afterPath="$PROJECT_DIR$/library/build/intermediates/classes/release/com/roomorama/caldroid/CaldroidFragment$DatePageChangeListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/classes/debug/com/roomorama/caldroid/CaldroidFragment.class" afterPath="$PROJECT_DIR$/library/build/intermediates/classes/debug/com/roomorama/caldroid/CaldroidFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/classes/release/com/roomorama/caldroid/CaldroidFragment.class" afterPath="$PROJECT_DIR$/library/build/intermediates/classes/release/com/roomorama/caldroid/CaldroidFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/classes/debug/com/roomorama/caldroid/CaldroidListener.class" afterPath="$PROJECT_DIR$/library/build/intermediates/classes/debug/com/roomorama/caldroid/CaldroidListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/classes/release/com/roomorama/caldroid/CaldroidListener.class" afterPath="$PROJECT_DIR$/library/build/intermediates/classes/release/com/roomorama/caldroid/CaldroidListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Calendar_Holder_Fragment.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Calendar_Holder_Fragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Countdown_Fragment.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Countdown_Fragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Countup_Fragment.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Countup_Fragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$GetPRsAsync.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$GetPRsAsync.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$GetSearchResultsAsync.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$GetSearchResultsAsync.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$Get_Wods_in_the_month.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$Get_Wods_in_the_month.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$WOD_DB_Listener.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$WOD_DB_Listener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$addinsert_child_async.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$addinsert_child_async.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$addinsert_parent_async.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$addinsert_parent_async.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$create_file_async.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$create_file_async.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$create_xml_async.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$create_xml_async.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$delete_child_async.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$delete_child_async.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$delete_parent_async.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$delete_parent_async.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$edit_child_async.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$edit_child_async.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$edit_parent_async.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$edit_parent_async.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$getWODsinDayAsync.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$getWODsinDayAsync.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$get_analytics_data_async.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$get_analytics_data_async.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$get_rep_max_async.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$get_rep_max_async.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$restore_file_async.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$restore_file_async.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$restore_xml_async.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$restore_xml_async.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DetailsFragment.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DetailsFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Edit_Child_Dialog.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Edit_Child_Dialog.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Edit_Parent_Dialog.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Edit_Parent_Dialog.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/ImageAdapter.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/ImageAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/InsertAddDeleteEditDialogChild.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/InsertAddDeleteEditDialogChild.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/InsertAddDeleteEditDialogParent.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/InsertAddDeleteEditDialogParent.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/InsertAdd_Child_Dialog.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/InsertAdd_Child_Dialog.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/InsertAdd_Parent_Dialog.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/InsertAdd_Parent_Dialog.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/MainActivity.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/MainActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Personal_Record_Adapter.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Personal_Record_Adapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Personal_Record_View_Holder.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Personal_Record_View_Holder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Personal_Records_Display_Fragment.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Personal_Records_Display_Fragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/caldroid/R$id.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/caldroid/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/R$id.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/caldroid/R$layout.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/caldroid/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/R$layout.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/ipaulpro/afilechooser/R$layout.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/ipaulpro/afilechooser/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/R$menu.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/R$menu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/R$string.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/ipaulpro/afilechooser/R$string.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/ipaulpro/afilechooser/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/R$style.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/R$style.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/R$xml.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/R$xml.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/R.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Timer_Main.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Timer_Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Utilities_Activity$1.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Utilities_Activity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Utilities_Activity.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Utilities_Activity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Utilities_File_Picker_Dialog.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Utilities_File_Picker_Dialog.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Utilities_First_Display_Fragment.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Utilities_First_Display_Fragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Utilities_List_Adapter.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Utilities_List_Adapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Utilities_Second_Display_Fragment.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Utilities_Second_Display_Fragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/WODCalendarFragment.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/WODCalendarFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/WOD_Calendar_Activity$1.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/WOD_Calendar_Activity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/WOD_Calendar_Activity.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/WOD_Calendar_Activity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/WOD_Calendar_Details.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/WOD_Calendar_Details.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/WOD_Display_Fragment.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/WOD_Display_Fragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/WOD_ExpandableListAdapter.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/WOD_ExpandableListAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Workout_Search_Activity$1.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Workout_Search_Activity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Workout_Search_Activity$2.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Workout_Search_Activity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Workout_Search_Activity$3.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Workout_Search_Activity$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Workout_Search_Activity$5.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Workout_Search_Activity$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Workout_Search_Activity.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Workout_Search_Activity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Workout_Search_Display_Fragment.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Workout_Search_Display_Fragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Workout_Search_Record_Adapter.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Workout_Search_Record_Adapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Workout_Search_View_Holder.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Workout_Search_View_Holder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/library/build/intermediates/bundles/debug/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/library/build/intermediates/bundles/release/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/exploded-aar/WODJournal/library/unspecified/jars/classes.jar" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/exploded-aar/WODJournal/library/unspecified/jars/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/outputs/aar/library-debug.aar" afterPath="$PROJECT_DIR$/library/build/outputs/aar/library-debug.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/outputs/aar/library-release.aar" afterPath="$PROJECT_DIR$/library/build/outputs/aar/library-release.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/outputFileStates.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/resources/resources-debug.ap_" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/resources/resources-debug.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/src/main/java/com/roomorama/caldroid/CaldroidFragment.java" afterPath="$PROJECT_DIR$/library/src/main/java/com/roomorama/caldroid/CaldroidFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/src/main/java/com/roomorama/caldroid/CaldroidListener.java" afterPath="$PROJECT_DIR$/library/src/main/java/com/roomorama/caldroid/CaldroidListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/Calendar_Holder_Fragment.java" afterPath="$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/Calendar_Holder_Fragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/DatabaseHelper.java" afterPath="$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/DatabaseHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/generated/source/r/debug/com/caldroid/R.java" afterPath="$PROJECT_DIR$/wODJournal/build/generated/source/r/debug/com/caldroid/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/generated/source/r/debug/com/floridaseabee/wodjournal/R.java" afterPath="$PROJECT_DIR$/wODJournal/build/generated/source/r/debug/com/floridaseabee/wodjournal/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/generated/source/r/debug/com/ipaulpro/afilechooser/R.java" afterPath="$PROJECT_DIR$/wODJournal/build/generated/source/r/debug/com/ipaulpro/afilechooser/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/symbols/debug/R.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/Utilities_Activity.java" afterPath="$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/Utilities_Activity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/WODCalendarFragment.java" afterPath="$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/WODCalendarFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WODJournal.iml" afterPath="$PROJECT_DIR$/WODJournal.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/WOD_Calendar_Activity.java" afterPath="$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/WOD_Calendar_Activity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/incremental/mergeResources/debug/merger.xml" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/incremental/mergeResources/debug/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/wODJournal/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_22_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_22_2_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/res/debug/values/values.xml" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/res/debug/values/values.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="WODJournal.iws" />
     <ignored path=".idea/workspace.xml" />
-    <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,11 +165,65 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="import-summary.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/import-summary.txt">
+      <file leaf-file-name="DatabaseHelper.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/DatabaseHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.56932515">
-              <caret line="98" column="30" selection-start-line="98" selection-start-column="30" selection-end-line="98" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.332">
+              <caret line="1781" column="20" selection-start-line="1781" selection-start-column="20" selection-end-line="1781" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Calendar_Delete_Dialog.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/Calendar_Delete_Dialog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CaldroidListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/src/main/java/com/roomorama/caldroid/CaldroidListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="46" column="7" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WODCalendarFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/WODCalendarFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CaldroidFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/src/main/java/com/roomorama/caldroid/CaldroidFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="296" column="4" selection-start-line="296" selection-start-column="4" selection-end-line="296" selection-end-column="4" />
+              <folding>
+                <element signature="e#5909#5919#0" expanded="true" />
+                <element signature="e#6684#6703#0" expanded="true" />
+                <element signature="e#7397#7418#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Utilities_Activity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/Utilities_Activity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.6296296">
+              <caret line="190" column="60" selection-start-line="190" selection-start-column="60" selection-end-line="190" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -2859,7 +3049,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/import-summary.txt" />
+        <option value="$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/Utilities_Activity.java" />
+        <option value="$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/Calendar_Delete_Dialog.java" />
+        <option value="$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/WODCalendarFragment.java" />
+        <option value="$PROJECT_DIR$/library/src/main/java/com/roomorama/caldroid/CaldroidListener.java" />
+        <option value="$PROJECT_DIR$/library/src/main/java/com/roomorama/caldroid/CaldroidFragment.java" />
+        <option value="$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/DatabaseHelper.java" />
       </list>
     </option>
   </component>
@@ -2867,10 +3062,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="70" />
-    <option name="y" value="9" />
-    <option name="width" value="1469" />
-    <option name="height" value="983" />
+    <option name="x" value="42" />
+    <option name="y" value="8" />
+    <option name="width" value="1400" />
+    <option name="height" value="966" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -2895,10 +3090,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2906,9 +3097,15 @@
               <option name="myItemId" value="WODJournal" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Gradle Scripts" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
+              <option name="myItemId" value="WODJournal" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wODJournal" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2916,18 +3113,33 @@
               <option name="myItemId" value="WODJournal" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wODJournal" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wodjournal" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="gradle.compiler" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="android.project.structure.last.selected" value="SDK Location" />
-    <property name="android.project.structure.proportion" value="0.15" />
     <property name="recentsLimit" value="5" />
-    <property name="FullScreen" value="false" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="f703ff46" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_22_x86" />
   </component>
   <component name="RunManager" selected="Android Application.wODJournal">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -2936,36 +3148,6 @@
       <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
-      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
-      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
-      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
@@ -3023,11 +3205,6 @@
       </option>
       <envs />
       <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="JarApplication" factoryName="JAR Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -3117,81 +3294,105 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1139738a-5cc6-4a58-a4c3-72e5c446e90d" name="Default" comment="" />
-      <created>1435901270462</created>
+      <changelist id="d1216288-649c-4441-bb41-e0d3e6d795d5" name="Default" comment="" />
+      <created>1438296541899</created>
       <option name="number" value="Default" />
-      <updated>1435901270462</updated>
+      <updated>1438296541899</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="70" y="9" width="1469" height="983" extended-state="0" />
-    <editor active="false" />
+    <frame x="42" y="8" width="1400" height="966" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936978" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3288835" sideWeight="0.50296295" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3288835" sideWeight="0.49703702" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35072815" sideWeight="0.7977778" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21407408" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288835" sideWeight="0.49703702" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
-  <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USER_GROUPS">
-      <collection />
-    </option>
-    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-      <collection />
-    </option>
-  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Updated to Android Studio 1.3.0 and it lost the GIT settings so its going to be seen as yet another complete rebaseline.  On the bright side, we were able to complete the delete day within the Calendar as well as fixing some dialog issues within the Utilities activity to ensure that the dialog doesn't loose its status if either the screen is rotated or the the app is stopped in the background and restarted." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated to Android Studio 1.3.0 and it lost the GIT settings so its going to be seen as yet another complete rebaseline.  On the bright side, we were able to complete the delete day within the Calendar as well as fixing some dialog issues within the Utilities activity to ensure that the dialog doesn't loose its status if either the screen is rotated or the the app is stopped in the background and restarted." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/import-summary.txt">
+    <entry file="file://$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/Utilities_Activity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-5.6296296">
+          <caret line="190" column="60" selection-start-line="190" selection-start-column="60" selection-end-line="190" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/import-summary.txt">
+    <entry file="file://$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/Calendar_Delete_Dialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/import-summary.txt">
+    <entry file="file://$PROJECT_DIR$/library/src/main/java/com/roomorama/caldroid/CaldroidListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56932515">
-          <caret line="98" column="30" selection-start-line="98" selection-start-column="30" selection-end-line="98" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="7" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/WODCalendarFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/src/main/java/com/roomorama/caldroid/CaldroidFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="296" column="4" selection-start-line="296" selection-start-column="4" selection-end-line="296" selection-end-column="4" />
+          <folding>
+            <element signature="e#5909#5919#0" expanded="true" />
+            <element signature="e#6684#6703#0" expanded="true" />
+            <element signature="e#7397#7418#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/DatabaseHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.332">
+          <caret line="1781" column="20" selection-start-line="1781" selection-start-column="20" selection-end-line="1781" selection-end-column="20" />
           <folding />
         </state>
       </provider>

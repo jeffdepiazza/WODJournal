@@ -18,7 +18,6 @@ import android.view.View;
 public abstract class CaldroidListener {
 	/**
 	 * Inform client user has clicked on a date
-	 * @param date
 	 * @param view
 	 */
 	public void onSelectDate(int year, int month, int day, View view){
@@ -27,11 +26,11 @@ public abstract class CaldroidListener {
 	
 	/**
 	 * Inform client user has long clicked on a date
-	 * @param date
+
 	 * @param view
 	 */
-	public void onLongClickDate(Date date, View view) {
-		// Do nothing
+	public void onLongClickDate(int year, int month, int day, View view) {
+		// changed from date as all i want are the year/month/day separated out
 	}
 
 	
@@ -42,7 +41,7 @@ public abstract class CaldroidListener {
 	 */
 	public void onChangeMonth(int month, int year) {
 		// Do nothing
-	};
+	}
 
 	
 	/**

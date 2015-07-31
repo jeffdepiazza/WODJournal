@@ -95,6 +95,7 @@
     <string name="utilities_xml_restore_progress_message">Restoring XML from </string>
     <string name="utilities_xml_export_progress_title">Export database to XML</string>
     <string name="utilities_xml_export_progress_message">Exporting XML to </string>
+    <string name="calendar_delete_dialog_text">Are you sure you want to delete all workouts information that occured on </string>
 
     <color name="grey">#585858</color>
     <color name="red">#fb0101</color>

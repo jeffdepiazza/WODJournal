@@ -3,6 +3,7 @@ package com.floridaseabee.wodjournal;
 import java.util.Calendar;
 import java.util.Date;
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -14,13 +15,19 @@ import android.view.Window;
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
 
-public class WOD_Calendar_Activity extends FragmentActivity {
+public class WOD_Calendar_Activity extends FragmentActivity implements Calendar_Delete_Dialog.Calendar_Delete_dialog_Listener{
 
 	private WODCalendarFragment calendarfragment;
 	private DetailsFragment details;
 	public static int absolutewindowheight;
 	public static int absolutewindowwidth;
+	private int selected_day =0;
+	private int selected_month=0;
+	private int selected_year=0;
 	public Boolean newlycreated = true;
+	private Calendar_Delete_Dialog calendar_delete_dialog = null;
+	private Boolean dialog_displayed;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +56,16 @@ public class WOD_Calendar_Activity extends FragmentActivity {
 			}
 
 			@Override
-			public void onLongClickDate(Date date, View view) {
+			public void onLongClickDate(int year, int month, int day, View view) {
 
+				Log.v("calender activity", " on long click date");
+                selected_day = day;
+                selected_month = month;
+                selected_year = year;
+				FragmentTransaction ft = getFragmentManager().beginTransaction();
+				calendar_delete_dialog = Calendar_Delete_Dialog.newInstance(selected_year, selected_month, selected_day);
+				calendar_delete_dialog.setListener(WOD_Calendar_Activity.this);
+				calendar_delete_dialog.show(ft, "dialog");
 			}
 
 			// executed after the Fragment OnCreateView sends this even to the
@@ -95,8 +110,12 @@ public class WOD_Calendar_Activity extends FragmentActivity {
 			// Log.v("Calendar Activity", "calendarfragement =" +
 			// calendarfragment);
 			newlycreated = savedInstanceState.getBoolean("newlycreated", false);
+            selected_day = savedInstanceState.getInt("SELECTED_DAY", 0);
+            selected_month = savedInstanceState.getInt("SELECTED_MONTH", 0);
+            selected_year = savedInstanceState.getInt("SELECTED_YEAR", 0);
 			calendarfragment.restoreStatesFromKey(savedInstanceState, "CALDROID_SAVED_STATE");
-		}
+            dialog_displayed = savedInstanceState.getBoolean("DIALOG_DISPLAYED", false);
+        }
 
 		// If activity is created from fresh
 		else {
@@ -112,6 +131,7 @@ public class WOD_Calendar_Activity extends FragmentActivity {
 			// Uncomment this to customize startDayOfWeek
 			// args.putInt(CaldroidFragment.START_DAY_OF_WEEK,
 			// CaldroidFragment.TUESDAY); // Tuesday
+			dialog_displayed = false;
 			calendarfragment.setArguments(args);
 		}
 		getSupportFragmentManager().beginTransaction().add(R.id.calendar, calendarfragment).commit();
@@ -123,6 +143,12 @@ public class WOD_Calendar_Activity extends FragmentActivity {
 			getSupportFragmentManager().beginTransaction().add(R.id.calendar, details).commit();
 		}
 
+        if (dialog_displayed == true) {
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            calendar_delete_dialog = Calendar_Delete_Dialog.newInstance(selected_year, selected_month, selected_day);
+            calendar_delete_dialog.setListener(this);
+            calendar_delete_dialog.show(ft, "dialog");
+        }
 	}
 
 	@Override
@@ -133,6 +159,10 @@ public class WOD_Calendar_Activity extends FragmentActivity {
 		if (calendarfragment != null) {
 			calendarfragment.saveStatesToKey(outState, "CALDROID_SAVED_STATE");
 			outState.putBoolean("newlycreated", false);
+            outState.putInt("SELECTED_DAY", selected_day);
+            outState.putInt("SELECTED MONTH", selected_month);
+            outState.putInt("SELECTED YEAR", selected_year);
+
 		}
 
 	}
@@ -163,4 +193,11 @@ public class WOD_Calendar_Activity extends FragmentActivity {
 		super.onPause();
 	}
 
+    @Override
+    public void head_back_to_activity() {
+        //  we are assuming that if we are here, that the dialog came back as a positive/yes to
+        // delete the date, so we are going to start the async task and head on down that road.
+		Log.v("got positive response", "heading to async task");
+        calendarfragment.delete_selected_date(selected_year, selected_month, selected_day);
+    }
 }

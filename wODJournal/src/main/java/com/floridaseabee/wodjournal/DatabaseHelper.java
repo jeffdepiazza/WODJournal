@@ -4,8 +4,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.nio.channels.FileChannel;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -49,21 +47,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	// are ready to be passed to the Calendar for proper display. Nothing else
 	interface WOD_DB_Listener {
 		// will need to sent to the fragment setBackgroundResourceForDates
-		public void CALLsetBackgroundResourceForDates(HashMap<Date, Integer> backgroundForDateMap);
+		void CALLsetBackgroundResourceForDates(HashMap<Date, Integer> backgroundForDateMap);
+        void done_day_delete();
 	}
 
 	// Used for the main WOD area that will need a lot of functions to allow the
 	// activity to know when items are uploaded and what to do.
 
 	interface WOD_Main_Listener {
-		public void returnNoWorkoutsforDayFound(); // no workouts for the day
+		void returnNoWorkoutsforDayFound(); // no workouts for the day
 													// found. so we have custom
 													// display to unhide
 
-		public void pulledWODsforDay(Date_Holder result); // got the data, now
+		void pulledWODsforDay(Date_Holder result); // got the data, now
 															// need to display
 
-		public void success_add_edit_delete(); // whether or not its an
+		void success_add_edit_delete(); // whether or not its an
 												// add/edit/or delete, we will
 												// make the activity repull that
 												// days workout and reattach the
@@ -74,34 +73,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	// holder fragment that will keep a hook into the database as its running
 
 	interface Personal_Records_Listener {
-		public void return_no_PRs_found();
+		void return_no_PRs_found();
 
-		public void return_PR_results(ArrayList<Personal_Record_Holder> prh);
+		void return_PR_results(ArrayList<Personal_Record_Holder> prh);
 
 	}
 
 	interface Workout_Search_Listener {
-		public void return_no_results_found();
+		void return_no_results_found();
 
-		public void return_search_results(ArrayList<Search_Results_Holder> results);
+		void return_search_results(ArrayList<Search_Results_Holder> results);
 	}
 
 	interface Rep_Max_Item_Listener {
-		public void return_Rep_Max_Items(ArrayList<String> rep_max_items);
+		void return_Rep_Max_Items(ArrayList<String> rep_max_items);
 
-		public void return_Analytics_data(ArrayList<Analytics_Data_Holder> result);
+		void return_Analytics_data(ArrayList<Analytics_Data_Holder> result);
 
 	}
 
 	interface Utilities_Listener {
-		public void return_progress(Integer progress);
+		void return_progress(Integer progress);
 
-		public void return_create_xml_asynctask(create_xml_async my_task);
+		void return_create_xml_asynctask(create_xml_async my_task);
 		
-		public void return_restore_xml_asynctask(restore_xml_async my_task);
+		void return_restore_xml_asynctask(restore_xml_async my_task);
 		
-		public void return_task_complete();
+		void return_task_complete();
 
+	}
+
+	public void deleteEntireDay(Integer year, Integer month, Integer day,  WOD_DB_Listener listener) {
+		Utilities_Holder_Fragment.executeAsyncTask(new delete_Entire_day(year, month, day, listener));
 	}
 
 	public void createXmlAsync(Utilities_Holder_Fragment listener, Context ctxt, String DATASUBDIRECTORY, String EXPORT_FILE_NAME) {
@@ -181,6 +184,71 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		Workout_Search_Holder_Fragment.executeAsyncTask(new GetSearchResultsAsync(search_string, search_type, listener));
 	}
 
+	public class delete_Entire_day extends AsyncTask<Void, Void, Void> {
+        private WOD_DB_Listener listener = null;
+        private Integer year;
+        private Integer month;
+        private Integer day;
+
+        delete_Entire_day(Integer year, Integer month, Integer day, WOD_DB_Listener listener) {
+            Log.v("delete entire day", "in constructor");
+            this.listener = listener;
+            this.year = year;
+            this.month = month;
+            this.day = day;
+
+        }
+        @Override
+        protected Void doInBackground(Void... params) {
+			String sqlstatement;
+			Integer date_id;
+			Integer container_id;
+			// in order to delete the entire workout, we need to grab the date_id of the Main table,
+			// and the container_id of the Container table before we delete
+            if (month <10 ) {
+                sqlstatement = "SELECT _id FROM MAIN WHERE WOD_Date = '" + year + "-0" + month + "-" + day + "';";
+            }
+            else {
+            sqlstatement = "SELECT _id FROM MAIN WHERE WOD_Date = '" + year + "-" + month + "-" + day + "';";
+                }
+            Log.v("delete day", sqlstatement);
+			Cursor c = getReadableDatabase().rawQuery(sqlstatement, null);
+			c.moveToFirst();
+            if (!c.isAfterLast()) {
+                date_id = c.getInt(c.getColumnIndex("_id"));
+                c.close();
+                if (month <10 ) {
+                    sqlstatement = "DELETE FROM MAIN WHERE WOD_Date = '" + year + "-0" + month + "-" + day + "';";
+                }
+                else {
+                    sqlstatement = "DELETE FROM MAIN WHERE WOD_Date = '" + year + "-" + month + "-" + day + "';";
+                }
+				Log.v("Databasehelper", sqlstatement);
+                getWritableDatabase().execSQL(sqlstatement);
+
+                sqlstatement = "SELECT _id FROM WOD_Container WHERE Date_ID = " + date_id + ";";
+                c = getReadableDatabase().rawQuery(sqlstatement, null);
+                c.moveToFirst();
+                while (!c.isAfterLast()) {
+                    container_id = c.getInt(c.getColumnIndex("_id"));
+                    sqlstatement = "DELETE FROM Movement_Template WHERE WOD_Container_ID = " + container_id + ";";
+                    getWritableDatabase().execSQL(sqlstatement);
+                    sqlstatement = "DELETE FROM WOD_Container WHERE Date_ID = " + date_id + ";";
+                    getWritableDatabase().execSQL(sqlstatement);
+                    c.moveToNext();
+                }
+            }
+			c.close();
+
+            return null;
+        }
+        @Override
+        protected void onPostExecute(Void result) {
+            Log.v("finishing day delete", "heading back to activity");
+            listener.done_day_delete();
+        }
+    }
+
 	public class create_file_async extends AsyncTask<Void, Void, Void> {
 
 		Utilities_Listener listener;
@@ -200,7 +268,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 		@Override
 		protected Void doInBackground(Void... params) {
-			// TODO Auto-generated method stub
 
 			File directorycheck = new File(DATASUBDIRECTORY);
 
@@ -211,9 +278,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			// will tell us what happened with the directory.
 
 			if (!directorycheck.mkdir())
-				Log.v("database helper file creating", "directory already existed");
+				Log.v("database file creating", "directory already existed");
 			else
-				Log.v("database helper file creating", "directory did not exist previsouly, creating directory");
+				Log.v("database file creating", "directory did not exist previsouly, creating directory");
 			try {
 				File currentDB = ctxt.getDatabasePath(DATABASE_NAME);
 				File backupDB = new File(DATASUBDIRECTORY, EXPORT_FILE_NAME);
@@ -265,15 +332,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			super.onPreExecute();
 			// listener.return_asynctask(this); when we clean up the listener
 			// stuff
-			Log.v("Database helper for file restore", "creating progress dialog and sending hook for task ");
+			Log.v("Database file restore", "creating progress dialog and sending hook for task ");
 		}
 
 		@Override
 		protected String doInBackground(Void... params) {
-			int restore_schema_version = 0;
+			int restore_schema_version;
 			Cursor c;
-			SQLiteDatabase restore_db = null;
-			SQLiteDatabase current_db = null;
+			SQLiteDatabase restore_db;
+			SQLiteDatabase current_db;
 			try {
 				File restorefile = new File(filename);
 				restore_db = SQLiteDatabase.openOrCreateDatabase(restorefile, null);
@@ -283,34 +350,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				// in case the user gives us an invalid file or database, we
 				// need to catch it upon opening, and exit the task
 				t.printStackTrace();
-				onPostExecute(null);
+                return null;
 			}
 
 			restore_schema_version = restore_db.getVersion();
-			Log.v("database helper restore file", "restore database version = " + restore_schema_version);
+			Log.v("database restore file", "restore database version = " + restore_schema_version);
 			if (restore_schema_version > SCHEMA_VERSION) {
-				onPostExecute(ctxt.getResources().getString(R.string.schema_too_high) + SCHEMA_VERSION); // schema
-																											// version
-																											// is
-																											// higher
-																											// than
-																											// what
-																											// we
-																											// have,
-																											// so
-																											// this
-																											// must
-																											// be
-																											// the
-																											// wrong
-																											// database.
+                // schema version is higher than what we have, so this must be the wrong database.
+				 return (ctxt.getResources().getString(R.string.schema_too_high) + SCHEMA_VERSION);
 			}
 
 			try {
 				c = restore_db.rawQuery("SELECT * FROM VARIABLES", null);
 				c.moveToFirst();
 				if ((!(c.getString(c.getColumnIndex("Application_Name")) == "WODJOURNAL")) && (!(c.getString(c.getColumnIndex("Database_Name")) == "WODS.db"))) {
-					onPostExecute(null); // has a variables table, but not the
+                    return null; // has a variables table, but not the
 											// correct entries.... after this
 											// check, we can finally try to
 											// restore.
@@ -319,7 +373,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				// in case the user gives us an invalid file or database, we
 				// need to catch it upon opening, and exit the task
 				t.printStackTrace();
-				onPostExecute(null);
+                return null;
 			}
 
 			current_db = getWritableDatabase();
@@ -337,7 +391,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 		@Override
 		protected void onPostExecute(String result) {
-			Log.v("database helper finishing file restore", " dismissing dialog");
+			Log.v("done file restore", " dismissing dialog");
 			super.onPostExecute(result);
 			completed = true;
 			listener.return_task_complete();
@@ -366,7 +420,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			super.onPreExecute();
 			// listener.return_asynctask(this); when we clean up the listener
 			// stuff
-			Log.v("Database helper for file restore", "creating progress dialog and sending hook for task ");
+			Log.v("file restore", "creating progress dialog and sending hook for task ");
 		}
 
 		@Override
@@ -404,7 +458,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 					ArrayList<Movement_Container_Holder> mch;
 					Cursor date_cursor;
 					Cursor container_cursor;
-					Log.v("database helper import xml", "date holder size = " + XMLid.get_date_holder_size());
+					Log.v("database import xml", "date holder size = " + XMLid.get_date_holder_size());
 					while (XMLid.get_date_holder_size() >= date_counter + 1) {
 						// write the date and give the progress back to the listeners...
 						//Log.v("database helper" , "" + (float) (date_counter + 1) + "  " + (float) XMLid.get_date_holder_size());
@@ -555,7 +609,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				
 				} else {
 					
-					Log.v("DatabaseHelper xml import" , "null error or something...not good");
+					Log.v("Database xml import" , "null error or something...not good");
 				}
 					
 
@@ -605,7 +659,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		protected void onPreExecute() {
 			super.onPreExecute();
 			listener.return_create_xml_asynctask(this);
-			Log.v("Database helper for .xml dump", "creating progress dialog ");
+			Log.v("Database for .xml dump", "creating progress dialog ");
 		}
 
 		@Override
@@ -613,7 +667,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			Cursor main_cursor;
 			Cursor container_cursor;
 			Cursor movement_cursor;
-			Log.v("Database Helper xml export", "directory = " + DATASUBDIRECTORY + " filename = " + EXPORT_FILE_NAME);
+			Log.v("Database xml export", "directory = " + DATASUBDIRECTORY + " filename = " + EXPORT_FILE_NAME);
 			String sqlstatement = "SELECT * FROM MAIN";
 
 			xml_exporter = new XMLExporter(DATASUBDIRECTORY + EXPORT_FILE_NAME);
@@ -626,14 +680,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			// will tell us what happened with the directory.
 
 			if (!directorycheck.mkdir())
-				Log.v("database helper XML creating", "directory already existed");
+				Log.v("database XML creating", "directory already existed");
 			else
-				Log.v("database helper XML creating", "directory did not exist previsouly, creating directory");
+				Log.v("database XML creating", "directory did not exist previsouly, creating directory");
 
 			main_cursor = getReadableDatabase().rawQuery(sqlstatement, null);
 
 			main_cursor.moveToFirst();
-			Log.v("DatabaseHelper-xml export", "Main Cursor count = " + main_cursor.getCount());
+			Log.v("Database-xml export", "Main Cursor count = " + main_cursor.getCount());
 			try {
 				if (main_cursor.isAfterLast()) {
 					Log.v("DatabaseHelper ", "no main entries found");
@@ -770,7 +824,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 						+ mch.return_Comments()
 						+ "', "
 						+ mch.return_Staggered_Rounds() + ", '" + mch.return_reps_dynamic() + "');";
-				Log.v("sql string for add child", sqlstatement);
+				Log.v("sql for add child", sqlstatement);
 				getWritableDatabase().execSQL(sqlstatement);
 			} else if (type == "Insert") {
 				// if this is an insert function, we will need to move up all
@@ -778,10 +832,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				Log.v("database helper", "Inserting child");
 				Integer i = date_holder.return_single_container(groupPosition).get_Movement_size();
 				while (i > childPosition) {
-					Log.v("Movement container iterator", "");
+					Log.v("Mvmt container iterator", "");
 
 					sqlstatement = "UPDATE Movement_Template SET Movement_Order = " + (i + 1) + " WHERE Movement_Order = " + i + " AND WOD_Container_ID = " + _id + ";";
-					Log.v("database helper increasing childs", sqlstatement);
+					Log.v("increasing childs", sqlstatement);
 					getWritableDatabase().execSQL(sqlstatement);
 					i--;
 				}
@@ -817,14 +871,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 						+ mch.return_weight_units()
 						+ "', "
 						+ mch.return_Percentage() + ", '" + mch.return_Comments() + "', " + mch.return_Staggered_Rounds() + ", '" + mch.return_reps_dynamic() + "');";
-				Log.v("sql string for insert child", sqlstatement);
+				Log.v("sql for insert child", sqlstatement);
 				getWritableDatabase().execSQL(sqlstatement);
 			}
 			return null;
 		}
 
 		protected void onPostExecute(Void params) {
-			Log.v("finished add/insert child ", "in onPostExceute");
+			Log.v("done add/insert child ", "in onPostExceute");
 			// done adding/inserting the child entry, lets go back so we can
 			// requery the adapter with fresh data.
 			// we could just edit the adapter as well, but I would rather
@@ -864,17 +918,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			// actual text that the user puts in...so we have to double up in
 			// order for sqlite to not crash.
 
-			Log.v("DatabaseHelper - Get Wodsin a Day", "SELECT DISTINCT _id, WOD_Date FROM Main WHERE WOD_Date = '" + current_date + "';");
+			Log.v("Database GetWodsinaDay", "SELECT DISTINCT _id, WOD_Date FROM Main WHERE WOD_Date = '" + current_date + "';");
 			Cursor c = getReadableDatabase().rawQuery("SELECT DISTINCT _id, WOD_Date FROM Main WHERE WOD_Date = '" + current_date + "';", null);
 			c.moveToFirst();
-			Log.v("DatabaseHelper-GetWodsInDay", "Cursor count" + c.getCount());
+			Log.v("Database-GetWodsInDay", "Cursor count" + c.getCount());
 			// If there is nothing in the cursor, then this is a new add for a
 			// date that has nothing, so we have to do our add operation into
 			// the main table, and then grab the _id afterwards and set it into
 			// our_id.
 
 			if (c.isAfterLast()) {
-				Log.v("DatabaseHelper-GetWodsinDay", "nothing found for date_id, so we much create one");
+				Log.v("Database-GetWodsinDay", "nothing found for date_id, so we much create one");
 				c.close();
 
 				getWritableDatabase().execSQL("INSERT INTO Main (WOD_Date) VALUES ('" + current_date + "');");
@@ -909,7 +963,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 						+ "', '"
 						+ wch.get_Staggered_Rounds() + "', " + (groupPosition + 1) + ");";
 
-				Log.v("sql string for edit parent", sqlstatement);
+				Log.v("sql for edit parent", sqlstatement);
 				getWritableDatabase().execSQL(sqlstatement);
 			} else if (type == "Insert") {
 				// if this is an insert function, we will need to move up all
@@ -920,7 +974,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 					Log.v("WOD container iterator", "");
 
 					sqlstatement = "UPDATE WOD_Container SET Container_Order = " + (i + 1) + " WHERE Container_Order = " + i + " AND Date_ID = " + _id + ";";
-					Log.v("database helper increasing parents", sqlstatement);
+					Log.v("increasing parent", sqlstatement);
 					getWritableDatabase().execSQL(sqlstatement);
 					i--;
 				}
@@ -957,7 +1011,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		}
 
 		protected void onPostExecute(Void params) {
-			Log.v("finished add/insert parent ", "in onPostExceute");
+			Log.v("done add/insert parent ", "in onPostExceute");
 			// done adding/inserting the parent entry, lets go back so we can
 			// requery the adapter with fresh data.
 			// we could just edit the adapter as well, but I would rather
@@ -994,7 +1048,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 					+ wch.get_Finish_Time() + "', Rounds_Finished = " + wch.get_Rounds_Finished() + ", IsWeight_Workout = '" + wch.get_IsWeight_Workout() + "', Workout_name = '"
 					+ wch.get_Workout_Name() + "', Comments = '" + wch.get_Comments() + "', Staggered_Rounds = '" + wch.get_Staggered_Rounds() + "' WHERE _id = " + wch.get_id()
 					+ ";";
-			Log.v("sql string for edit parent", sqlstring);
+			Log.v("sql for edit parent", sqlstring);
 			getWritableDatabase().execSQL(sqlstring);
 
 			return null;
@@ -1035,7 +1089,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 					+ ", Length_units = '" + mch.return_length_units() + "', Weight = " + mch.return_weight() + ", Weight_Units = '" + mch.return_weight_units()
 					+ "', Percentage = " + mch.return_Percentage() + ", Movement_Number = " + mch.return_Movement_Number() + ", Comments = '" + mch.return_Comments()
 					+ "', Staggered_Rounds =" + mch.return_Staggered_Rounds() + " WHERE _id = " + mch.return_id() + ";";
-			Log.v("sql string for edit child", sqlstring);
+			Log.v("sql for edit child", sqlstring);
 			getWritableDatabase().execSQL(sqlstring);
 			return null;
 		}
@@ -1156,7 +1210,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			// ensure that
 			// there are no holes in the movement orders.
 			for (Movement_Container_Holder movement_holder_iterator : container_holder.return_movements()) {
-				Log.v("Movement container iterator", "");
+				Log.v("Mvmt container iterator", "");
 				if (movement_holder_iterator.return_Movement_Order() > (childPosition + 1)) {
 					sqlstatement = "UPDATE Movement_Template SET Movement_Order = " + (movement_holder_iterator.return_Movement_Order() - 1) + " WHERE Movement_Order = "
 							+ (movement_holder_iterator.return_Movement_Order()) + " AND WOD_Container_Id = " + date_holder.return_single_container(groupPosition).get_id() + ";";
@@ -1191,7 +1245,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		private String current_date;
 
 		getWODsinDayAsync(String current_date, WOD_Main_Listener listener) {
-			Log.v("DatabaseHelper-getWODsinDayAsync", "in constructor");
+			Log.v("getWODsinDayAsync", "in constructor");
 			this.listener = listener;
 			this.current_date = current_date;
 			// we have to do this as the integer won't have two digits unless
@@ -1214,11 +1268,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			// We couldn't reuse the cursors as they were both being used at the
 			// same time.
 
-			Log.v("DatabaseHelper-GetWodsinaDay", "in doinbackground");
-			Log.v("DatabaseHelper - Get Wodsin a Day", "SELECT DISTINCT _id, WOD_Date FROM Main WHERE WOD_Date = '" + current_date + "';");
+			Log.v("Database-GetWodsinaDay", "in doinbackground");
+			Log.v("Database-GetWodsinaDay", "SELECT DISTINCT _id, WOD_Date FROM Main WHERE WOD_Date = '" + current_date + "';");
 			Cursor c = getReadableDatabase().rawQuery("SELECT DISTINCT _id, WOD_Date FROM Main WHERE WOD_Date = '" + current_date + "';", null);
 			c.moveToFirst();
-			Log.v("DatabaseHelper-GetWodsInDay", "Cursor count" + c.getCount());
+			Log.v("Database-GetWodsInDay", "Cursor count" + c.getCount());
 
 			// we need to figure out if we have any data to display first...and
 			// if not, we exit out with a null
@@ -1227,7 +1281,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			// will be part of the SELECT statement out of WOD_container.
 
 			if (c.isAfterLast()) {
-				Log.v("DatabaseHelper-GetWodsinDay", "no workouts for the day found");
+				Log.v("Database-GetWodsinDay", "no workouts for the day found");
 				c.close();
 				return null;
 			}
@@ -1249,7 +1303,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			// entry in the Main table to begin with.
 
 			if (container_cursor.isAfterLast()) {
-				Log.v("DatabaseHelper-GetWodsinDay", "no WOD Containers for the day found");
+				Log.v("Database-GetWodsinDay", "no WOD Containers for the day found");
 				container_cursor.close();
 				return null;
 				// put something here that returns the database object with
@@ -1286,7 +1340,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		}
 
 		protected void onPostExecute(Date_Holder result) {
-			Log.v("DatabaseHelper-GetWodsinDay", "in onPostExceute");
+			Log.v("Database-GetWodsinDay", "in onPostExceute");
 			// once we find out what we have, we return
 			if (result == null) {
 				listener.returnNoWorkoutsforDayFound();
@@ -1302,7 +1356,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		private Integer month;
 
 		Get_Wods_in_the_month(WOD_DB_Listener listener, Integer year, Integer month) {
-			Log.v("DatabaseHelper-GetWodsinMonth", "in constructor");
+			Log.v("Database-GetWodsinMonth", "in constructor");
 			this.listener = listener;
 			this.year = year;
 			this.month = month;
@@ -1318,9 +1372,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			String[] args = null;
 			Date d = null;
 			String startDate = null;
-			Log.v("DatabaseHelper-GetWodsinMonth", "in doinbackground");
-			Log.v("DatabaseHelper-GetWodsinMonth", "Month =" + month);
-			Log.v("DatabaseHelper-GetWodsinMonth", "Year =" + year);
+			Log.v("Database-GetWodsinMonth", "in doinbackground");
+			Log.v("Database-GetWodsinMonth", "Month =" + month);
+			Log.v("Database-GetWodsinMonth", "Year =" + year);
 			args = new String[2];
 			if (month < 10) {
 				args[0] = "0" + month.toString();
@@ -1334,9 +1388,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 					"SELECT WOD_Date FROM Main WHERE WOD_Date >= '" + startDate + "' AND WOD_Date <= date('" + startDate + "','+1 month','-1 day');", null);
 
 			c.moveToFirst();
-			Log.v("DatabaseHelper-GetWodsInMonth", "Cursor count" + c.getCount());
+			Log.v("Database-GetWodsInMonth", "Cursor count" + c.getCount());
 			if (c.isAfterLast()) {
-				Log.v("DatabaseHelper-GetWodsinMonth", "no workouts for the month found");
+				Log.v("Database-GetWodsinMonth", "no workouts for the month found");
 				c.close();
 				return null;
 			}
@@ -1353,7 +1407,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				try {
 					d = sdf.parse(c.getString(0));
 				} catch (ParseException e) {
-					// TODO Auto-generated catch block
+
 					e.printStackTrace();
 				}
 				result.put(d, R.drawable.kettlebell); // color calendar cell
@@ -1496,10 +1550,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 					c = getReadableDatabase().rawQuery(sqlstatement, null);
 				}
 
-				Log.v("database helper workout search", " after getting the cursor with count " + c.getCount());
+				Log.v("database workout search", " after getting the cursor with count " + c.getCount());
 				c.moveToFirst();
 				if (!(c.isAfterLast())) {
-					Log.v("DatabaseHelper-workout search", "records found");
+					Log.v("Database workout search", "records found");
 
 					srh = new ArrayList<Search_Results_Holder>();
 
@@ -1551,7 +1605,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 					c = getReadableDatabase().rawQuery(sqlstatement, null);
 				}
-				Log.v("database helper workout search", " after getting workout cursor entries " + c.getCount());
+				Log.v("database workout search", " after getting workout cursor entries " + c.getCount());
 				c.moveToFirst();
 				if (!(c.isAfterLast())) {
 

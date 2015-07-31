@@ -39,8 +39,7 @@ public class WODCalendarFragment extends CaldroidFragment implements
 	 * .  while we are not going on anything else but Jellybean, i left this in there as it should help out with keeping
 	 *  with keeping parallel tasks in addition 
 	 *  
-	 * @param task
-	 * @param params
+	 *
 	 */
 	static public <T> void executeAsyncTask(AsyncTask<T, ?, ?> task,
 			T... params) {
@@ -60,7 +59,18 @@ public class WODCalendarFragment extends CaldroidFragment implements
 		refreshView();
 		
 	}
-	
+
+	@Override
+	public void done_day_delete() {
+		// Once the deletion of the day is done, we have to completely redraw the calendar
+		// as the hashmap that drives the kettlebell display needs to be redone, as it wouldn't
+		// show the now missing day otherwise.
+		DatabaseHelper.getInstance(getActivity()).getWODAsync(year, month, this);
+	}
+
+	public void delete_selected_date(Integer year, Integer month, Integer day) {
+        DatabaseHelper.getInstance(getActivity()).deleteEntireDay(year, month, day, this);
+    }
 	// called from the activity after it gets notification that the fragment has finished loading caldroid items
 	// this is the only way to let the fragment know that it needs to start loading up as I didn't want to override the
 	// onCreateView as i would've had to duplicate a TON Of of other stuff for no damn reason. So this is the next best thing...
@@ -70,5 +80,6 @@ public class WODCalendarFragment extends CaldroidFragment implements
  public void startupWODCalendarAsync() {
 		DatabaseHelper.getInstance(getActivity()).getWODAsync(year, month, this);
 	}
+
 
 }
