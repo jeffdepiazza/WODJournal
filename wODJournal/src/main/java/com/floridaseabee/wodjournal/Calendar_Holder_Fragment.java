@@ -103,6 +103,11 @@ public class Calendar_Holder_Fragment extends Fragment implements
 
 	}
 
+	public void copychild(Date_Holder date_holder, Integer groupPosition, Integer childPosition) {
+		DatabaseHelper.getInstance(getActivity()).CopyChildAsync(date_holder,
+				groupPosition, childPosition, this);
+	}
+
 	public void editparent(WOD_Container_Holder WOD_container_edit) {
 		DatabaseHelper.getInstance(getActivity()).EditParentAsync(
 				WOD_container_edit, this);

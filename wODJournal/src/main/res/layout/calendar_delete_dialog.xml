@@ -7,7 +7,9 @@
     <TextView
         android:id="@+id/calendar_delete_dialog_textview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:paddingLeft="7dip">
     </TextView>
 
 </LinearLayout>

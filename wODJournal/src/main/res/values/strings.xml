@@ -21,6 +21,7 @@
     <string name="percentage">%</string>
     <string name="percentage_text">Percentage</string>
     <string name="delete_entry">Delete entry</string>
+    <string name="copy_entry">Copy entry</string>
     <string name="add_entry">Insert entry</string>
     <string name="AMRAP_text">AMRAP</string>
     <string name="edit_entry">Edit entry</string>
@@ -53,6 +54,7 @@
     <string name="insert_container">Insert WOD Container here</string>
     <string name="delete_container">Delete selected WOD Container</string>
     <string name="add_movement_entry_text">Add Movement entry</string>
+    <string name="copy_movement">Copy Movement to end</string>
     <string name="staggered_rounds_text">Staggered Rounds:</string>
     <string name="named_workout_text">Named Workout:</string>
     <string name="noPRsfound">No Records found.</string>
@@ -95,7 +97,7 @@
     <string name="utilities_xml_restore_progress_message">Restoring XML from </string>
     <string name="utilities_xml_export_progress_title">Export database to XML</string>
     <string name="utilities_xml_export_progress_message">Exporting XML to </string>
-    <string name="calendar_delete_dialog_text">Are you sure you want to delete all workouts information that occured on </string>
+    <string name="calendar_delete_dialog_text">Are you sure you want to delete all workout information that occured on </string>
 
     <color name="grey">#585858</color>
     <color name="red">#fb0101</color>

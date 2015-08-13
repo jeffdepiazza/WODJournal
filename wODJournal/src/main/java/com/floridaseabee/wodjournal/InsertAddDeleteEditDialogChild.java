@@ -16,6 +16,7 @@ public class InsertAddDeleteEditDialogChild extends DialogFragment implements
 	Button edit_entry;
 	Button delete_entry;
 	Button insert_entry;
+	Button copy_entry;
 	Child_Return_Clicks listener;
 
 	
@@ -33,8 +34,8 @@ public class InsertAddDeleteEditDialogChild extends DialogFragment implements
 			@Override
 			public void onClick(View v) {
 				send_back_add_event();
-				Log.v("insert add edit dialog child", "add entry");
-			
+				Log.v("iaed dialog child", "add entry");
+
 			}
 		});
 		
@@ -45,7 +46,7 @@ public class InsertAddDeleteEditDialogChild extends DialogFragment implements
 			@Override
 			public void onClick(View v) {
 				send_back_insert_event();
-				Log.v("insert add edit dialog child", "insert entry");
+				Log.v("iaed dialog child", "insert entry");
 			}
 		});
 		edit_entry = (Button) v.findViewById(R.id.edit_entry);
@@ -55,7 +56,7 @@ public class InsertAddDeleteEditDialogChild extends DialogFragment implements
 			@Override
 			public void onClick(View v) {
 				send_back_edit_event();
-				Log.v("insert add edit dialog child", "edit entry");
+				Log.v("iaed dialog child", "edit entry");
 			}
 
 		});
@@ -65,8 +66,20 @@ public class InsertAddDeleteEditDialogChild extends DialogFragment implements
 
 			@Override
 			public void onClick(View v) {
-				Log.v("insert add edit dialog child", "delete entry");
+				Log.v("iaed dialog child", "delete entry");
 				send_back_delete_event();
+				dismiss();
+			}
+
+		});
+		copy_entry = (Button) v.findViewById(R.id.copy_entry);
+		copy_entry.setText(getResources().getString(R.string.copy_movement));
+		copy_entry.setOnClickListener(new Button.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Log.v("iaed dialog child", "copy entry");
+				send_back_copy_event();
 				dismiss();
 			}
 
@@ -90,6 +103,7 @@ public class InsertAddDeleteEditDialogChild extends DialogFragment implements
 		
 		public void return_child_insert();
 
+		public void return_child_copy();
 	}
 
 	public static InsertAddDeleteEditDialogChild newInstance() {
@@ -108,10 +122,15 @@ public class InsertAddDeleteEditDialogChild extends DialogFragment implements
 	public void send_back_delete_event() {
 		listener.return_child_delete();
 	}
-	
+
+	public void send_back_copy_event() {
+		listener.return_child_copy();
+	}
+
 	public void send_back_edit_event() {
 		listener.return_child_edit();
 	}
+
 	public void setListener(Child_Return_Clicks listener) {
 		
 		this.listener = listener;

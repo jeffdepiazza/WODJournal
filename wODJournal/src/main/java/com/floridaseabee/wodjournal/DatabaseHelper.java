@@ -140,6 +140,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 	}
 
+	public void CopyChildAsync(Date_Holder date_holder, Integer groupPosition, Integer childPosition, Calendar_Holder_Fragment listener) {
+		WODCalendarFragment.executeAsyncTask(new copy_child_async(listener, date_holder, childPosition, groupPosition));
+
+	}
 	public void DeleteParentAsync(Date_Holder date_holder, Integer groupPosition, Calendar_Holder_Fragment listener) {
 		Log.v("Database helper", "delete parent Async ");
 		Calendar_Holder_Fragment.executeAsyncTask(new delete_parent_async(listener, date_holder, groupPosition));
@@ -1173,6 +1177,89 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			// could guarantee by editing them normally.
 			listener.success_add_edit_delete();
 		}
+	}
+
+	private class copy_child_async extends AsyncTask<Void, Void, Void> {
+		private WOD_Main_Listener listener = null;
+		private Integer groupPosition = 0;
+		private Integer childPosition = 0;
+		private Date_Holder date_holder;
+
+		copy_child_async(Calendar_Holder_Fragment listener, Date_Holder date_holder, Integer childPosition, Integer groupPosition) {
+			Log.v("copy child async", "in constructor");
+			this.listener = listener;
+			this.childPosition = childPosition;
+			this.groupPosition = groupPosition;
+			this.date_holder = date_holder;
+		}
+
+		@Override
+		protected Void doInBackground(Void... params) {
+			Log.v("copy child async", " do in background");
+			WOD_Container_Holder container_holder;
+			Movement_Container_Holder mch;
+			String sqlstatement;
+			container_holder = date_holder.WOD_Container_Holder.get(groupPosition);
+			mch = container_holder.return_single_movement(childPosition);
+
+			sqlstatement = "INSERT INTO Movement_Template_Copy (WOD_Container_ID, Movement_Order, Sets, Reps, AMRAP, Movement_Number, Movement, Rep_Max, Time_of_Movement, "
+					+ "Time_of_Movement_Units, Length, Length_Units, Weight, Weight_Units, Percentage, Comments, Staggered_Rounds, Reps_Dynamic) VALUES ("
+					+ mch.return_WOD_Container_ID()
+					+ ", "
+					+ (container_holder.get_Movement_size() + 1)
+					+ ","
+					+ mch.return_sets()
+					+ ", "
+					+ mch.return_reps()
+					+ ", "
+					+ mch.return_AMRAP()
+					+ ", "
+					+ mch.return_Movement_Number()
+					+ ", "
+					+ mch.return_Movement()
+					+ ", "
+					+ mch.return_Rep_Max()
+					+ ", "
+					+ mch.return_Time_of_Movement()
+					+ ", "
+					+ mch.return_Time_of_Movement_Units()
+					+ ", "
+					+ mch.return_length()
+					+ ", "
+					+ mch.return_length_units()
+					+ ", "
+					+ mch.return_weight()
+					+ ", "
+					+ mch.return_weight_units()
+					+ ", "
+					+ mch.return_Percentage()
+					+ ", '"
+					+ mch.return_Comments()
+					+ "', "
+					+ mch.return_Staggered_Rounds()
+					+ ", "
+					+ mch.return_reps_dynamic() + ");";
+			getWritableDatabase().beginTransaction();
+			getWritableDatabase().execSQL(sqlstatement);
+			getWritableDatabase().setTransactionSuccessful();
+			getWritableDatabase().endTransaction();
+
+			Log.v("copy child", "about to exit do in background");
+			return null;
+		}
+
+		protected void onPostExecute(Void params) {
+			Log.v("copy child ", "in onPostExceute");
+			// done copy that entry, lets go back so we can requery the
+			// adapter with fresh data.
+			// we could just edit the adapter as well, but I would rather
+			// requery the adapter and make sure
+			// that the Order of Movements are the same, which I'm not sure i
+			// could guarantee by editing them normally.
+			listener.success_add_edit_delete();
+
+		}
+
 	}
 
 	private class delete_child_async extends AsyncTask<Void, Void, Void> {

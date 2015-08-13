@@ -74,7 +74,7 @@ public class WOD_Calendar_Details extends FragmentActivity implements
 			current_date = current_date + "-" + Day;
 		}
 
-		Log.v("Wod Calendar Details On Create:", "current date= "
+		Log.v("WodCal Details OnCreate", "current date= "
 				+ current_date);
 		current_date_view = (TextView) findViewById(R.id.current_date_text);
 		SimpleDateFormat simpledate = new SimpleDateFormat("yyyy-MM-dd");
@@ -104,14 +104,14 @@ public class WOD_Calendar_Details extends FragmentActivity implements
 		final WOD_Day_DB_Listener Daypull_listener = new WOD_Day_DB_Listener() {
 
 			public void NoWorkoutsForDayFound() {
-				Log.v("WOD Calendar Details Activity",
+				Log.v("WODCal Details Activity",
 						" No records found for this day");
 				wod_display_fragment.no_data();
 			}
 
 			public void workoutsforDay(Date_Holder result) {
 
-				Log.v("WOD Calendar Details Activity", "Found entries");
+				Log.v("WODCal Details Activity", "Found entries");
 				date_holder = result;
 				wod_display_fragment.is_data();
 				wod_display_fragment.handover_data(result);
@@ -350,6 +350,11 @@ public class WOD_Calendar_Details extends FragmentActivity implements
 
 	}
 
+	public void return_child_copy() {
+		Log.v("WODCal Details Activity", "inside return child copy");
+		CalendarHolder.copychild(date_holder, groupPosition, childPosition);
+	}
+
 	@Override
 	public void return_child_insert() {
 		Log.v("activity main", "with insert child event");
@@ -415,7 +420,7 @@ public class WOD_Calendar_Details extends FragmentActivity implements
 			ft.remove(prev);
 		}
 		Log.v("month day year", "" + Month + " " + Day + " " + Year);
-		Log.v(" child and group positions", "" + childPosition + " "
+		Log.v("child n group positions", "" + childPosition + " "
 				+ groupPosition);
 
 		Edit_Parent_Dialog newEditParentFragment = Edit_Parent_Dialog

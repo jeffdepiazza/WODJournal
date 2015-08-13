@@ -65,7 +65,7 @@
     <string name="amrap_text">minute</string>
     <string name="app_name">WOD Journal</string>
     <string name="backup_filename_beginning">WJ_Backup_</string>
-    <string name="calendar_delete_dialog_text">Are you sure you want to delete all workouts information that occured on </string>
+    <string name="calendar_delete_dialog_text">Are you sure you want to delete all workout information that occured on </string>
     <string name="cancel">Cancel</string>
     <!-- From: file:/C:/projects/WODJournal/wODJournal/build/intermediates/exploded-aar/WODJournal/aFileChooser/unspecified/res/values/values.xml -->
     <eat-comment/>
@@ -73,6 +73,8 @@
     <!-- From: file:/C:/projects/WODJournal/wODJournal/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="comments_text">Comments</string>
+    <string name="copy_entry">Copy entry</string>
+    <string name="copy_movement">Copy Movement to end</string>
     <string name="count_start">3</string>
     <string name="delete_container">Delete selected WOD Container</string>
     <string name="delete_entry">Delete entry</string>

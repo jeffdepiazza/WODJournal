@@ -49,7 +49,7 @@ public class Calendar_Delete_Dialog  extends DialogFragment implements
         month = getArguments().getInt(Month, 0);
         day = getArguments().getInt(Day, 0);
         delete_verify_text = (TextView) v.findViewById(R.id.calendar_delete_dialog_textview);
-        delete_verify_text.setText(getResources().getText(R.string.calendar_delete_dialog_text) + " " + day + "-" + get_month(month) + "-" + year );
+        delete_verify_text.setText(getResources().getText(R.string.calendar_delete_dialog_text) + " " + day + "-" + get_month(month) + "-" + year + "?");
 
         return (builder.setTitle("Delete Day?").setView(v).setPositiveButton(android.R.string.ok, this)
                 .setNegativeButton(android.R.string.cancel, null).create());

@@ -276,7 +276,9 @@ public class Utilities_Activity extends Activity implements Utilities_File_Picke
 		progress_dialog.setIndeterminate(false);
 		progress_dialog.setTitle(title);
 		progress_dialog.setMessage(message);
-		progress_dialog.show();
+        progress_dialog.setCanceledOnTouchOutside(false);
+        progress_dialog.setCancelable(false);
+        progress_dialog.show();
 		show_progress_dialog = true;
 		utilities_holder_fragment.set_progress_dialog(progress_dialog);
 	}
