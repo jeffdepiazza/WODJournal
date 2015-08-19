@@ -491,10 +491,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 							if (!(wch.get(container_counter).get_Comments().equals("''"))) {
 								wch.get(container_counter).set_Comments(wch.get(container_counter).get_Comments().substring(1, wch.get(container_counter).get_Comments().length() -1 ));
 								wch.get(container_counter).set_Comments(wch.get(container_counter).get_Comments().replace("'", "''"));
+
 							} else {
 								wch.get(container_counter).set_Comments("");
 							}
-							
+
 							//Log.v("database helper ", "container comments " + wch.get(container_counter).get_Comments());
 							//Log.v("database helper ", "container count - " + container_counter);
 							// had to do this as we will crash when we have apostrophes in the
@@ -541,6 +542,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 								} else {
 									mch.get(movement_counter).set_Comments("");
 								}
+                                if (!(mch.get(movement_counter).return_Movement().equals("''"))) {
+                                    mch.get(movement_counter).set_Movement(mch.get(movement_counter).return_Movement().substring(1, mch.get(movement_counter).return_Movement().length() - 1));
+                                    mch.get(movement_counter).set_Movement(mch.get(movement_counter).return_Movement().replace("'", "''"));
+                                } else {
+                                    mch.get(movement_counter).set_Movement("");
+                                }
+
 								// had to do this as we will crash when we have apostrophes in the
 								// actual text that the user puts in...so we have to double up in
 								// order for sqlite to not crash.
@@ -788,7 +796,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		protected Void doInBackground(Void... params) {
 
 			mch.set_Comments(mch.return_Comments().replace("'", "''"));
-			// had to do this as we will crash when we have apostrophes in the
+            mch.set_Movement(mch.return_Movement().replace("'", "''"));
+            // had to do this as we will crash when we have apostrophes in the
 			// actual text that the user puts in...so we have to double up in
 			// order for sqlite to not crash.
 			if (type == "Add") {
@@ -1085,8 +1094,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		protected Void doInBackground(Void... params) {
 			String sqlstring;
 			mch.set_Comments(mch.return_Comments().replace("'", "''"));
-
-			Log.v("database helper", " edit child do in background with ID of " + mch.return_id());
+            mch.set_Movement(mch.return_Movement().replace("'", "''"));
+            Log.v("database helper", " edit child do in background with ID of " + mch.return_id());
 			sqlstring = "UPDATE Movement_Template SET Reps = " + mch.return_reps() + ", Reps_Dynamic = '" + mch.return_reps_dynamic() + "', Sets = " + mch.return_sets()
 					+ ", AMRAP = " + mch.return_AMRAP() + ", Movement = '" + mch.return_Movement() + "', Time_of_Movement = " + mch.return_Time_of_Movement()
 					+ ", Time_of_Movement_Units = '" + mch.return_Time_of_Movement_Units() + "', Rep_Max = " + mch.return_Rep_Max() + ", Length = " + mch.return_length()
