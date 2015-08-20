@@ -21,35 +21,28 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="wodjournal" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1216288-649c-4441-bb41-e0d3e6d795d5" name="Default" comment="Fixed issued (hopefully) with the utilities dialog being able to be closed by clicking away from the dialog, as we don't want this to happen while we are notifying the user that we are updating the progress on either backup/restore.  We are also starting to do the copy as well and haven't really tested it yet, but will.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Calendar_Holder_Fragment.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Calendar_Holder_Fragment.class" />
+    <list default="true" id="d1216288-649c-4441-bb41-e0d3e6d795d5" name="Default" comment="Fixed issue of not accounting for apostrophes in the Movement strings as they are passed to the database, as it was choking pretty hard on it.  The Comments are already taken care of, as we need to put any apostrophe we see in as a double apostrophe.  Now we can have those in the Movement titles as well.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$GetPRsAsync.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$GetPRsAsync.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$GetSearchResultsAsync.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$GetSearchResultsAsync.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$Get_Wods_in_the_month.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$Get_Wods_in_the_month.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$addinsert_child_async.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$addinsert_child_async.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$addinsert_parent_async.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$addinsert_parent_async.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$create_file_async.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$create_file_async.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$create_xml_async.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$create_xml_async.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$delete_child_async.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$delete_child_async.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$delete_parent_async.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$delete_parent_async.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$edit_child_async.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$edit_child_async.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$edit_parent_async.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$edit_parent_async.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$getWODsinDayAsync.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$getWODsinDayAsync.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$get_analytics_data_async.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$get_analytics_data_async.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$get_rep_max_async.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$get_rep_max_async.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$restore_file_async.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$restore_file_async.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$restore_xml_async.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper$restore_xml_async.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/DatabaseHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Utilities_Activity.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/Utilities_Activity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/WOD_Calendar_Details.class" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/classes/debug/com/floridaseabee/wodjournal/WOD_Calendar_Details.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aFileChooser/build/intermediates/resources/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/aFileChooser/build/intermediates/resources/resources-debug-androidTest.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/resources/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/library/build/intermediates/resources/resources-debug-androidTest.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/resources/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/resources/resources-debug-androidTest.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/resources/resources-debug.ap_" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/resources/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/DatabaseHelper.java" afterPath="$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/DatabaseHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/res/debug/layout/insert_add_edit_delete_dialog.xml" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/res/debug/layout/insert_add_edit_delete_dialog.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aFileChooser/build.gradle" afterPath="$PROJECT_DIR$/aFileChooser/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build.gradle" afterPath="$PROJECT_DIR$/library/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build.gradle" afterPath="$PROJECT_DIR$/wODJournal/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wODJournal/build/intermediates/incremental/mergeResources/debug/merger.xml" afterPath="$PROJECT_DIR$/wODJournal/build/intermediates/incremental/mergeResources/debug/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -83,28 +76,18 @@
       <file leaf-file-name="DatabaseHelper.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/DatabaseHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31346154">
-              <caret line="913" column="35" selection-start-line="913" selection-start-column="35" selection-end-line="913" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.425">
+              <caret line="1209" column="32" selection-start-line="1209" selection-start-column="32" selection-end-line="1209" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Utilities_Progress_Dialog_Listener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/Utilities_Progress_Dialog_Listener.java">
+      <file leaf-file-name="AsyncTask.java" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-22/android/os/AsyncTask.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Utilities_Activity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/Utilities_Activity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="280" column="19" selection-start-line="280" selection-start-column="19" selection-end-line="280" selection-end-column="19" />
+              <caret line="287" column="0" selection-start-line="287" selection-start-column="0" selection-end-line="287" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -2456,7 +2439,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="C:\projects\WODJournal" value="7179506357210" />
+        <entry key="C:\projects\WODJournal" value="7191915026479" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2956,8 +2939,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="24" />
-    <option name="y" value="3" />
+    <option name="x" value="45" />
+    <option name="y" value="5" />
     <option name="width" value="1477" />
     <option name="height" value="996" />
   </component>
@@ -2984,12 +2967,18 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="WODJournal" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gradle Scripts" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -3020,12 +3009,26 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WODJournal" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WODJournal" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aFileChooser" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="ProjectPane" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3035,6 +3038,8 @@
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="f703ff46" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_22_x86" />
     <property name="FullScreen" value="false" />
+    <property name="android.project.structure.last.selected" value="wODJournal" />
+    <property name="android.project.structure.proportion" value="0.15" />
   </component>
   <component name="RunManager" selected="Android Application.wODJournal">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -3243,38 +3248,53 @@
       <option name="project" value="LOCAL" />
       <updated>1439438442792</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fixed issue of not accounting for apostrophes in the Movement strings as they are passed to the database, as it was choking pretty hard on it.  The Comments are already taken care of, as we need to put any apostrophe we see in as a double apostrophe.  Now we can have those in the Movement titles as well.">
+      <created>1439953152831</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1439953152831</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="24" y="3" width="1477" height="996" extended-state="0" />
+    <frame x="45" y="5" width="1477" height="996" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290398" sideWeight="0.4975473" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290398" sideWeight="0.7428171" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290398" sideWeight="0.4947442" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290398" sideWeight="0.7302032" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290398" sideWeight="0.2571829" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290398" sideWeight="0.2571829" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32786885" sideWeight="0.4856342" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290398" sideWeight="0.2697968" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32786885" sideWeight="0.48142958" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290398" sideWeight="0.4975473" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23125438" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32865497" sideWeight="0.49124035" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19831815" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32786885" sideWeight="0.48283112" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962963" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2899061" sideWeight="0.7764541" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -3294,7 +3314,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated to Android Studio 1.3.0 and it lost the GIT settings so its going to be seen as yet another complete rebaseline.  On the bright side, we were able to complete the delete day within the Calendar as well as fixing some dialog issues within the Utilities activity to ensure that the dialog doesn't loose its status if either the screen is rotated or the the app is stopped in the background and restarted." />
     <MESSAGE value="Fixed issued (hopefully) with the utilities dialog being able to be closed by clicking away from the dialog, as we don't want this to happen while we are notifying the user that we are updating the progress on either backup/restore.  We are also starting to do the copy as well and haven't really tested it yet, but will." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed issued (hopefully) with the utilities dialog being able to be closed by clicking away from the dialog, as we don't want this to happen while we are notifying the user that we are updating the progress on either backup/restore.  We are also starting to do the copy as well and haven't really tested it yet, but will." />
+    <MESSAGE value="Fixed issue of not accounting for apostrophes in the Movement strings as they are passed to the database, as it was choking pretty hard on it.  The Comments are already taken care of, as we need to put any apostrophe we see in as a double apostrophe.  Now we can have those in the Movement titles as well." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed issue of not accounting for apostrophes in the Movement strings as they are passed to the database, as it was choking pretty hard on it.  The Comments are already taken care of, as we need to put any apostrophe we see in as a double apostrophe.  Now we can have those in the Movement titles as well." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -3302,67 +3323,17 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/Utilities_Progress_Dialog_Listener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/Utilities_Activity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/DatabaseHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="738" column="0" selection-start-line="738" selection-start-column="0" selection-end-line="738" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/Utilities_Progress_Dialog_Listener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/Utilities_Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="265" column="14" selection-start-line="265" selection-start-column="14" selection-end-line="265" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/DatabaseHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="738" column="0" selection-start-line="738" selection-start-column="0" selection-end-line="738" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/Utilities_Progress_Dialog_Listener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/Utilities_Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#6731#6732#0" expanded="false" />
+            <element signature="e#6758#6759#0" expanded="false" />
+            <element signature="e#6804#6805#0" expanded="false" />
+            <element signature="e#6844#6845#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3561,25 +3532,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wODJournal/src/main/res/layout/movement_edit.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16898608">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="63" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wODJournal/src/main/res/layout/movement_amrap.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6759443">
           <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/Calendar_Delete_Dialog.java">
@@ -3590,47 +3559,43 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wODJournal/src/main/res/layout/wod_container_edit.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="92.81481">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wODJournal/src/main/res/layout/movement_length.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.037037">
           <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="29" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wODJournal/src/main/res/layout/calendar_delete_dialog.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3717694">
           <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="35" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wODJournal/src/main/res/layout/insert_add_edit_delete_dialog.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.407408">
           <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wODJournal/src/main/res/values/strings.xml">
@@ -3687,14 +3652,76 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="280" column="19" selection-start-line="280" selection-start-column="19" selection-end-line="280" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#6731#6732#0" expanded="false" />
+            <element signature="e#6758#6759#0" expanded="false" />
+            <element signature="e#6804#6805#0" expanded="false" />
+            <element signature="e#6844#6845#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aFileChooser/build/generated/source/buildConfig/debug/com/ipaulpro/afilechooser/BuildConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09751434">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wODJournal/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aFileChooser/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.72">
+          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3250478">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-22/android/os/AsyncTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="287" column="0" selection-start-line="287" selection-start-column="0" selection-end-line="287" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wODJournal/src/main/java/com/floridaseabee/wodjournal/DatabaseHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31346154">
-          <caret line="913" column="35" selection-start-line="913" selection-start-column="35" selection-end-line="913" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.425">
+          <caret line="1209" column="32" selection-start-line="1209" selection-start-column="32" selection-end-line="1209" selection-end-column="32" />
           <folding />
         </state>
       </provider>

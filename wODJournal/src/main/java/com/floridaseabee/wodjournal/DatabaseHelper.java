@@ -1210,9 +1210,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			String sqlstatement;
 			container_holder = date_holder.WOD_Container_Holder.get(groupPosition);
 			mch = container_holder.return_single_movement(childPosition);
-
-			sqlstatement = "INSERT INTO Movement_Template_Copy (WOD_Container_ID, Movement_Order, Sets, Reps, AMRAP, Movement_Number, Movement, Rep_Max, Time_of_Movement, "
-					+ "Time_of_Movement_Units, Length, Length_Units, Weight, Weight_Units, Percentage, Comments, Staggered_Rounds, Reps_Dynamic) VALUES ("
+            mch.set_Comments(mch.return_Comments().replace("'", "''"));
+            mch.set_Movement(mch.return_Movement().replace("'", "''"));
+            sqlstatement = "INSERT INTO Movement_Template (WOD_Container_ID, Movement_Order, Sets, Reps, AMRAP, Movement_Number, Movement, Rep_Max, Time_of_Movement, "
+                    + "Time_of_Movement_Units, Length, Length_Units, Weight, Weight_Units, Percentage, Comments, Staggered_Rounds, Reps_Dynamic) VALUES ("
 					+ mch.return_WOD_Container_ID()
 					+ ", "
 					+ (container_holder.get_Movement_size() + 1)
@@ -1224,32 +1225,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 					+ mch.return_AMRAP()
 					+ ", "
 					+ mch.return_Movement_Number()
-					+ ", "
-					+ mch.return_Movement()
-					+ ", "
-					+ mch.return_Rep_Max()
+                    + ", '"
+                    + mch.return_Movement()
+                    + "', "
+                    + mch.return_Rep_Max()
 					+ ", "
 					+ mch.return_Time_of_Movement()
-					+ ", "
-					+ mch.return_Time_of_Movement_Units()
-					+ ", "
-					+ mch.return_length()
-					+ ", "
-					+ mch.return_length_units()
-					+ ", "
-					+ mch.return_weight()
-					+ ", "
-					+ mch.return_weight_units()
-					+ ", "
-					+ mch.return_Percentage()
+                    + ", '"
+                    + mch.return_Time_of_Movement_Units()
+                    + "', "
+                    + mch.return_length()
+                    + ", '"
+                    + mch.return_length_units()
+                    + "', "
+                    + mch.return_weight()
+                    + ", '"
+                    + mch.return_weight_units()
+                    + "', "
+                    + mch.return_Percentage()
 					+ ", '"
 					+ mch.return_Comments()
 					+ "', "
 					+ mch.return_Staggered_Rounds()
-					+ ", "
-					+ mch.return_reps_dynamic() + ");";
-			getWritableDatabase().beginTransaction();
-			getWritableDatabase().execSQL(sqlstatement);
+                    + ", '"
+                    + mch.return_reps_dynamic() + "');";
+            getWritableDatabase().beginTransaction();
+            Log.v("Database Helper", sqlstatement);
+            getWritableDatabase().execSQL(sqlstatement);
 			getWritableDatabase().setTransactionSuccessful();
 			getWritableDatabase().endTransaction();
 
