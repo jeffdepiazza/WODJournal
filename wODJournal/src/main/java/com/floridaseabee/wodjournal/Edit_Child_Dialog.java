@@ -18,6 +18,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.NumberFormat;
+
 public class Edit_Child_Dialog extends DialogFragment implements
 		AdapterView.OnItemSelectedListener, OnClickListener {
 
@@ -77,6 +79,9 @@ public class Edit_Child_Dialog extends DialogFragment implements
 	private ArrayAdapter<String> le;
 	private ArrayAdapter<String> rt;
 	private Movement_Edit_Listener listener;
+    private NumberFormat nf; //this was required as android studio was complaining about a
+    //regular .toString() of the numbers inside of the setText.  This is apparently required
+    // or highly recommended to support different locale settings.
 
 	static Edit_Child_Dialog newInstance(Movement_Container_Holder movement,
 			Integer groupPosition, Integer childPosition) {
@@ -129,6 +134,8 @@ public class Edit_Child_Dialog extends DialogFragment implements
 		View v = getActivity().getLayoutInflater().inflate(
 				R.layout.movement_edit, null);
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+        nf = NumberFormat.getInstance();  // see description in the declaration
 
 		movement_type_spinner = (Spinner) v
 				.findViewById(R.id.edit_movement_type_spinner);
@@ -247,39 +254,36 @@ public class Edit_Child_Dialog extends DialogFragment implements
 		}
 
 		sets = (EditText) v.findViewById(R.id.edit_sets);
-		sets.setText("" + movement_container_edit.return_sets() + "");
-		sets_text = (TextView) v.findViewById(R.id.edit_sets_text);
+        sets.setText(nf.format(movement_container_edit.return_sets()));
+        sets_text = (TextView) v.findViewById(R.id.edit_sets_text);
 		reps = (EditText) v.findViewById(R.id.edit_reps);
-		reps.setText("" + movement_container_edit.return_reps() + "");
-		reps_dynamic = (EditText) v.findViewById(R.id.edit_reps_dynamic);
+        reps.setText(nf.format(movement_container_edit.return_reps()));
+        reps_dynamic = (EditText) v.findViewById(R.id.edit_reps_dynamic);
 		reps_dynamic.setText(movement_container_edit.return_reps_dynamic());
 		reps_text = (TextView) v.findViewById(R.id.edit_reps_text);
 		movement = (EditText) v.findViewById(R.id.edit_movement);
 		movement.setText(movement_container_edit.return_Movement());
 
 		timed = (EditText) v.findViewById(R.id.edit_timed);
-		timed.setText("" + movement_container_edit.return_Time_of_Movement()
-				+ "");
+        timed.setText(nf.format(movement_container_edit.return_Time_of_Movement()));
 
 		percentage = (EditText) v.findViewById(R.id.edit_percentage);
-		percentage.setText("" + movement_container_edit.return_Percentage()
-				+ "");
-		rep_max = (EditText) v.findViewById(R.id.edit_rep_max);
-		rep_max.setText("" + movement_container_edit.return_Rep_Max() + "");
-		rep_max_text = (TextView) v.findViewById(R.id.edit_rep_max_text);
+        percentage.setText(nf.format(movement_container_edit.return_Percentage()));
+        rep_max = (EditText) v.findViewById(R.id.edit_rep_max);
+        rep_max.setText(nf.format(movement_container_edit.return_Rep_Max()));
+        rep_max_text = (TextView) v.findViewById(R.id.edit_rep_max_text);
 		length = (EditText) v.findViewById(R.id.edit_length);
-		length.setText("" + movement_container_edit.return_length() + "");
-		length_text = (TextView) v.findViewById(R.id.edit_length_text);
+        length.setText(nf.format(movement_container_edit.return_length()));
+        length_text = (TextView) v.findViewById(R.id.edit_length_text);
 		weight = (EditText) v.findViewById(R.id.edit_weight);
-		weight.setText("" + movement_container_edit.return_weight() + "");
-		edit_AMRAP = (TextView) v.findViewById(R.id.edit_AMRAP_text);
+        weight.setText(nf.format(movement_container_edit.return_weight()));
+        edit_AMRAP = (TextView) v.findViewById(R.id.edit_AMRAP_text);
 		comments = (EditText) v.findViewById(R.id.edit_comments);
-		comments.setText("" + movement_container_edit.return_Comments() + "");
-		movement_number_text = (TextView) v
+        comments.setText(movement_container_edit.return_Comments());
+        movement_number_text = (TextView) v
 				.findViewById(R.id.edit_movement_number_text);
 		movement_number = (EditText) v.findViewById(R.id.edit_movement_number);
-		movement_number.setText(""
-				+ movement_container_edit.return_Movement_Number() + "");
+        movement_number.setText(nf.format(movement_container_edit.return_Movement_Number()));
 
 	
 		if (!(movement_container_edit.return_sets() == 0)
@@ -350,12 +354,14 @@ public class Edit_Child_Dialog extends DialogFragment implements
 
 			if (movement_container_edit.return_reps_dynamic().trim().length() == 0) {
 				Log.v("edit dialog", " zero length dynamic");
-				reps.setVisibility(View.VISIBLE);
-				reps_dynamic.setVisibility(View.GONE);
-			} else {
+                reps.setVisibility(View.VISIBLE);
+                reps_dynamic.setVisibility(View.GONE);
+                rep_type_text.setSelection(0);
+            } else {
 				reps.setVisibility(View.GONE);
 				reps_dynamic.setVisibility(View.VISIBLE);
-				Log.v("edit dialog", " zero static");
+                rep_type_text.setSelection(1);
+                Log.v("edit dialog", " zero static");
 			}
 			rep_type_text.setOnItemSelectedListener(new OnItemSelectedListener() {
 				@Override
@@ -363,13 +369,13 @@ public class Edit_Child_Dialog extends DialogFragment implements
 						int position, long id) {
 					switch (position) {
 					case 0:
-						Log.v("on item selected for rep text", " case 0");
-						reps.setVisibility(View.VISIBLE);
+                        Log.v("onitem selected reptext", " case 0");
+                        reps.setVisibility(View.VISIBLE);
 						reps_dynamic.setVisibility(View.GONE);
 						break;
 					case 1:
-						Log.v("on item selected for rep text", " case 1");
-						reps.setVisibility(View.GONE);
+                        Log.v("onitem selected reptext", " case 1");
+                        reps.setVisibility(View.GONE);
 						reps_dynamic.setVisibility(View.VISIBLE);
 						break;
 					default:
@@ -590,8 +596,8 @@ public class Edit_Child_Dialog extends DialogFragment implements
 
 			}
 
-			Log.v("add/insert child dialog onclick", "sets reps");
-			movement_container_edit.set_Movement(movement.getText().toString());
+            Log.v("childdialog onclick", "sets reps");
+            movement_container_edit.set_Movement(movement.getText().toString());
 			movement_container_edit.set_AMRAP(0);
 			movement_container_edit.set_length(0);
 			movement_container_edit.set_Time_of_Movement(0);
@@ -614,8 +620,8 @@ public class Edit_Child_Dialog extends DialogFragment implements
 				any_errors = true;
 
 			}
-			Log.v("add/insert child dialog onclick", "length");
-			movement_container_edit.set_length_units(length_units_text
+            Log.v("child dialog onclick", "length");
+            movement_container_edit.set_length_units(length_units_text
 					.getSelectedItem().toString());
 			movement_container_edit.set_AMRAP(0);
 			movement_container_edit.set_reps(0);
@@ -626,8 +632,8 @@ public class Edit_Child_Dialog extends DialogFragment implements
 			movement_container_edit.set_Staggered_Rounds(0);
 			break;
 		case 2:
-			Log.v("add/insert child dialog onclick", "amrap");
-			movement_container_edit.set_AMRAP(1);
+            Log.v("child dialog onclick", "amrap");
+            movement_container_edit.set_AMRAP(1);
 			movement_container_edit.set_length(0);
 			movement_container_edit.set_reps(0);
 			movement_container_edit.set_sets(0);
@@ -652,8 +658,8 @@ public class Edit_Child_Dialog extends DialogFragment implements
 				any_errors = true;
 
 			}
-			Log.v("add/insert child dialog onclick", "normal movement number");
-			movement_container_edit.set_AMRAP(0);
+            Log.v("child dialog onclick", "normal movement number");
+            movement_container_edit.set_AMRAP(0);
 			movement_container_edit.set_reps(0);
 			movement_container_edit.set_sets(0);
 			movement_container_edit.set_length(0);
@@ -677,8 +683,8 @@ public class Edit_Child_Dialog extends DialogFragment implements
 				any_errors = true;
 
 			}
-			Log.v("add/insert child dialog onclick", "timed movements");
-			movement_container_edit.set_Time_of_Movement_Units(timed_units_text
+            Log.v("child dialog onclick", "timed movements");
+            movement_container_edit.set_Time_of_Movement_Units(timed_units_text
 					.getSelectedItem().toString());
 			movement_container_edit.set_AMRAP(0);
 			movement_container_edit.set_reps(0);
@@ -704,8 +710,8 @@ public class Edit_Child_Dialog extends DialogFragment implements
 				any_errors = true;
 
 			}
-			Log.v("add/insert child dialog onclick", "rep max");
-			movement_container_edit.set_AMRAP(0);
+            Log.v("child dialog onclick", "rep max");
+            movement_container_edit.set_AMRAP(0);
 			movement_container_edit.set_reps(0);
 			movement_container_edit.set_sets(0);
 			movement_container_edit.set_length(0);
@@ -715,8 +721,8 @@ public class Edit_Child_Dialog extends DialogFragment implements
 			break;
 
 		case 6:
-			Log.v("add/insert child dialog onclick", "staggered");
-			movement_container_edit.set_Staggered_Rounds(1);
+            Log.v("child dialog onclick", "staggered");
+            movement_container_edit.set_Staggered_Rounds(1);
 			movement_container_edit.set_AMRAP(0);
 			movement_container_edit.set_reps(0);
 			movement_container_edit.set_sets(0);
@@ -749,8 +755,8 @@ public class Edit_Child_Dialog extends DialogFragment implements
 		movement_container_edit.set_Movement(movement.getText().toString());
 		movement_container_edit.set_Comments(comments.getText().toString());
 
-		if (any_errors == true) {
-			Toast.makeText(getActivity(), "Errors in selections...",
+        if (any_errors) {
+            Toast.makeText(getActivity(), "Errors in selections...",
 					Toast.LENGTH_LONG).show();
 			return;
 		} else {
@@ -773,8 +779,8 @@ public class Edit_Child_Dialog extends DialogFragment implements
 							// it after this point
 		AlertDialog d = (AlertDialog) getDialog();
 		if (d != null) {
-			Button positiveButton = (Button) d
-					.getButton(Dialog.BUTTON_POSITIVE);
+            Button positiveButton = d
+                    .getButton(Dialog.BUTTON_POSITIVE);
 			positiveButton.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
