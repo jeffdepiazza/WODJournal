@@ -1,6 +1,5 @@
 package com.roomorama.caldroid;
 
-import java.util.Calendar;
 import java.util.Date;
 
 import android.view.View;
@@ -8,34 +7,34 @@ import android.view.View;
 /**
  * CaldroidListener inform when user clicks on a valid date (not within disabled
  * dates, and valid between min/max dates)
- * 
+ * <p/>
  * The method onChangeMonth is optional, user can always override this to listen
  * to month change event
- * 
+ *
  * @author thomasdao
- * 
  */
 public abstract class CaldroidListener {
 	/**
 	 * Inform client user has clicked on a date
+	 *
 	 * @param view
 	 */
-	public void onSelectDate(int year, int month, int day, View view){
-		// changed from date as all i want are the year/month/day separated out
-	}
-	
+	public abstract void onSelectDate(int year, int month, int day, View view);
+
+
 	/**
 	 * Inform client user has long clicked on a date
-
+	 *
 	 * @param view
 	 */
 	public void onLongClickDate(int year, int month, int day, View view) {
-		// changed from date as all i want are the year/month/day separated out
+		// Do nothing
 	}
 
-	
+
 	/**
 	 * Inform client that calendar has changed month
+	 *
 	 * @param month
 	 * @param year
 	 */
@@ -43,7 +42,7 @@ public abstract class CaldroidListener {
 		// Do nothing
 	}
 
-	
+
 	/**
 	 * Inform client that CaldroidFragment view has been created and views are
 	 * no longer null. Useful for customization of button and text views

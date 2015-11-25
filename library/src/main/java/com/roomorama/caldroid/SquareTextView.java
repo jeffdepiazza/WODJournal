@@ -26,14 +26,14 @@ public class SquareTextView extends TextView {
 	@Override 
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-		if (myheight == 0) {
+		/*if (myheight == 0) {
 			myheight= CaldroidFragment.getheights();
 		}
 		if (myheight == 0) {
 			//Log.v ("onMeasure status","my height is still 0");
 			myheight = 600;
 		}
-		this.setMeasuredDimension(widthMeasureSpec, myheight/6);
+		this.setMeasuredDimension(widthMeasureSpec, myheight/6); */
 		
 	}
 
@@ -46,13 +46,14 @@ public class SquareTextView extends TextView {
 		// Log.v("my old height", "" + oldh);
 		//if (myheight == 0) {
 			//Log.v ("status","my height is 0");
-			myheight = CaldroidFragment.getheights();
+		//myheight = CaldroidFragment.getheights();
 		//}
 		//Log.v ("onSizeChanged status","my height is now" + myheight);
-		if (myheight == 0) {
+		//if (myheight == 0) {
 		//Log.v ("onSizeChanged status","my height is still 0");
-			myheight = 600;
-		}
-		super.onSizeChanged(w,myheight/6, oldw, oldh);
+		//	myheight = 600;
+		//}
+		// super.onSizeChanged(w,myheight/6, oldw, oldh);
+		super.onSizeChanged(w, h, oldw, oldh);
 	}
 }

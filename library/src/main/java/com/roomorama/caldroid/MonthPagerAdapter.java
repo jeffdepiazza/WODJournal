@@ -10,9 +10,8 @@ import android.support.v4.app.FragmentPagerAdapter;
  * MonthPagerAdapter holds 4 fragments, which provides fragment for current
  * month, previous month and next month. The extra fragment helps for recycle
  * fragments.
- * 
+ *
  * @author thomasdao
- * 
  */
 public class MonthPagerAdapter extends FragmentPagerAdapter {
 

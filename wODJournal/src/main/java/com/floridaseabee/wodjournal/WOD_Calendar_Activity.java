@@ -38,7 +38,7 @@ public class WOD_Calendar_Activity extends FragmentActivity implements Calendar_
 		calendarfragment = new WODCalendarFragment();
 		DisplayMetrics metrics = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(metrics);
-		calendarfragment.pass_screen_height(metrics.heightPixels);
+		//calendarfragment.pass_screen_height(metrics.heightPixels);
 		// calendarfragment = (WODCalendarFragment) getSupportFragmentManager()
 		// .findFragmentById(R.id.calendar);
 		Log.v("onCreate", " Wod Calender Activity ");
@@ -59,9 +59,9 @@ public class WOD_Calendar_Activity extends FragmentActivity implements Calendar_
 			public void onLongClickDate(int year, int month, int day, View view) {
 
 				Log.v("calender activity", " on long click date");
-                selected_day = day;
-                selected_month = month;
-                selected_year = year;
+				selected_day = day;
+				selected_month = month;
+				selected_year = year;
 				FragmentTransaction ft = getFragmentManager().beginTransaction();
 				calendar_delete_dialog = Calendar_Delete_Dialog.newInstance(selected_year, selected_month, selected_day);
 				calendar_delete_dialog.setListener(WOD_Calendar_Activity.this);

@@ -13,6 +13,70 @@ public final class R {
         public static final int theme_name=0x7f090001;
     }
     public static final class attr {
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int state_date_disabled=0x7f01000a;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int state_date_prev_next_month=0x7f01000b;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int state_date_selected=0x7f010009;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int state_date_today=0x7f010008;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int styleCaldroidGridView=0x7f010000;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int styleCaldroidLeftArrow=0x7f010001;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int styleCaldroidMonthName=0x7f010002;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int styleCaldroidNormalCell=0x7f010003;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int styleCaldroidRightArrow=0x7f010004;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int styleCaldroidSquareCell=0x7f010005;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int styleCaldroidViewLayout=0x7f010006;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int styleCaldroidWeekdayView=0x7f010007;
     }
     public static final class bool {
         public static final int use_activity=0x7f080000;
@@ -21,17 +85,23 @@ public final class R {
     public static final class color {
         public static final int Violet=0x7f0a0000;
         public static final int black=0x7f0a0001;
-        public static final int caldroid_black=0x7f0a0002;
-        public static final int caldroid_darker_gray=0x7f0a0003;
-        public static final int caldroid_gray=0x7f0a0004;
-        public static final int caldroid_holo_blue_dark=0x7f0a0005;
-        public static final int caldroid_holo_blue_light=0x7f0a0006;
-        public static final int caldroid_lighter_gray=0x7f0a0007;
-        public static final int caldroid_sky_blue=0x7f0a0008;
-        public static final int caldroid_transparent=0x7f0a0009;
-        public static final int caldroid_white=0x7f0a000a;
-        public static final int grey=0x7f0a000b;
-        public static final int red=0x7f0a000c;
+        public static final int caldroid_333=0x7f0a0002;
+        public static final int caldroid_555=0x7f0a0003;
+        public static final int caldroid_black=0x7f0a0004;
+        public static final int caldroid_darker_gray=0x7f0a0005;
+        public static final int caldroid_gray=0x7f0a0006;
+        public static final int caldroid_holo_blue_dark=0x7f0a0007;
+        public static final int caldroid_holo_blue_light=0x7f0a0008;
+        public static final int caldroid_light_red=0x7f0a0009;
+        public static final int caldroid_lighter_gray=0x7f0a000a;
+        public static final int caldroid_middle_gray=0x7f0a000b;
+        public static final int caldroid_sky_blue=0x7f0a000c;
+        public static final int caldroid_transparent=0x7f0a000d;
+        public static final int caldroid_white=0x7f0a000e;
+        public static final int cell_text_color=0x7f0a0011;
+        public static final int cell_text_color_dark=0x7f0a0012;
+        public static final int grey=0x7f0a000f;
+        public static final int red=0x7f0a0010;
     }
     public static final class dimen {
         public static final int activity_horizontal_margin=0x7f060000;
@@ -43,33 +113,36 @@ public final class R {
         public static final int calendar_next_arrow=0x7f020000;
         public static final int calendar_prev_arrow=0x7f020001;
         public static final int cell_bg=0x7f020002;
-        public static final int disable_cell=0x7f020003;
-        public static final int ic_action_new=0x7f020004;
-        public static final int ic_action_search=0x7f020005;
-        public static final int ic_analytics=0x7f020006;
-        public static final int ic_calendar_light=0x7f020007;
-        public static final int ic_chooser=0x7f020008;
-        public static final int ic_file=0x7f020009;
-        public static final int ic_folder=0x7f02000a;
-        public static final int ic_launcher=0x7f02000b;
-        public static final int ic_provider=0x7f02000c;
-        public static final int ic_prs=0x7f02000d;
-        public static final int ic_search=0x7f02000e;
-        public static final int ic_timer=0x7f02000f;
-        public static final int icon_down=0x7f020010;
-        public static final int icon_pause=0x7f020011;
-        public static final int icon_play=0x7f020012;
-        public static final int icon_reset=0x7f020013;
-        public static final int icon_stop=0x7f020014;
-        public static final int icon_up=0x7f020015;
-        public static final int kettlebell=0x7f020016;
-        public static final int left_arrow=0x7f020017;
-        public static final int red_border=0x7f020018;
-        public static final int red_border_gray_bg=0x7f020019;
-        public static final int right_arrow=0x7f02001a;
+        public static final int cell_bg_dark=0x7f020003;
+        public static final int disabled_cell=0x7f020004;
+        public static final int disabled_cell_dark=0x7f020005;
+        public static final int ic_action_new=0x7f020006;
+        public static final int ic_action_search=0x7f020007;
+        public static final int ic_analytics=0x7f020008;
+        public static final int ic_calendar_light=0x7f020009;
+        public static final int ic_chooser=0x7f02000a;
+        public static final int ic_file=0x7f02000b;
+        public static final int ic_folder=0x7f02000c;
+        public static final int ic_launcher=0x7f02000d;
+        public static final int ic_provider=0x7f02000e;
+        public static final int ic_prs=0x7f02000f;
+        public static final int ic_search=0x7f020010;
+        public static final int ic_timer=0x7f020011;
+        public static final int icon_down=0x7f020012;
+        public static final int icon_pause=0x7f020013;
+        public static final int icon_play=0x7f020014;
+        public static final int icon_reset=0x7f020015;
+        public static final int icon_stop=0x7f020016;
+        public static final int icon_up=0x7f020017;
+        public static final int kettlebell=0x7f020018;
+        public static final int left_arrow=0x7f020019;
+        public static final int red_border=0x7f02001a;
+        public static final int red_border_dark=0x7f02001b;
+        public static final int red_border_gray_bg=0x7f02001c;
+        public static final int right_arrow=0x7f02001d;
     }
     public static final class id {
-        public static final int GridItem=0x7f0c0027;
+        public static final int GridItem=0x7f0c0025;
         public static final int LoadFromCalendar=0x7f0c008f;
         public static final int Load_Personal_Records=0x7f0c0062;
         public static final int No_Personal_Records=0x7f0c0061;
@@ -78,23 +151,23 @@ public final class R {
         public static final int action_add_new=0x7f0c00d3;
         public static final int action_settings=0x7f0c00d1;
         public static final int action_utilities=0x7f0c00d2;
-        public static final int add_entry=0x7f0c002b;
-        public static final int add_movement_entry=0x7f0c002a;
-        public static final int amrap_comments=0x7f0c0031;
-        public static final int amrap_movement=0x7f0c0030;
+        public static final int add_entry=0x7f0c0029;
+        public static final int add_movement_entry=0x7f0c0028;
+        public static final int amrap_comments=0x7f0c002f;
+        public static final int amrap_movement=0x7f0c002e;
         public static final int analytics_go=0x7f0c0002;
         public static final int analytics_graph=0x7f0c0003;
         public static final int analytics_nothing_to_display=0x7f0c0004;
         public static final int analytics_rep_max_spinner=0x7f0c0001;
         public static final int calendar=0x7f0c0068;
         public static final int calendar_delete_dialog_textview=0x7f0c0005;
-        public static final int calendar_gridview=0x7f0c0024;
-        public static final int calendar_kettlebell=0x7f0c0023;
+        public static final int calendar_gridview=0x7f0c0022;
+        public static final int calendar_kettlebell=0x7f0c0058;
         public static final int calendar_left_arrow=0x7f0c0008;
         public static final int calendar_month_year_textview=0x7f0c0009;
         public static final int calendar_right_arrow=0x7f0c000a;
         public static final int calendar_title_view=0x7f0c0007;
-        public static final int calendar_tv=0x7f0c0022;
+        public static final int calendar_tv=0x7f0c0057;
         public static final int container_accessory_comments=0x7f0c007d;
         public static final int container_isweight_accessory=0x7f0c007c;
         public static final int container_rounds_comments=0x7f0c0080;
@@ -111,46 +184,46 @@ public final class R {
         public static final int container_timed_comments=0x7f0c008a;
         public static final int container_timed_named_workout=0x7f0c0089;
         public static final int controls=0x7f0c0017;
-        public static final int copy_entry=0x7f0c002f;
+        public static final int copy_entry=0x7f0c002d;
         public static final int countupcontrols=0x7f0c001f;
         public static final int countupspacer=0x7f0c001e;
         public static final int countupspacer1=0x7f0c0020;
         public static final int countuptimer_textview=0x7f0c001d;
         public static final int current_date_text=0x7f0c008c;
-        public static final int delete_entry=0x7f0c002e;
+        public static final int delete_entry=0x7f0c002c;
         public static final int details=0x7f0c0069;
-        public static final int edit_AMRAP_text=0x7f0c0043;
+        public static final int edit_AMRAP_text=0x7f0c0041;
         public static final int edit_Rounds_Time_Completed=0x7f0c0078;
         public static final int edit_Rounds_Time_Completed_text=0x7f0c0077;
         public static final int edit_Timed_Rounds_Completed=0x7f0c0072;
         public static final int edit_Timed_Rounds_Completed_text=0x7f0c0071;
-        public static final int edit_comments=0x7f0c004c;
-        public static final int edit_comments_text=0x7f0c004b;
-        public static final int edit_entry=0x7f0c002d;
-        public static final int edit_length=0x7f0c003b;
-        public static final int edit_length_text=0x7f0c003a;
-        public static final int edit_length_units_spinner=0x7f0c003c;
-        public static final int edit_movement=0x7f0c0045;
-        public static final int edit_movement_number=0x7f0c0042;
-        public static final int edit_movement_number_text=0x7f0c0041;
-        public static final int edit_movement_reps_type_spinner=0x7f0c0039;
-        public static final int edit_movement_text=0x7f0c0044;
-        public static final int edit_movement_type_spinner=0x7f0c0033;
-        public static final int edit_movement_type_spinner_text=0x7f0c0032;
-        public static final int edit_percentage=0x7f0c0049;
-        public static final int edit_percentage_text=0x7f0c004a;
-        public static final int edit_rep_max=0x7f0c003d;
-        public static final int edit_rep_max_text=0x7f0c003e;
-        public static final int edit_reps=0x7f0c0037;
-        public static final int edit_reps_dynamic=0x7f0c0038;
-        public static final int edit_reps_text=0x7f0c0036;
-        public static final int edit_sets=0x7f0c0035;
-        public static final int edit_sets_text=0x7f0c0034;
-        public static final int edit_timed=0x7f0c003f;
-        public static final int edit_timed_units_spinner=0x7f0c0040;
-        public static final int edit_weight=0x7f0c0047;
-        public static final int edit_weight_text=0x7f0c0046;
-        public static final int edit_weight_units_spinner=0x7f0c0048;
+        public static final int edit_comments=0x7f0c004a;
+        public static final int edit_comments_text=0x7f0c0049;
+        public static final int edit_entry=0x7f0c002b;
+        public static final int edit_length=0x7f0c0039;
+        public static final int edit_length_text=0x7f0c0038;
+        public static final int edit_length_units_spinner=0x7f0c003a;
+        public static final int edit_movement=0x7f0c0043;
+        public static final int edit_movement_number=0x7f0c0040;
+        public static final int edit_movement_number_text=0x7f0c003f;
+        public static final int edit_movement_reps_type_spinner=0x7f0c0037;
+        public static final int edit_movement_text=0x7f0c0042;
+        public static final int edit_movement_type_spinner=0x7f0c0031;
+        public static final int edit_movement_type_spinner_text=0x7f0c0030;
+        public static final int edit_percentage=0x7f0c0047;
+        public static final int edit_percentage_text=0x7f0c0048;
+        public static final int edit_rep_max=0x7f0c003b;
+        public static final int edit_rep_max_text=0x7f0c003c;
+        public static final int edit_reps=0x7f0c0035;
+        public static final int edit_reps_dynamic=0x7f0c0036;
+        public static final int edit_reps_text=0x7f0c0034;
+        public static final int edit_sets=0x7f0c0033;
+        public static final int edit_sets_text=0x7f0c0032;
+        public static final int edit_timed=0x7f0c003d;
+        public static final int edit_timed_units_spinner=0x7f0c003e;
+        public static final int edit_weight=0x7f0c0045;
+        public static final int edit_weight_text=0x7f0c0044;
+        public static final int edit_weight_units_spinner=0x7f0c0046;
         public static final int edit_wod_Rounds=0x7f0c0073;
         public static final int edit_wod_Rounds_text=0x7f0c0074;
         public static final int edit_wod_Timed=0x7f0c006d;
@@ -165,13 +238,13 @@ public final class R {
         public static final int edit_wod_type_spinner_text=0x7f0c006b;
         public static final int edit_wod_weightonly=0x7f0c0070;
         public static final int grid=0x7f0c0000;
-        public static final int grid_item_image=0x7f0c0028;
-        public static final int grid_item_text=0x7f0c0029;
+        public static final int grid_item_image=0x7f0c0026;
+        public static final int grid_item_text=0x7f0c0027;
         public static final int hours_down=0x7f0c0013;
         public static final int hours_up=0x7f0c000e;
-        public static final int insert_entry=0x7f0c002c;
-        public static final int length_movement_comments=0x7f0c004e;
-        public static final int length_movement_length=0x7f0c004d;
+        public static final int insert_entry=0x7f0c002a;
+        public static final int length_movement_comments=0x7f0c004c;
+        public static final int length_movement_length=0x7f0c004b;
         public static final int linearLayout_buttonsdown=0x7f0c0012;
         public static final int linearLayout_buttonsup=0x7f0c000d;
         public static final int main_personal_recodrds_display=0x7f0c005f;
@@ -179,8 +252,8 @@ public final class R {
         public static final int minutes_down=0x7f0c0014;
         public static final int minutes_up=0x7f0c000f;
         public static final int months_infinite_pager=0x7f0c000c;
-        public static final int normal_movement=0x7f0c004f;
-        public static final int normal_weight_comments=0x7f0c0050;
+        public static final int normal_movement=0x7f0c004d;
+        public static final int normal_weight_comments=0x7f0c004e;
         public static final int or_textbox=0x7f0c00b4;
         public static final int pr_comments=0x7f0c005e;
         public static final int pr_date=0x7f0c005d;
@@ -188,8 +261,8 @@ public final class R {
         public static final int pr_movement=0x7f0c0059;
         public static final int pr_weight=0x7f0c005a;
         public static final int pr_weight_units=0x7f0c005b;
-        public static final int rep_max=0x7f0c0051;
-        public static final int rep_max_comments=0x7f0c0052;
+        public static final int rep_max=0x7f0c004f;
+        public static final int rep_max_comments=0x7f0c0050;
         public static final int reset=0x7f0c001a;
         public static final int search_Rounds_Time_Completed=0x7f0c00c4;
         public static final int search_Rounds_Time_Completed_text=0x7f0c00c3;
@@ -252,24 +325,24 @@ public final class R {
         public static final int search_wod_timed_container2=0x7f0c00bd;
         public static final int seconds_down=0x7f0c0015;
         public static final int seconds_up=0x7f0c0010;
-        public static final int set_reps_comments=0x7f0c0054;
-        public static final int set_reps_sets=0x7f0c0053;
+        public static final int set_reps_comments=0x7f0c0052;
+        public static final int set_reps_sets=0x7f0c0051;
         public static final int spacer=0x7f0c0016;
         public static final int spacer1=0x7f0c001b;
         public static final int spinner1=0x7f0c006a;
-        public static final int staggered_movement=0x7f0c0055;
-        public static final int staggered_weight_comments=0x7f0c0056;
+        public static final int staggered_movement=0x7f0c0053;
+        public static final int staggered_weight_comments=0x7f0c0054;
         public static final int startpausecount=0x7f0c0018;
         public static final int stopcount=0x7f0c0019;
         public static final int textView1=0x7f0c0006;
-        public static final int timed_comments=0x7f0c0058;
-        public static final int timed_text=0x7f0c0057;
+        public static final int timed_comments=0x7f0c0056;
+        public static final int timed_text=0x7f0c0055;
         public static final int timer_countdown_text=0x7f0c001c;
         public static final int timer_countup_text=0x7f0c0021;
         public static final int timer_pager_display=0x7f0c0063;
         public static final int timer_textview=0x7f0c0011;
-        public static final int utilities_directory=0x7f0c0025;
-        public static final int utilities_file_name=0x7f0c0026;
+        public static final int utilities_directory=0x7f0c0023;
+        public static final int utilities_file_name=0x7f0c0024;
         public static final int utilities_listview=0x7f0c0064;
         public static final int utilities_progressbar=0x7f0c0065;
         public static final int utilities_summary=0x7f0c0067;
@@ -290,35 +363,37 @@ public final class R {
         public static final int calendar_view=0x7f030004;
         public static final int countdown_timer_layout=0x7f030005;
         public static final int countup_timer_layout=0x7f030006;
-        public static final int date_cell=0x7f030007;
-        public static final int date_grid_fragment=0x7f030008;
-        public static final int file=0x7f030009;
-        public static final int file_name_dialog=0x7f03000a;
-        public static final int grid_cell_items=0x7f03000b;
-        public static final int insert_add_edit_delete_dialog=0x7f03000c;
-        public static final int movement_amrap=0x7f03000d;
-        public static final int movement_edit=0x7f03000e;
-        public static final int movement_length=0x7f03000f;
-        public static final int movement_normal=0x7f030010;
-        public static final int movement_rep_max=0x7f030011;
-        public static final int movement_set_reps=0x7f030012;
-        public static final int movement_staggered=0x7f030013;
-        public static final int movement_timed=0x7f030014;
+        public static final int date_grid_fragment=0x7f030007;
+        public static final int file=0x7f030008;
+        public static final int file_name_dialog=0x7f030009;
+        public static final int grid_cell_items=0x7f03000a;
+        public static final int insert_add_edit_delete_dialog=0x7f03000b;
+        public static final int movement_amrap=0x7f03000c;
+        public static final int movement_edit=0x7f03000d;
+        public static final int movement_length=0x7f03000e;
+        public static final int movement_normal=0x7f03000f;
+        public static final int movement_rep_max=0x7f030010;
+        public static final int movement_set_reps=0x7f030011;
+        public static final int movement_staggered=0x7f030012;
+        public static final int movement_timed=0x7f030013;
+        public static final int normal_date_cell=0x7f030014;
         public static final int personal_record_row_layout=0x7f030015;
         public static final int personal_records=0x7f030016;
-        public static final int timer_pager=0x7f030017;
-        public static final int utilities_main=0x7f030018;
-        public static final int utilities_row_layout=0x7f030019;
-        public static final int wod_calendar_main=0x7f03001a;
-        public static final int wod_container=0x7f03001b;
-        public static final int wod_container_edit=0x7f03001c;
-        public static final int wod_container_isweight=0x7f03001d;
-        public static final int wod_container_rounds=0x7f03001e;
-        public static final int wod_container_staggered=0x7f03001f;
-        public static final int wod_container_timed=0x7f030020;
-        public static final int wod_details=0x7f030021;
-        public static final int workout_search=0x7f030022;
-        public static final int workout_search_row_layout=0x7f030023;
+        public static final int square_date_cell=0x7f030017;
+        public static final int timer_pager=0x7f030018;
+        public static final int utilities_main=0x7f030019;
+        public static final int utilities_row_layout=0x7f03001a;
+        public static final int weekday_textview=0x7f03001b;
+        public static final int wod_calendar_main=0x7f03001c;
+        public static final int wod_container=0x7f03001d;
+        public static final int wod_container_edit=0x7f03001e;
+        public static final int wod_container_isweight=0x7f03001f;
+        public static final int wod_container_rounds=0x7f030020;
+        public static final int wod_container_staggered=0x7f030021;
+        public static final int wod_container_timed=0x7f030022;
+        public static final int wod_details=0x7f030023;
+        public static final int workout_search=0x7f030024;
+        public static final int workout_search_row_layout=0x7f030025;
     }
     public static final class menu {
         public static final int main=0x7f0b0000;
@@ -441,7 +516,25 @@ public final class R {
         /**  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f070001;
-        public static final int fileChooserName=0x7f070002;
+        public static final int CaldroidDefault=0x7f070002;
+        public static final int CaldroidDefaultArrowButton=0x7f070003;
+        public static final int CaldroidDefaultCalendarViewLayout=0x7f070004;
+        public static final int CaldroidDefaultCell=0x7f070005;
+        public static final int CaldroidDefaultDark=0x7f070006;
+        public static final int CaldroidDefaultDarkCalendarViewLayout=0x7f070007;
+        public static final int CaldroidDefaultDarkCell=0x7f070008;
+        public static final int CaldroidDefaultDarkGridView=0x7f070009;
+        public static final int CaldroidDefaultDarkMonthName=0x7f07000a;
+        public static final int CaldroidDefaultDarkNormalCell=0x7f07000b;
+        public static final int CaldroidDefaultDarkSquareCell=0x7f07000c;
+        public static final int CaldroidDefaultGridView=0x7f07000d;
+        public static final int CaldroidDefaultLeftButton=0x7f07000e;
+        public static final int CaldroidDefaultMonthName=0x7f07000f;
+        public static final int CaldroidDefaultNormalCell=0x7f070010;
+        public static final int CaldroidDefaultRightButton=0x7f070011;
+        public static final int CaldroidDefaultSquareCell=0x7f070012;
+        public static final int CaldroidDefaultWeekday=0x7f070013;
+        public static final int fileChooserName=0x7f070014;
     }
     public static final class xml {
         public static final int mimetypes=0x7f040000;
@@ -449,4 +542,108 @@ public final class R {
         public static final int preference2=0x7f040002;
         public static final int preference_headers=0x7f040003;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a Cell.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #Cell_android_background android:background}</code></td><td></td></tr>
+           <tr><td><code>{@link #Cell_android_textColor android:textColor}</code></td><td></td></tr>
+           </table>
+           @see #Cell_android_background
+           @see #Cell_android_textColor
+         */
+        public static final int[] Cell = {
+            0x01010098, 0x010100d4
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#background}
+          attribute's value can be found in the {@link #Cell} array.
+          @attr name android:background
+        */
+        public static final int Cell_android_background = 1;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#textColor}
+          attribute's value can be found in the {@link #Cell} array.
+          @attr name android:textColor
+        */
+        public static final int Cell_android_textColor = 0;
+        /** Attributes that can be used with a DateState.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #DateState_state_date_disabled com.floridaseabee.wodjournal:state_date_disabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #DateState_state_date_prev_next_month com.floridaseabee.wodjournal:state_date_prev_next_month}</code></td><td></td></tr>
+           <tr><td><code>{@link #DateState_state_date_selected com.floridaseabee.wodjournal:state_date_selected}</code></td><td></td></tr>
+           <tr><td><code>{@link #DateState_state_date_today com.floridaseabee.wodjournal:state_date_today}</code></td><td></td></tr>
+           </table>
+           @see #DateState_state_date_disabled
+           @see #DateState_state_date_prev_next_month
+           @see #DateState_state_date_selected
+           @see #DateState_state_date_today
+         */
+        public static final int[] DateState = {
+            0x7f010008, 0x7f010009, 0x7f01000a, 0x7f01000b
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.floridaseabee.wodjournal.R.attr#state_date_disabled}
+          attribute's value can be found in the {@link #DateState} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.floridaseabee.wodjournal:state_date_disabled
+        */
+        public static final int DateState_state_date_disabled = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.floridaseabee.wodjournal.R.attr#state_date_prev_next_month}
+          attribute's value can be found in the {@link #DateState} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.floridaseabee.wodjournal:state_date_prev_next_month
+        */
+        public static final int DateState_state_date_prev_next_month = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.floridaseabee.wodjournal.R.attr#state_date_selected}
+          attribute's value can be found in the {@link #DateState} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.floridaseabee.wodjournal:state_date_selected
+        */
+        public static final int DateState_state_date_selected = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.floridaseabee.wodjournal.R.attr#state_date_today}
+          attribute's value can be found in the {@link #DateState} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.floridaseabee.wodjournal:state_date_today
+        */
+        public static final int DateState_state_date_today = 0;
+    };
 }

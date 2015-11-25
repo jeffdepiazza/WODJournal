@@ -1,7 +1,5 @@
 package com.roomorama.caldroid;
 
-import hirondelle.date4j.DateTime;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -9,32 +7,32 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+import hirondelle.date4j.DateTime;
+
 /**
- * Convenient helper to work with date, JODA DateTime and String
- * 
+ * Convenient helper to work with date, Date4J DateTime and String
+ *
  * @author thomasdao
- * 
  */
 public class CalendarHelper {
 
-	public static SimpleDateFormat yyyyMMddFormat = new SimpleDateFormat(
-			"yyyy-MM-dd", Locale.ENGLISH);
+	private static SimpleDateFormat yyyyMMddFormat;
 
-	public static SimpleDateFormat MMMFormat = new SimpleDateFormat(
-			"MMM", Locale.getDefault());
+	public static void setup() {
+		yyyyMMddFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+	}
 
 	/**
 	 * Retrieve all the dates for a given calendar month Include previous month,
 	 * current month and next month.
-	 * 
+	 *
 	 * @param month
 	 * @param year
-	 * @param startDayOfWeek
-	 *            : calendar can start from customized date instead of Sunday
+	 * @param startDayOfWeek : calendar can start from customized date instead of Sunday
 	 * @return
 	 */
 	public static ArrayList<DateTime> getFullWeeks(int month, int year,
-			int startDayOfWeek, boolean sixWeeksInCalendar) {
+												   int startDayOfWeek, boolean sixWeeksInCalendar) {
 		ArrayList<DateTime> datetimeList = new ArrayList<DateTime>();
 
 		DateTime firstDateOfMonth = new DateTime(year, month, 1, 0, 0, 0, 0);
@@ -103,7 +101,7 @@ public class CalendarHelper {
 
 	/**
 	 * Get the DateTime from Date, with hour and min is 0
-	 * 
+	 *
 	 * @param date
 	 * @return
 	 */
@@ -137,7 +135,7 @@ public class CalendarHelper {
 
 	/**
 	 * Get the Date from String with custom format. Default format is yyyy-MM-dd
-	 * 
+	 *
 	 * @param dateString
 	 * @param dateFormat
 	 * @return
@@ -147,6 +145,10 @@ public class CalendarHelper {
 			throws ParseException {
 		SimpleDateFormat formatter;
 		if (dateFormat == null) {
+			if (yyyyMMddFormat == null) {
+				setup();
+			}
+
 			formatter = yyyyMMddFormat;
 		} else {
 			formatter = new SimpleDateFormat(dateFormat, Locale.ENGLISH);
@@ -158,13 +160,13 @@ public class CalendarHelper {
 	/**
 	 * Get the DateTime from String with custom format. Default format is
 	 * yyyy-MM-dd
-	 * 
+	 *
 	 * @param dateString
 	 * @param dateFormat
 	 * @return
 	 */
 	public static DateTime getDateTimeFromString(String dateString,
-			String dateFormat) {
+												 String dateFormat) {
 		Date date;
 		try {
 			date = getDateFromString(dateString, dateFormat);
