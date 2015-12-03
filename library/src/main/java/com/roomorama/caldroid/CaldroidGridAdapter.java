@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.graphics.Typeface;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
@@ -35,8 +37,8 @@ public class CaldroidGridAdapter extends BaseAdapter {
 
 	// Use internally, to make the search for date faster instead of using
 	// indexOf methods on ArrayList
-	protected HashMap<DateTime, Integer> disableDatesMap = new HashMap<DateTime, Integer>();
-	protected HashMap<DateTime, Integer> selectedDatesMap = new HashMap<DateTime, Integer>();
+    protected HashMap<DateTime, Integer> disableDatesMap = new HashMap<>();
+    protected HashMap<DateTime, Integer> selectedDatesMap = new HashMap<>();
 
 	protected DateTime minDateTime;
 	protected DateTime maxDateTime;
@@ -58,6 +60,8 @@ public class CaldroidGridAdapter extends BaseAdapter {
 	 * extraData belongs to client
 	 */
 	protected HashMap<String, Object> extraData;
+
+    protected LayoutInflater localInflater;
 
 	public void setAdapterDateTime(DateTime dateTime) {
 		this.month = dateTime.getMonth();
@@ -148,7 +152,11 @@ public class CaldroidGridAdapter extends BaseAdapter {
 
 		// Get data from caldroidData
 		populateFromCaldroidData();
-	}
+
+        LayoutInflater inflater = (LayoutInflater) context
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        localInflater = CaldroidFragment.getLayoutInflater(context, inflater, themeResource);
+    }
 
 	/**
 	 * Retrieve internal parameters from caldroid data
@@ -232,15 +240,22 @@ public class CaldroidGridAdapter extends BaseAdapter {
 		// Set custom background resource
 		HashMap<DateTime, Integer> backgroundForDateTimeMap = (HashMap<DateTime, Integer>) caldroidData
 				.get(CaldroidFragment._BACKGROUND_FOR_DATETIME_MAP);
-		if (backgroundForDateTimeMap != null) {
-			// Get background resource for the dateTime
+        //Log.v("grid adapter", "in setcustomresources");
+        if (backgroundForDateTimeMap != null) {
+            // Get background resource for the dateTime
 			Integer backgroundResource = backgroundForDateTimeMap.get(dateTime);
 
 			// Set it
-			if (backgroundResource != null) {
-				backgroundView.setBackgroundResource(backgroundResource);
-			}
-		}
+            if (backgroundResource != null) {
+                // Log.v("grid adapter", "setting KB visible");
+                backgroundView.findViewById(R.id.calendar_kettlebell)
+                        .setVisibility(View.VISIBLE);
+
+            } else {
+                backgroundView.findViewById(R.id.calendar_kettlebell)
+                        .setVisibility(View.GONE);
+            }
+        }
 
 		// Set custom text color
 		HashMap<DateTime, Integer> textColorForDateTimeMap = (HashMap<DateTime, Integer>) caldroidData
@@ -270,55 +285,49 @@ public class CaldroidGridAdapter extends BaseAdapter {
 	 * @param position
 	 * @param cellView
 	 */
-	protected void customizeTextView(int position, CellView cellView) {
-		// Get the padding of cell so that it can be restored later
-		int topPadding = cellView.getPaddingTop();
-		int leftPadding = cellView.getPaddingLeft();
-		int bottomPadding = cellView.getPaddingBottom();
-		int rightPadding = cellView.getPaddingRight();
+
+    // lots of changes here, just to make this work with a custom view.  lord.
+    protected void customizeTextView(int position, View cellView, CellView cal_view) {
+        // Get the padding of cell so that it can be restored later
+        int topPadding = 6; //cellView.getPaddingTop();
+        int leftPadding = 6; //cellView.getPaddingLeft();
+        int bottomPadding = 6; //cellView.getPaddingBottom();
+        int rightPadding = 6;//cellView.getPaddingRight();
 
 		// Get dateTime of this cell
 		DateTime dateTime = this.datetimeList.get(position);
 
-		cellView.resetCustomStates();
-		resetCustomResources(cellView);
+        cal_view.resetCustomStates();
+        resetCustomResources(cal_view);
 
-		if (dateTime.equals(getToday())) {
-			cellView.addCustomState(CellView.STATE_TODAY);
-		}
+        // Set color of the dates in previous / next month
+        if (dateTime.getMonth() != month) {
+            cal_view.addCustomState(CellView.STATE_PREV_NEXT_MONTH);
+            //Log.v("Disabled date", "month- " + month + " for  M= " + dateTime.getMonth() + " " + " day=" + String.valueOf(dateTime.getDay()));
+        }
 
-		// Set color of the dates in previous / next month
-		if (dateTime.getMonth() != month) {
-			cellView.addCustomState(CellView.STATE_PREV_NEXT_MONTH);
-		}
+        cal_view.refreshDrawableState();
 
-		// Customize for disabled dates and date outside min/max dates
-		if ((minDateTime != null && dateTime.lt(minDateTime))
-				|| (maxDateTime != null && dateTime.gt(maxDateTime))
-				|| (disableDates != null && disableDatesMap
-				.containsKey(dateTime))) {
+        // Set text
+        cal_view.setText(String.valueOf(dateTime.getDay()));
 
-			cellView.addCustomState(CellView.STATE_DISABLED);
-		}
+        if (dateTime.equals(getToday())) {
+            cellView.setBackgroundResource(com.caldroid.R.drawable.red_border);
+            cal_view.addCustomState(CellView.STATE_TODAY);
+            //cal_view.setTypeface(null, Typeface.BOLD_ITALIC);
+            //cal_view.setTextColor(resources.getColor(R.color.caldroid_light_red));
+            //Log.v("grid adapter","set for today again!");
+        } else {
+            cellView.setBackgroundResource(com.caldroid.R.drawable.cell_bg);
+        }
 
-		// Customize for selected dates
-		if (selectedDates != null && selectedDatesMap.containsKey(dateTime)) {
-			cellView.addCustomState(CellView.STATE_SELECTED);
-		}
-
-		cellView.refreshDrawableState();
-
-		// Set text
-		cellView.setText("" + dateTime.getDay());
-
-		// Set custom color if required
-		setCustomResources(dateTime, cellView, cellView);
-
-		// Somehow after setBackgroundResource, the padding collapse.
-		// This is to recover the padding
-		cellView.setPadding(leftPadding, topPadding, rightPadding,
-				bottomPadding);
-	}
+        // Somehow after setBackgroundResource, the padding collapse.
+        // This is to recover the padding
+        cellView.setPadding(leftPadding, topPadding, rightPadding,
+                bottomPadding);
+        // Set custom color if required
+        setCustomResources(dateTime, cellView, cal_view);
+    }
 
 	@Override
 	public int getCount() {
@@ -338,24 +347,20 @@ public class CaldroidGridAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		LayoutInflater inflater = (LayoutInflater) context
+        View cellView = convertView;
+        LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		CellView cellView = (CellView) convertView;
 
-		LayoutInflater localInflater = CaldroidFragment.getLayoutInflater(context, inflater, themeResource);
+        // For reuse
+        if (convertView == null) {
+            cellView = inflater.inflate(R.layout.normal_date_cell, null);
 
-		// For reuse
-		if (convertView == null) {
-			if (squareTextViewCell) {
-				//cellView = (TextView) convertView.findViewById(R.id.calendar_tv, null); from old version that i edited.
-				cellView = (CellView) localInflater.inflate(R.layout.square_date_cell, null);
-				//customizeTextView(position, cellView, convertView); from old version that i edited.
-			} else {
-				cellView = (CellView) localInflater.inflate(R.layout.normal_date_cell, null);
-			}
-		}
+        }
+        CellView cal_view;
+        cal_view = (CellView) cellView.findViewById(R.id.calendar_tv);
 
-		customizeTextView(position, cellView);
+        customizeTextView(position, cellView, cal_view); //edited as our version of this requires
+        // a custom view.
 
 		return cellView;
 	}

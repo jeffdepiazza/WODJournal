@@ -2,6 +2,7 @@ package com.roomorama.caldroid;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.TextView;
 
 public class SquareTextView extends TextView {
@@ -23,37 +24,34 @@ public class SquareTextView extends TextView {
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override 
-	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+	@Override
+	public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-		/*if (myheight == 0) {
-			myheight= CaldroidFragment.getheights();
+		if (myheight == 0) {
+			myheight = CaldroidFragment.getheights();
 		}
 		if (myheight == 0) {
 			//Log.v ("onMeasure status","my height is still 0");
 			myheight = 600;
 		}
-		this.setMeasuredDimension(widthMeasureSpec, myheight/6); */
-		
+		this.setMeasuredDimension(widthMeasureSpec, myheight / 6);
 	}
 
-	@Override	
+	@Override
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-
 		// Log.v("my current width", "" + w);
 		// Log.v("my current height", "" + h);
 		// Log.v("my old width", "" + oldw);
 		// Log.v("my old height", "" + oldh);
 		//if (myheight == 0) {
-			//Log.v ("status","my height is 0");
-		//myheight = CaldroidFragment.getheights();
+		//Log.v ("status","my height is 0");
+		myheight = CaldroidFragment.getheights();
 		//}
 		//Log.v ("onSizeChanged status","my height is now" + myheight);
-		//if (myheight == 0) {
-		//Log.v ("onSizeChanged status","my height is still 0");
-		//	myheight = 600;
-		//}
-		// super.onSizeChanged(w,myheight/6, oldw, oldh);
-		super.onSizeChanged(w, h, oldw, oldh);
+		if (myheight == 0) {
+			//Log.v ("onSizeChanged status","my height is still 0");
+			myheight = 600;
+		}
+		super.onSizeChanged(w, myheight / 6, oldw, oldh);
 	}
 }

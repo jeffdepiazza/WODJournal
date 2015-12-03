@@ -565,9 +565,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 										+ mch.get(movement_counter).return_AMRAP()
 										+ ", "
 										+ mch.get(movement_counter).return_Movement_Number()
-										+ ", "
+										+ ", '"
 										+ mch.get(movement_counter).return_Movement()
-										+ ", "
+										+ "', "
 										+ mch.get(movement_counter).return_Rep_Max()
 										+ ", "
 										+ mch.get(movement_counter).return_Time_of_Movement()

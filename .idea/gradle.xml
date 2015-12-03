@@ -15,6 +15,14 @@
             <option value="$PROJECT_DIR$/wODJournal" />
           </set>
         </option>
+        <option name="myModules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/aFileChooser" />
+            <option value="$PROJECT_DIR$/library" />
+            <option value="$PROJECT_DIR$/wODJournal" />
+          </set>
+        </option>
       </GradleProjectSettings>
     </option>
   </component>

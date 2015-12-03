@@ -71,13 +71,13 @@
         <item name="android:background">@color/caldroid_middle_gray</item>
     </style><style name="CaldroidDefaultNormalCell" parent="CaldroidDefaultCell">
         <item name="android:padding">5dp</item>
-    </style><style name="CaldroidDefaultDarkNormalCell" parent="CaldroidDefaultDarkCell">
+    </style><style name="CaldroidDefaultSquareCell" parent="CaldroidDefaultCell"/><style name="CaldroidDefaultDarkNormalCell" parent="CaldroidDefaultDarkCell">
         <item name="android:padding">5dp</item>
-    </style><style name="CaldroidDefaultSquareCell" parent="CaldroidDefaultCell"/><style name="CaldroidDefaultLeftButton" parent="CaldroidDefaultArrowButton">
+    </style><style name="CaldroidDefaultLeftButton" parent="CaldroidDefaultArrowButton">
         <item name="android:layout_alignParentLeft">true</item>
         <item name="android:background">@drawable/left_arrow</item>
     </style></file><file path="C:\projects\WODJournal\library\src\main\res\values-v11\styles.xml" qualifiers="v11"><style name="AppBaseTheme" parent="android:Theme.Holo.Light">
         <!-- API 11 theme customizations can go here. -->
     </style></file><file path="C:\projects\WODJournal\library\src\main\res\values-v14\styles.xml" qualifiers="v14"><style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <!-- API 14 theme customizations can go here. -->
-    </style></file></source><source path="C:\projects\WODJournal\library\build\generated\res\rs\debug"/><source path="C:\projects\WODJournal\library\build\generated\res\generated\debug"/></dataSet><dataSet config="debug"><source path="C:\projects\WODJournal\library\src\debug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="Cell"><attr name="android:textColor"/><attr name="android:background"/></declare-styleable><declare-styleable name="DateState"><attr format="boolean" name="state_date_today"/><attr format="boolean" name="state_date_selected"/><attr format="boolean" name="state_date_disabled"/><attr format="boolean" name="state_date_prev_next_month"/></declare-styleable></configuration></mergedItems></merger>
+    </style></file><file name="date_cell" path="C:\projects\WODJournal\library\src\main\res\layout\date_cell.xml" qualifiers="" type="layout"/></source><source path="C:\projects\WODJournal\library\build\generated\res\rs\debug"/><source path="C:\projects\WODJournal\library\build\generated\res\generated\debug"/></dataSet><dataSet config="debug"><source path="C:\projects\WODJournal\library\src\debug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="Cell"><attr name="android:textColor"/><attr name="android:background"/></declare-styleable><declare-styleable name="DateState"><attr format="boolean" name="state_date_today"/><attr format="boolean" name="state_date_selected"/><attr format="boolean" name="state_date_disabled"/><attr format="boolean" name="state_date_prev_next_month"/></declare-styleable></configuration></mergedItems></merger>

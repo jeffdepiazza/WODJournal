@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.Window;
 
@@ -27,7 +28,8 @@ public class WOD_Calendar_Activity extends FragmentActivity implements Calendar_
 	public Boolean newlycreated = true;
 	private Calendar_Delete_Dialog calendar_delete_dialog = null;
 	private Boolean dialog_displayed;
-
+    private int status_bar_height = 0;
+    private int resourceId = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +40,25 @@ public class WOD_Calendar_Activity extends FragmentActivity implements Calendar_
 		calendarfragment = new WODCalendarFragment();
 		DisplayMetrics metrics = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(metrics);
-		//calendarfragment.pass_screen_height(metrics.heightPixels);
-		// calendarfragment = (WODCalendarFragment) getSupportFragmentManager()
+
+        TypedValue tv = new TypedValue();
+
+        //try to get the status bar height.
+        resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            status_bar_height = getResources().getDimensionPixelSize(resourceId);
+        }
+
+        if (getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true)) {
+
+
+            Log.v("calender activity", "has an actionbar");
+            calendarfragment.pass_screen_height(metrics.heightPixels - status_bar_height - TypedValue.complexToDimensionPixelSize(tv.data, getResources().getDisplayMetrics()));
+        } else {
+            Log.v("calender activity", "No actionbar");
+            calendarfragment.pass_screen_height(metrics.heightPixels - status_bar_height);
+        }
+        // calendarfragment = (WODCalendarFragment) getSupportFragmentManager()
 		// .findFragmentById(R.id.calendar);
 		Log.v("onCreate", " Wod Calender Activity ");
 		final CaldroidListener listener = new CaldroidListener() {
@@ -127,11 +146,8 @@ public class WOD_Calendar_Activity extends FragmentActivity implements Calendar_
 			args.putInt(CaldroidFragment.YEAR, cal.get(Calendar.YEAR));
 			args.putBoolean(CaldroidFragment.ENABLE_SWIPE, true);
 			args.putBoolean(CaldroidFragment.SIX_WEEKS_IN_CALENDAR, true);
-			// Log.v("current height in pixels", "" + metrics.heightPixels);
-			// Uncomment this to customize startDayOfWeek
-			// args.putInt(CaldroidFragment.START_DAY_OF_WEEK,
-			// CaldroidFragment.TUESDAY); // Tuesday
-			dialog_displayed = false;
+            args.putBoolean(CaldroidFragment.SQUARE_TEXT_VIEW_CELL, true);
+            dialog_displayed = false;
 			calendarfragment.setArguments(args);
 		}
 		getSupportFragmentManager().beginTransaction().add(R.id.calendar, calendarfragment).commit();

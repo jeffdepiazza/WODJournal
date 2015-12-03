@@ -14,7 +14,7 @@ import hirondelle.date4j.DateTime;
 /**
  * A {@link ViewPager} that allows pseudo-infinite paging with a wrap-around
  * effect. Should be used with an {@link InfinitePagerAdapter}.
- * 
+ *
  */
 public class InfiniteViewPager extends ViewPager {
 
@@ -104,10 +104,10 @@ public class InfiniteViewPager extends ViewPager {
 	 * ViewPager does not respect "wrap_content". The code below tries to
 	 * measure the height of the child and set the height of viewpager based on
 	 * child height
-	 * 
+	 *
 	 * It was customized from
 	 * http://stackoverflow.com/questions/9313554/measuring-a-viewpager
-	 * 
+	 *
 	 * Thanks Delyan for his brilliant code
 	 */
 	@Override
@@ -131,7 +131,7 @@ public class InfiniteViewPager extends ViewPager {
 
 			rowHeight = firstChild.getMeasuredHeight();
 		}
-
+		rowHeight = 600;
 		// Calculate height of the calendar
 		int calHeight;
 

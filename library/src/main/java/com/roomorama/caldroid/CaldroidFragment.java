@@ -109,6 +109,11 @@ public class CaldroidFragment extends DialogFragment {
 
 	public final static int NUMBER_OF_PAGES = 4;
 
+	//** Screen size given to us as we do not know what the screen size is for when we resize the grid array
+	protected static int screen_height = 0;
+	protected static int screentopass;  //  screen height that is left, that we need to pass to the square text views.
+	public final static String OUR_SCREEN_HEIGHT = "screen_height";
+
 	/**
 	 * To customize the disabled background drawable and text color
 	 */
@@ -120,8 +125,8 @@ public class CaldroidFragment extends DialogFragment {
 	 */
 	private Button leftArrowButton;
 	private Button rightArrowButton;
-	private TextView monthTitleTextView;
-	private GridView weekdayGridView;
+	public static TextView monthTitleTextView;
+	public static GridView weekdayGridView;
 	private InfiniteViewPager dateViewPager;
 	private DatePageChangeListener pageChangeListener;
 	private ArrayList<DateGridFragment> fragments;
@@ -167,6 +172,10 @@ public class CaldroidFragment extends DialogFragment {
 	protected DateTime minDateTime;
 	protected DateTime maxDateTime;
 	protected ArrayList<DateTime> dateInMonthsList;
+
+	public static int _weekdaygridview = 0;  // internal usage for the height of the weekdaygridview, which is set in the onlayout
+	public static int _monthTitleTextView = 0;  //internal usafe for the height of the monthtitle TextView which is set in the onlayout
+
 
 	/**
 	 * caldroidData belongs to Caldroid
@@ -331,7 +340,7 @@ public class CaldroidFragment extends DialogFragment {
 	}
 
 	public void setMonthTitleTextView(TextView monthTitleTextView) {
-		this.monthTitleTextView = monthTitleTextView;
+		CaldroidFragment.monthTitleTextView = monthTitleTextView;
 	}
 
 	/**
@@ -393,7 +402,9 @@ public class CaldroidFragment extends DialogFragment {
 	 */
 	public void setBackgroundResourceForDates(
 			HashMap<Date, Integer> backgroundForDateMap) {
+		Log.v("caldroidfragment", "calling setresourcebackgroundfordates");
 		if (backgroundForDateMap == null || backgroundForDateMap.size() == 0) {
+			Log.v("caldroidfragment", "returning with null or zero size");
 			return;
 		}
 
@@ -690,6 +701,9 @@ public class CaldroidFragment extends DialogFragment {
 	 * Set disableDates from ArrayList of Date
 	 *
 	 * @param disableDateList
+	 *
+	 *
+	 *
 	 */
 	public void setDisableDates(ArrayList<Date> disableDateList) {
 		if (disableDateList == null || disableDateList.size() == 0) {
@@ -704,7 +718,6 @@ public class CaldroidFragment extends DialogFragment {
 		}
 
 	}
-
 	/**
 	 * Set disableDates from ArrayList of String. By default, the date formatter
 	 * is yyyy-MM-dd. For e.g 2013-12-24
@@ -836,7 +849,6 @@ public class CaldroidFragment extends DialogFragment {
 	/**
 	 * Check if the navigation arrow is shown
 	 *
-	 * @return
 	 */
 	public boolean isShowNavigationArrows() {
 		return showNavigationArrows;
@@ -913,7 +925,6 @@ public class CaldroidFragment extends DialogFragment {
 	/**
 	 * Set max date. This method does not refresh view
 	 *
-	 * @param maxDate
 	 */
 	public void setMaxDate(Date maxDate) {
 		if (maxDate == null) {
@@ -927,8 +938,6 @@ public class CaldroidFragment extends DialogFragment {
 	 * Convenient method to set max date from String. If dateFormat is null,
 	 * default format is yyyy-MM-dd
 	 *
-	 * @param maxDateString
-	 * @param dateFormat
 	 */
 	public void setMaxDateFromString(String maxDateString, String dateFormat) {
 		if (maxDateString == null) {
@@ -1068,10 +1077,11 @@ public class CaldroidFragment extends DialogFragment {
 	public void refreshView() {
 		// If month and year is not yet initialized, refreshView doesn't do
 		// anything
+
 		if (month == -1 || year == -1) {
 			return;
 		}
-
+		//Log.v("caldroidfragment", "refreshview");
 		refreshMonthTitleTextView();
 
 		// Refresh the date grid views
@@ -1087,6 +1097,7 @@ public class CaldroidFragment extends DialogFragment {
 
 			// Refresh view
 			adapter.notifyDataSetChanged();
+
 		}
 	}
 
@@ -1270,6 +1281,21 @@ public class CaldroidFragment extends DialogFragment {
 		monthTitleTextView = (TextView) view
 				.findViewById(R.id.calendar_month_year_textview);
 
+		monthTitleTextView.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+			@Override
+			public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int OldBottom) {
+				if (left == 0 && top == 0 && right == 0 && bottom == 0) {
+					return;
+				}
+				_monthTitleTextView = bottom - top;
+				if (_weekdaygridview != 0 && _monthTitleTextView != 0) {
+					screentopass = screen_height - _weekdaygridview - _monthTitleTextView;
+					//Log.v("just changed screentopass", "" + screentopass);
+				}
+				//Log.v(" monthTitle TV left, top, right, bottom", ""+ left + " " + top + " " + right + " " + bottom);
+			}
+		});
+
 		// For the left arrow button
 		leftArrowButton = (Button) view.findViewById(R.id.calendar_left_arrow);
 		rightArrowButton = (Button) view
@@ -1298,6 +1324,21 @@ public class CaldroidFragment extends DialogFragment {
 
 		// For the weekday gridview ("SUN, MON, TUE, WED, THU, FRI, SAT")
 		weekdayGridView = (GridView) view.findViewById(R.id.weekday_gridview);
+		weekdayGridView.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+			@Override
+			public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int OldBottom) {
+				if (left == 0 && top == 0 && right == 0 && bottom == 0) {
+					return;
+				}
+				_weekdaygridview = bottom - top;
+				if (_weekdaygridview != 0 && _monthTitleTextView != 0) {
+					screentopass = screen_height - _weekdaygridview - _monthTitleTextView;
+					Log.v("weekdygrid screentopass", "" + screentopass);
+				}
+				//Log.v("weekdayGridView TV left, top, right, bottom", ""+ left + " " + top + " " + right + " " + bottom);
+			}
+		});
+
 		WeekdayArrayAdapter weekdaysAdapter = getNewWeekdayAdapter(themeResource);
 		weekdayGridView.setAdapter(weekdaysAdapter);
 
@@ -1319,6 +1360,20 @@ public class CaldroidFragment extends DialogFragment {
 		if (caldroidListener != null) {
 			caldroidListener.onCaldroidViewCreated();
 		}
+	}
+
+	//both this and the below were required to get our heights to removtely fit a damn screen
+	public static int getheights() {
+		screentopass = screen_height - weekdayGridView.getHeight() - monthTitleTextView.getHeight();
+		//Log.v("screen height", "" + screen_height);
+		//Log.v("weedaygridviewheight" , ""+ weekdayGridView.getHeight());
+		//Log.v("monthtitleheight" , ""+ monthTitleTextView.getHeight());
+		//Log.v("passing screen height", "" + screentopass);
+		return screentopass;
+	}
+
+	public void pass_screen_height(int passed_screen_height) {
+		screen_height = passed_screen_height;
 	}
 
 	/**
@@ -1631,10 +1686,5 @@ public class CaldroidFragment extends DialogFragment {
 			throw new RuntimeException(e);
 		}
 	}
-	//added by me!
-	/*public static int getheights() {
-	*	screentopass =screen_height - weekdayGridView.getHeight() - monthTitleTextView.getHeight();
-	*	//Log.v("passing screen height", "" + screentopass);
-		return screentopass;
-	}*/
+
 }

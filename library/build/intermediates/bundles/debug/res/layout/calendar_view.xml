@@ -17,7 +17,7 @@
 
         <TextView
             android:id="@+id/calendar_month_year_textview"
-            style="?styleCaldroidMonthName"/>
+            style="?styleCaldroidMonthName" />
 
         <Button
             android:id="@+id/calendar_right_arrow"
@@ -36,6 +36,6 @@
     <com.antonyt.infiniteviewpager.InfiniteViewPager
         android:id="@+id/months_infinite_pager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
 </LinearLayout><!-- From: file:/C:/projects/WODJournal/library/src/main/res/layout/calendar_view.xml -->

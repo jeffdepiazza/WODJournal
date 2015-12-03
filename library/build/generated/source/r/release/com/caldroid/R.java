@@ -107,22 +107,23 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static int right_arrow=0x7f02000c;
     }
     public static final class id {
-        public static int calendar_gridview=0x7f070006;
-        public static int calendar_kettlebell=0x7f070008;
+        public static int calendar_gridview=0x7f070008;
+        public static int calendar_kettlebell=0x7f070007;
         public static int calendar_left_arrow=0x7f070001;
         public static int calendar_month_year_textview=0x7f070002;
         public static int calendar_right_arrow=0x7f070003;
         public static int calendar_title_view=0x7f070000;
-        public static int calendar_tv=0x7f070007;
+        public static int calendar_tv=0x7f070006;
         public static int months_infinite_pager=0x7f070005;
         public static int weekday_gridview=0x7f070004;
     }
     public static final class layout {
         public static int calendar_view=0x7f030000;
-        public static int date_grid_fragment=0x7f030001;
-        public static int normal_date_cell=0x7f030002;
-        public static int square_date_cell=0x7f030003;
-        public static int weekday_textview=0x7f030004;
+        public static int date_cell=0x7f030001;
+        public static int date_grid_fragment=0x7f030002;
+        public static int normal_date_cell=0x7f030003;
+        public static int square_date_cell=0x7f030004;
+        public static int weekday_textview=0x7f030005;
     }
     public static final class string {
         public static int app_name=0x7f060000;
