@@ -96,10 +96,12 @@ public class Edit_Child_Dialog extends DialogFragment implements
 		args.putInt(AMRAP, movement.return_AMRAP());
 		args.putString(Movement, movement.return_Movement());
 		args.putInt(Time_of_Movement, movement.return_Time_of_Movement());
-		args.putString(Time_of_Movement_Units,
-				movement.return_Time_of_Movement_Units());
-		args.putInt(Rep_Max, movement.return_Rep_Max());
-		args.putInt(Length, movement.return_length());
+
+        args.putString(Time_of_Movement_Units,
+                movement.return_Time_of_Movement_Units());
+        Log.v("constructor", movement.return_Time_of_Movement_Units());
+        args.putInt(Rep_Max, movement.return_Rep_Max());
+        args.putInt(Length, movement.return_length());
 		args.putString(Length_Units, movement.return_length_units());
 		args.putInt(Weight, movement.return_weight());
 		args.putString(Weight_Units, movement.return_weight_units());
@@ -113,8 +115,8 @@ public class Edit_Child_Dialog extends DialogFragment implements
 	}
 
 	interface Movement_Edit_Listener {
-		public void send_back_edited_movement(
-				Movement_Container_Holder movement_container_edit);
+        void send_back_edited_movement(
+                Movement_Container_Holder movement_container_edit);
 
 	}
 
@@ -206,9 +208,12 @@ public class Edit_Child_Dialog extends DialogFragment implements
 				Movement_Number, 0));
 		movement_container_edit.set_Comments(getArguments().getString(Comments,
 				""));
+        movement_container_edit.set_weight_units(getArguments().getString(Weight_Units, ""));
+        movement_container_edit.set_length_units(getArguments().getString(Length_Units, ""));
+        movement_container_edit.set_Time_of_Movement_Units(getArguments().getString(Time_of_Movement_Units, ""));
 
-		// we are now setting up the edit display, hiding/showing the things
-		// that we need
+        // we are now setting up the edit display, hiding/showing the things
+        // that we need
 		// as we are tailoring the display to show based upon the movement type.
 
 		switch (movement_container_edit.return_length_units()) {
@@ -234,20 +239,22 @@ public class Edit_Child_Dialog extends DialogFragment implements
 		switch (movement_container_edit.return_weight_units()) {
 		case "lbs":
 			weight_units_text.setSelection(0);
-			break;
+            Log.v("edit child", "lbs setting spinner");
+            break;
 		case "kgs":
 			weight_units_text.setSelection(1);
-			break;
+            Log.v("edit child", "kgs setting spinner");
+            break;
 		default:
 			weight_units_text.setSelection(0);
 		}
-
-		switch (movement_container_edit.return_Time_of_Movement_Units()) {
-		case "sec":
-			timed_units_text.setSelection(0);
+        Log.v("edit child", movement_container_edit.return_Time_of_Movement_Units());
+        switch (movement_container_edit.return_Time_of_Movement_Units()) {
+            case "min":
+                timed_units_text.setSelection(0);
 			break;
-		case "min":
-			timed_units_text.setSelection(1);
+            case "sec":
+                timed_units_text.setSelection(1);
 			break;
 		default:
 			timed_units_text.setSelection(0);
@@ -255,6 +262,7 @@ public class Edit_Child_Dialog extends DialogFragment implements
 
 		sets = (EditText) v.findViewById(R.id.edit_sets);
         sets.setText(nf.format(movement_container_edit.return_sets()));
+
         sets_text = (TextView) v.findViewById(R.id.edit_sets_text);
 		reps = (EditText) v.findViewById(R.id.edit_reps);
         reps.setText(nf.format(movement_container_edit.return_reps()));
@@ -277,6 +285,7 @@ public class Edit_Child_Dialog extends DialogFragment implements
         length_text = (TextView) v.findViewById(R.id.edit_length_text);
 		weight = (EditText) v.findViewById(R.id.edit_weight);
         weight.setText(nf.format(movement_container_edit.return_weight()));
+        Log.v("weight units", movement_container_edit.return_weight_units());
         edit_AMRAP = (TextView) v.findViewById(R.id.edit_AMRAP_text);
 		comments = (EditText) v.findViewById(R.id.edit_comments);
         comments.setText(movement_container_edit.return_Comments());

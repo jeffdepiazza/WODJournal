@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/projects/WODJournal/aFileChooser/src/main/res/values-it/strings.xml -->
-    <eat-comment/>
     <string name="choose_file">Selezionare un file</string>
     <string name="empty_directory">Directory vuota</string>
     <string name="error_selecting_file">Errore nel selezionare il File</string>

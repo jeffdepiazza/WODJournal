@@ -3,4 +3,3 @@
     android:src="@drawable/calendar_next_arrow"
     android:tileMode="disabled" android:gravity="center" >
 </bitmap>
-<!-- From: file:/C:/projects/WODJournal/library/src/main/res/drawable/right_arrow.xml -->

@@ -10,4 +10,4 @@
     android:numColumns="7"
     android:padding="1dp"
     android:stretchMode="columnWidth"
-    android:verticalSpacing="1dp" /><!-- From: file:/C:/projects/WODJournal/library/src/main/res/layout/date_grid_fragment.xml -->
+    android:verticalSpacing="1dp" />
