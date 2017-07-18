@@ -115,7 +115,7 @@ public class WOD_Display_Fragment extends Fragment {
 		// expand all groups to show the user what is in there...most likely the will want to do this anyway...
 		// especially if they are adding items.
 		count = list_adapter.getGroupCount();
-		Log.v(" creating display fragment view", "current group count is " + list_adapter.getGroupCount());
+		Log.v("createdisp fragmentview", "current group count is " + list_adapter.getGroupCount());
 			for (position = 1; position <= count; position++) {
 			    lv.expandGroup(position - 1); 
 			}

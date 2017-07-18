@@ -32,14 +32,14 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 	@Override
 	public Object getGroup(int groupPosition) {
 
-		Log.v("Wod ExpandableList Adapter", groupPosition + "=  getGroup ");
+		Log.v("Wod ExpandList Adapter", groupPosition + "=  getGroup ");
 		return date_holder.WOD_Container_Holder.get(groupPosition);
 	}
 
 	@Override
 	public Object getChild(int groupPosition, int childPosition) {
 
-		Log.v("Wod ExpandableList Adapter", "getchild " + groupPosition + "=  groupPosition , " + childPosition
+		Log.v("Wod ExpandList Adapter", "getchild " + groupPosition + "=  groupPosition , " + childPosition
 				+ "= childposition");
 		final WOD_Container_Holder WOD_Container_Holder = date_holder.WOD_Container_Holder.get(groupPosition);
 		final Movement_Container_Holder movement_container_holder = WOD_Container_Holder.return_movements().get(
@@ -49,13 +49,13 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 
 	@Override
 	public long getGroupId(int groupPosition) {
-		Log.v("Wod ExpandableList Adapter", " get group id" + groupPosition + "=  groupPosition ");
+		Log.v("Wod ExpanList Adapter", " get group id" + groupPosition + "=  groupPosition ");
 		return groupPosition;
 	}
 
 	@Override
 	public long getChildId(int groupPosition, int childPosition) {
-		Log.v("Wod ExpandableList Adapter", " get childid " + groupPosition + "=  groupPosition , " + childPosition
+		Log.v("Wod ExpandList Adapter", " get childid " + groupPosition + "=  groupPosition , " + childPosition
 				+ "= childposition");
 		return childPosition;
 	}
@@ -74,7 +74,7 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 		TextView comments_view;
 		if (!(WOD_Container_Holder.get_Timed() == 0)) {
 			convertView = inflater.inflate(R.layout.wod_container_timed, parent, false);
-			Log.v("WOD Expandable get timed group", " " + WOD_Container_Holder.get_Timed());
+			Log.v("get timed group", " " + WOD_Container_Holder.get_Timed());
 			String timed_type;
 			
 			// setting this string so we can build the expression as the rounds finished may
@@ -112,11 +112,19 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 			}
 		} else if (!(WOD_Container_Holder.get_Rounds() == 0)) {
 			convertView = inflater.inflate(R.layout.wod_container_rounds, parent, false);
+			String temp_text = "";
+			//temp_text is used as we are trying to determine if the "rounds finished" text is needed
+			//as we don't want to display it if there is none stored.  We don't want to do a whole
+			//bunch of findviewbyID's...as its inefficient, so we have a temp text string that we
+			//build and THEN send to the textbox.
 
-			((TextView) convertView.findViewById(R.id.container_rounds_rounds_total)).setText(Html.fromHtml(""
-					+ WOD_Container_Holder.get_Rounds() + " " + context.getResources().getString(R.string.rounds_text)
-					+ " <small> " + context.getResources().getString(R.string.finished_in) + " "
-					+ WOD_Container_Holder.get_Finish_Time()));
+			temp_text = WOD_Container_Holder.get_Rounds() + " " + context.getResources().getString(R.string.rounds_text);
+
+			if (!((WOD_Container_Holder.get_Finish_Time().isEmpty()))) {
+				temp_text = " <small> " + context.getResources().getString(R.string.finished_in) + " "
+				+ WOD_Container_Holder.get_Finish_Time();
+			}
+			((TextView) convertView.findViewById(R.id.container_rounds_rounds_total)).setText(Html.fromHtml(temp_text));
 			Log.v("Adapter view inflate", "rounds inflating");
 
 			// if the comments or named workout are zero length, hide the box as
@@ -204,7 +212,7 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 
 		if (!(movement_container_holder.return_Rep_Max() == 0)) {
 			convertView = inflater.inflate(R.layout.movement_rep_max, parent, false);
-			Log.v("wod expandable list adapter", "get child view in Rep max");
+			Log.v("wod expand list adapter", "get child view in Rep max");
 			// Get childrow.xml file elements and set values
 			text_to_display = "" + movement_container_holder.return_Rep_Max() + "RM "
 					+ movement_container_holder.return_Movement();
@@ -232,7 +240,7 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 		} else if (!(movement_container_holder.return_sets() == 0)
 				&& (!(movement_container_holder.return_reps() == 0) || !(movement_container_holder
 						.return_reps_dynamic().length() == 0))) {
-			Log.v("wod expandable list adapter", "get child view in sets and reps");
+			Log.v("wod expand list adapter", "get child view in sets and reps");
 			convertView = inflater.inflate(R.layout.movement_set_reps, parent, false);
 
 			// Get childrow.xml file elements and set values
@@ -270,7 +278,7 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 		} else if (!(movement_container_holder.return_length() == 0)) {
 
 			convertView = inflater.inflate(R.layout.movement_length, parent, false);
-			Log.v("wod expandable list adapter", "get child view in length workout");
+			Log.v("wod expand list adapter", "get child view in length workout");
 			// Get childrow.xml file elements and set values
 
 			text_to_display = "" + movement_container_holder.return_length()
@@ -296,7 +304,7 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 			}
 		} else if (!(movement_container_holder.return_AMRAP() == 0)) {
 
-			Log.v("wod expandable list adapter", "get child view in amrap");
+			Log.v("wod expand list adapter", "get child view in amrap");
 			convertView = inflater.inflate(R.layout.movement_amrap, parent, false);
 			text_to_display = "AMRAP " + movement_container_holder.return_Movement();
 
@@ -321,7 +329,7 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 
 		} else if (!(movement_container_holder.return_Movement_Number() == 0)) {
 			convertView = inflater.inflate(R.layout.movement_normal, parent, false);
-			Log.v("wod expandable list adapter",
+			Log.v("wod expand list adapter",
 					"get child view in movement number" + movement_container_holder.return_Movement_Number());
 			// Get childrow.xml file elements and set values
 			text_to_display = "" + movement_container_holder.return_Movement_Number() + " "
@@ -347,7 +355,7 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 		} else if (!(movement_container_holder.return_Time_of_Movement() == 0)) {
 
 			convertView = inflater.inflate(R.layout.movement_timed, parent, false);
-			Log.v("wod expandable list adapter", "get child view in normal movements with time of movement "
+			Log.v("wod expand list adapter", "get child view in normal movements with time of movement "
 					+ movement_container_holder.return_Time_of_Movement());
 			// Get childrow.xml file elements and set values
 			text_to_display = "" + movement_container_holder.return_Time_of_Movement() + " "
@@ -375,7 +383,7 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 		} else if (!(movement_container_holder.return_Staggered_Rounds() == 0)) {
 
 			convertView = inflater.inflate(R.layout.movement_staggered, parent, false);
-			Log.v("wod expandable list adapter", "get child view in staggered movements ");
+			Log.v("wod expand list adapter", "get child view in staggered movements ");
 			// Get childrow.xml file elements and set values
 			text_to_display = "" + movement_container_holder.return_Movement();
 
