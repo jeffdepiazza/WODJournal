@@ -1,14 +1,13 @@
 package com.floridaseabee.wodjournal;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-
 import android.content.Context;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.Calendar;
 
 public class Workout_Search_Record_Adapter extends ArrayAdapter<Search_Results_Holder> {
 	private ArrayList<Search_Results_Holder> srh;

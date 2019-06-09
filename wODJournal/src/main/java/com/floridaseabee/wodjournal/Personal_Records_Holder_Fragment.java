@@ -1,11 +1,11 @@
 package com.floridaseabee.wodjournal;
 
-import java.util.ArrayList;
-
 import android.app.Fragment;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+
+import java.util.ArrayList;
 
 public class Personal_Records_Holder_Fragment extends Fragment implements DatabaseHelper.Personal_Records_Listener {
 	private Personal_Record_DB_Listener listener;

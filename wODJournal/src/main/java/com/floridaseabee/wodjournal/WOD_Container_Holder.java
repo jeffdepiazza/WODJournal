@@ -1,9 +1,8 @@
 package com.floridaseabee.wodjournal;
 
-import java.util.ArrayList;
-
 import android.database.Cursor;
-import android.util.Log;
+
+import java.util.ArrayList;
 
 public class WOD_Container_Holder {
 	private Integer _id;

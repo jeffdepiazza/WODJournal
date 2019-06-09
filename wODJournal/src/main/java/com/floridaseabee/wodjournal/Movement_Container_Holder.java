@@ -1,7 +1,6 @@
 package com.floridaseabee.wodjournal;
 
 import android.database.Cursor;
-import android.util.Log;
 
 public class Movement_Container_Holder {
 

@@ -1,7 +1,5 @@
 package com.floridaseabee.wodjournal;
 
-import java.util.ArrayList;
-
 import android.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +11,8 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import com.jjoe64.graphview.GraphView;
+
+import java.util.ArrayList;
 
 public class Analytics_Display_Fragment extends Fragment {
 

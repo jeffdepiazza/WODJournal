@@ -2,9 +2,10 @@ package com.floridaseabee.wodjournal;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.view.ViewPager;
+
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.ViewPager;
 import android.util.Log;
 import android.view.WindowManager;
 
@@ -27,7 +28,7 @@ public class Timer_Main extends FragmentActivity {
 					"" + savedInstanceState.getInt("pageItem"));
 
 		}
-		pager = (ViewPager) findViewById(R.id.timer_pager_display);
+        pager = findViewById(R.id.timer_pager_display);
 		pager.setAdapter(mAdapter);
 
 	}

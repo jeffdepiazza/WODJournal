@@ -10,13 +10,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.AdapterView.OnItemSelectedListener;
 
 public class InsertAdd_Child_Dialog extends DialogFragment implements AdapterView.OnItemSelectedListener,
 		OnClickListener {
@@ -71,9 +71,9 @@ public class InsertAdd_Child_Dialog extends DialogFragment implements AdapterVie
 	}
 
 	interface Movement_Add_Insert_Listener {
-		public void send_back_add_movement(Movement_Container_Holder movement_container_edit);
+        void send_back_add_movement(Movement_Container_Holder movement_container_edit);
 
-		public void send_back_insert_movement(Movement_Container_Holder movement_container_edit);
+        void send_back_insert_movement(Movement_Container_Holder movement_container_edit);
 	}
 
 	@Override
@@ -100,32 +100,32 @@ public class InsertAdd_Child_Dialog extends DialogFragment implements AdapterVie
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
 		Add_Insert = getArguments().getString(Type, "");
-		movement_type_spinner = (Spinner) v.findViewById(R.id.edit_movement_type_spinner);
+        movement_type_spinner = v.findViewById(R.id.edit_movement_type_spinner);
 		mv = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, movement_types);
 		mv.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		movement_type_spinner.setAdapter(mv);
 		movement_type_spinner.setOnItemSelectedListener(this);
 
 		// populate the timed units spinner
-		timed_units_text = (Spinner) v.findViewById(R.id.edit_timed_units_spinner);
+        timed_units_text = v.findViewById(R.id.edit_timed_units_spinner);
 		tm = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, time_unit_types);
 		tm.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		timed_units_text.setAdapter(tm);
 
 		// populate the length units spinner
-		length_units_text = (Spinner) v.findViewById(R.id.edit_length_units_spinner);
+        length_units_text = v.findViewById(R.id.edit_length_units_spinner);
 		le = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, length_unit_types);
 		le.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		length_units_text.setAdapter(le);
 
 		// populate the weights units spinners
-		weight_units_text = (Spinner) v.findViewById(R.id.edit_weight_units_spinner);
+        weight_units_text = v.findViewById(R.id.edit_weight_units_spinner);
 		we = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, weight_unit_types);
 		we.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		weight_units_text.setAdapter(we);
 
 		// populate the set/reps dynamic spinner
-		rep_type_text = (Spinner) v.findViewById(R.id.edit_movement_reps_type_spinner);
+        rep_type_text = v.findViewById(R.id.edit_movement_reps_type_spinner);
 		rt = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, rep_types);
 		rt.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		rep_type_text.setAdapter(rt);
@@ -139,23 +139,23 @@ public class InsertAdd_Child_Dialog extends DialogFragment implements AdapterVie
 		weight_units_text.setSelection(0);
 		timed_units_text.setSelection(0);
 
-		sets = (EditText) v.findViewById(R.id.edit_sets);
-		sets_text = (TextView) v.findViewById(R.id.edit_sets_text);
-		reps = (EditText) v.findViewById(R.id.edit_reps);
-		reps_dynamic = (EditText) v.findViewById(R.id.edit_reps_dynamic);
-		reps_text = (TextView) v.findViewById(R.id.edit_reps_text);
-		movement = (EditText) v.findViewById(R.id.edit_movement);
-		timed = (EditText) v.findViewById(R.id.edit_timed);
-		percentage = (EditText) v.findViewById(R.id.edit_percentage);
-		rep_max = (EditText) v.findViewById(R.id.edit_rep_max);
-		rep_max_text = (TextView) v.findViewById(R.id.edit_rep_max_text);
-		length = (EditText) v.findViewById(R.id.edit_length);
-		length_text = (TextView) v.findViewById(R.id.edit_length_text);
-		weight = (EditText) v.findViewById(R.id.edit_weight);
-		edit_AMRAP = (TextView) v.findViewById(R.id.edit_AMRAP_text);
-		comments = (EditText) v.findViewById(R.id.edit_comments);
-		movement_number = (EditText) v.findViewById(R.id.edit_movement_number);
-		movement_number_text = (TextView) v.findViewById(R.id.edit_movement_number_text);
+        sets = v.findViewById(R.id.edit_sets);
+        sets_text = v.findViewById(R.id.edit_sets_text);
+        reps = v.findViewById(R.id.edit_reps);
+        reps_dynamic = v.findViewById(R.id.edit_reps_dynamic);
+        reps_text = v.findViewById(R.id.edit_reps_text);
+        movement = v.findViewById(R.id.edit_movement);
+        timed = v.findViewById(R.id.edit_timed);
+        percentage = v.findViewById(R.id.edit_percentage);
+        rep_max = v.findViewById(R.id.edit_rep_max);
+        rep_max_text = v.findViewById(R.id.edit_rep_max_text);
+        length = v.findViewById(R.id.edit_length);
+        length_text = v.findViewById(R.id.edit_length_text);
+        weight = v.findViewById(R.id.edit_weight);
+        edit_AMRAP = v.findViewById(R.id.edit_AMRAP_text);
+        comments = v.findViewById(R.id.edit_comments);
+        movement_number = v.findViewById(R.id.edit_movement_number);
+        movement_number_text = v.findViewById(R.id.edit_movement_number_text);
 		movement_type_spinner.setSelection(0); // set the spinner to sets and
 												// reps as we have no idea what
 												// the user wants anyway, just
@@ -602,7 +602,7 @@ public class InsertAdd_Child_Dialog extends DialogFragment implements AdapterVie
 							// it after this point
 		AlertDialog d = (AlertDialog) getDialog();
 		if (d != null) {
-			Button positiveButton = (Button) d.getButton(Dialog.BUTTON_POSITIVE);
+            Button positiveButton = d.getButton(Dialog.BUTTON_POSITIVE);
 			positiveButton.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {

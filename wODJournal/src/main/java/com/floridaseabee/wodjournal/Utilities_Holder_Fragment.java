@@ -3,7 +3,6 @@ package com.floridaseabee.wodjournal;
 import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -28,7 +27,7 @@ public class Utilities_Holder_Fragment extends Fragment implements DatabaseHelpe
 	}
 
 	interface Dialog_Dismiss {
-		public void dismiss_dialog();
+        void dismiss_dialog();
 	}
 
 	@Override

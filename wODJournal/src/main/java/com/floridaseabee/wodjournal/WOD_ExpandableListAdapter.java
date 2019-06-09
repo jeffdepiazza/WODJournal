@@ -96,7 +96,7 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 			// there is nothing
 			// in there
 			if (WOD_Container_Holder.get_Workout_Name().length() == 0) {
-				((TextView) convertView.findViewById(R.id.container_timed_named_workout)).setVisibility(View.GONE);
+                convertView.findViewById(R.id.container_timed_named_workout).setVisibility(View.GONE);
 			} else {
 				((TextView) convertView.findViewById(R.id.container_timed_named_workout)).setText(context
 						.getResources().getString(R.string.named_workout_text)
@@ -104,7 +104,7 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 						+ WOD_Container_Holder.get_Workout_Name());
 
 			}
-			comments_view = (TextView) convertView.findViewById(R.id.container_timed_comments);
+            comments_view = convertView.findViewById(R.id.container_timed_comments);
 			if (WOD_Container_Holder.get_Comments().length() == 0) {
 				comments_view.setVisibility(View.GONE);
 			} else {
@@ -131,7 +131,7 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 			// there is nothing
 			// in there
 			if (WOD_Container_Holder.get_Workout_Name().length() == 0) {
-				((TextView) convertView.findViewById(R.id.container_rounds_named_workout)).setVisibility(View.GONE);
+                convertView.findViewById(R.id.container_rounds_named_workout).setVisibility(View.GONE);
 			} else {
 				((TextView) convertView.findViewById(R.id.container_rounds_named_workout)).setText(context
 						.getResources().getString(R.string.named_workout_text)
@@ -140,7 +140,7 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 
 			}
 
-			comments_view = (TextView) convertView.findViewById(R.id.container_rounds_comments);
+            comments_view = convertView.findViewById(R.id.container_rounds_comments);
 			if (WOD_Container_Holder.get_Comments().length() == 0) {
 				comments_view.setVisibility(View.GONE);
 			} else {
@@ -153,12 +153,12 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 			((TextView) convertView.findViewById(R.id.container_staggered_rounds)).setText(WOD_Container_Holder
 					.get_Staggered_Rounds() + " ");
 
-			comments_view = (TextView) convertView.findViewById(R.id.container_staggered_comments);
+            comments_view = convertView.findViewById(R.id.container_staggered_comments);
 
 			if (WOD_Container_Holder.get_Finish_Time() == ""  || WOD_Container_Holder.get_Finish_Time().isEmpty()) {
 				Log.v("expandable list adapter", " empty finish time");
-				((TextView) convertView.findViewById(R.id.container_staggered_time_finished)).setVisibility(View.GONE);
-				((TextView) convertView.findViewById(R.id.container_staggered_time_finished_text))
+                convertView.findViewById(R.id.container_staggered_time_finished).setVisibility(View.GONE);
+                convertView.findViewById(R.id.container_staggered_time_finished_text)
 						.setVisibility(View.GONE);
 			} else {
 				((TextView) convertView.findViewById(R.id.container_staggered_time_finished)).setText(": "
@@ -168,8 +168,8 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 			// there is nothing
 			// in there
 			if (WOD_Container_Holder.get_Workout_Name().length() == 0) {
-				((TextView) convertView.findViewById(R.id.container_staggered_named_workout)).setVisibility(View.GONE);
-				((TextView) convertView.findViewById(R.id.container_staggered_named_workout_text))
+                convertView.findViewById(R.id.container_staggered_named_workout).setVisibility(View.GONE);
+                convertView.findViewById(R.id.container_staggered_named_workout_text)
 						.setVisibility(View.GONE);
 			} else {
 				((TextView) convertView.findViewById(R.id.container_staggered_named_workout)).setText(" "
@@ -185,7 +185,7 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 		} else if (!(WOD_Container_Holder.get_IsWeight_Workout() == "F")) {
 			convertView = inflater.inflate(R.layout.wod_container_isweight, parent, false);
 			Log.v("Adapter view inflate", "weight only/accessory inflating");
-			comments_view = (TextView) convertView.findViewById(R.id.container_accessory_comments);
+            comments_view = convertView.findViewById(R.id.container_accessory_comments);
 			// if the comments are zero length, hide the box as there is nothing
 			// in there
 
@@ -232,7 +232,7 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 			// as there is no reason to display it.
 
 			if (movement_container_holder.return_Comments().length() == 0) {
-				((TextView) convertView.findViewById(R.id.rep_max_comments)).setVisibility(View.GONE);
+                convertView.findViewById(R.id.rep_max_comments).setVisibility(View.GONE);
 			} else {
 				((TextView) convertView.findViewById(R.id.rep_max_comments)).setText(""
 						+ movement_container_holder.return_Comments() + "");
@@ -270,7 +270,7 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 			((TextView) convertView.findViewById(R.id.set_reps_sets)).setText(text_to_display);
 
 			if (movement_container_holder.return_Comments().length() == 0) {
-				((TextView) convertView.findViewById(R.id.set_reps_comments)).setVisibility(View.GONE);
+                convertView.findViewById(R.id.set_reps_comments).setVisibility(View.GONE);
 			} else {
 				((TextView) convertView.findViewById(R.id.set_reps_comments)).setText(""
 						+ movement_container_holder.return_Comments() + "");
@@ -297,7 +297,7 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 			((TextView) convertView.findViewById(R.id.length_movement_length)).setText(text_to_display);
 
 			if (movement_container_holder.return_Comments().length() == 0) {
-				((TextView) convertView.findViewById(R.id.length_movement_comments)).setVisibility(View.GONE);
+                convertView.findViewById(R.id.length_movement_comments).setVisibility(View.GONE);
 			} else {
 				((TextView) convertView.findViewById(R.id.length_movement_comments)).setText(""
 						+ movement_container_holder.return_Comments() + "");
@@ -321,7 +321,7 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 
 			// Get childrow.xml file elements and set values
 			if (movement_container_holder.return_Comments().length() == 0) {
-				((TextView) convertView.findViewById(R.id.amrap_comments)).setVisibility(View.GONE);
+                convertView.findViewById(R.id.amrap_comments).setVisibility(View.GONE);
 			} else {
 				((TextView) convertView.findViewById(R.id.amrap_comments)).setText(""
 						+ movement_container_holder.return_Comments() + "");
@@ -347,7 +347,7 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 			((TextView) convertView.findViewById(R.id.normal_movement)).setText(text_to_display);
 
 			if (movement_container_holder.return_Comments().length() == 0) {
-				((TextView) convertView.findViewById(R.id.normal_weight_comments)).setVisibility(View.GONE);
+                convertView.findViewById(R.id.normal_weight_comments).setVisibility(View.GONE);
 			} else {
 				((TextView) convertView.findViewById(R.id.normal_weight_comments)).setText(""
 						+ movement_container_holder.return_Comments() + "");
@@ -374,7 +374,7 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 			((TextView) convertView.findViewById(R.id.timed_text)).setText(text_to_display);
 
 			if (movement_container_holder.return_Comments().length() == 0) {
-				((TextView) convertView.findViewById(R.id.timed_comments)).setVisibility(View.GONE);
+                convertView.findViewById(R.id.timed_comments).setVisibility(View.GONE);
 			} else {
 				((TextView) convertView.findViewById(R.id.timed_comments)).setText(""
 						+ movement_container_holder.return_Comments() + "");
@@ -399,7 +399,7 @@ public class WOD_ExpandableListAdapter extends BaseExpandableListAdapter {
 			((TextView) convertView.findViewById(R.id.staggered_movement)).setText(text_to_display);
 
 			if (movement_container_holder.return_Comments().length() == 0) {
-				((TextView) convertView.findViewById(R.id.staggered_weight_comments)).setVisibility(View.GONE);
+                convertView.findViewById(R.id.staggered_weight_comments).setVisibility(View.GONE);
 			} else {
 				((TextView) convertView.findViewById(R.id.staggered_weight_comments)).setText(""
 						+ movement_container_holder.return_Comments() + "");

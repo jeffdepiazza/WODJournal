@@ -1,7 +1,6 @@
 package com.floridaseabee.wodjournal;
 
 import android.app.Fragment;
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -39,7 +38,7 @@ public class WOD_Display_Fragment extends Fragment {
 	}
 
 	public void setAdd_Edit_Delete_Listener(WOD_Date_edit_delete_add listener) {
-		this.listener = listener;
+        WOD_Display_Fragment.listener = listener;
 	}
 
 	@Override
@@ -47,9 +46,9 @@ public class WOD_Display_Fragment extends Fragment {
 			Bundle savedInstanceState) {
 		Log.v("wod display fragment", "Inflating display view");
 		View v = inflater.inflate(R.layout.wod_details, container, false);
-		lv = (ExpandableListView) v.findViewById(R.id.wod_expandablelistview);
-		pg = (ProgressBar) v.findViewById(R.id.LoadFromCalendar);
-		tv = (TextView) v.findViewById(R.id.Nothingfound);
+        lv = v.findViewById(R.id.wod_expandablelistview);
+        pg = v.findViewById(R.id.LoadFromCalendar);
+        tv = v.findViewById(R.id.Nothingfound);
 		// pg.setVisibility(View.VISIBLE);
 		this.inflater = inflater;
 		setRetainInstance(true);
@@ -108,7 +107,7 @@ public class WOD_Display_Fragment extends Fragment {
 	}
 
 	public void handover_data(Date_Holder date_holder) {
-		this.date_holder = date_holder;
+        WOD_Display_Fragment.date_holder = date_holder;
 		pg.setVisibility(View.GONE);
 		list_adapter = new WOD_ExpandableListAdapter(date_holder, inflater, getActivity());
 		lv.setAdapter(list_adapter);
@@ -127,7 +126,7 @@ public class WOD_Display_Fragment extends Fragment {
 	
 	interface database_fragment_interface {
 
-		public void delete_entry(Integer groupPosition, Integer childPosition);
+        void delete_entry(Integer groupPosition, Integer childPosition);
 	}
 
 }

@@ -19,9 +19,10 @@ package com.ipaulpro.afilechooser;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v4.app.ListFragment;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.content.Loader;
+
+import androidx.fragment.app.ListFragment;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
 import android.view.View;
 import android.widget.ListView;
 
@@ -46,7 +47,7 @@ public class FileListFragment extends ListFragment implements
          *
          * @param file The file selected
          */
-        public void onFileSelected(File file);
+        void onFileSelected(File file);
     }
 
     private static final int LOADER_ID = 0;
@@ -108,7 +109,7 @@ public class FileListFragment extends ListFragment implements
     public void onListItemClick(ListView l, View v, int position, long id) {
         FileListAdapter adapter = (FileListAdapter) l.getAdapter();
         if (adapter != null) {
-            File file = (File) adapter.getItem(position);
+            File file = adapter.getItem(position);
             mPath = file.getAbsolutePath();
             mListener.onFileSelected(file);
         }

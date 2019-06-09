@@ -1,15 +1,16 @@
 package com.floridaseabee.wodjournal;
 
+import android.util.Log;
+import android.util.Xml;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import android.util.Log;
-import android.util.Xml;
 
 public class XMLParser {
 	// this is the class that will parse the opened up xml, check some basic

@@ -12,10 +12,10 @@ public class Workout_Search_View_Holder {
 
 	Workout_Search_View_Holder(View row) {
 
-		this.bigger_text = (TextView) row.findViewById(R.id.search_bigger_text);
-		this.smaller_text = (TextView) row.findViewById(R.id.search_smaller_text);
-		this.date = (TextView) row.findViewById(R.id.search_date);
-		this.medium_text = (TextView) row.findViewById(R.id.search_medium_text);
+        this.bigger_text = row.findViewById(R.id.search_bigger_text);
+        this.smaller_text = row.findViewById(R.id.search_smaller_text);
+        this.date = row.findViewById(R.id.search_date);
+        this.medium_text = row.findViewById(R.id.search_medium_text);
 
 	}
 }

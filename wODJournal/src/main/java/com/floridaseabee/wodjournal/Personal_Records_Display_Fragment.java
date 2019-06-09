@@ -1,11 +1,5 @@
 package com.floridaseabee.wodjournal;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,6 +12,11 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
 
 public class Personal_Records_Display_Fragment extends Fragment {
 
@@ -43,9 +42,9 @@ public class Personal_Records_Display_Fragment extends Fragment {
 		this.inflater = inflater;
 		View v = this.inflater.inflate(R.layout.personal_records, container,
 				false);
-		lv = (ListView) v.findViewById(R.id.PR_listview);
-		pg = (ProgressBar) v.findViewById(R.id.Load_Personal_Records);
-		tv = (TextView) v.findViewById(R.id.No_Personal_Records);
+        lv = v.findViewById(R.id.PR_listview);
+        pg = v.findViewById(R.id.Load_Personal_Records);
+        tv = v.findViewById(R.id.No_Personal_Records);
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
 

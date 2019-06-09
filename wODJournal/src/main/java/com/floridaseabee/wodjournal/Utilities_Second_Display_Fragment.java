@@ -54,7 +54,7 @@ public class Utilities_Second_Display_Fragment extends Fragment  {
 					getResources().getString(R.string.utilities_restore_summary2) };
 		}
 		View result = inflater.inflate(R.layout.utilities_main, container, false);
-		ListView first_lv = (ListView) result.findViewById(R.id.utilities_listview);
+        ListView first_lv = result.findViewById(R.id.utilities_listview);
 		Utilities_List_Adapter adapter = new Utilities_List_Adapter(getActivity(), title, summary);
 		first_lv.setAdapter(adapter);
 		first_lv.setOnItemClickListener(new OnItemClickListener() {

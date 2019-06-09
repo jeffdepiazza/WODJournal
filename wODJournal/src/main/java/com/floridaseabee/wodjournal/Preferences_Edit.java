@@ -1,11 +1,11 @@
 package com.floridaseabee.wodjournal;
 
-import java.util.List;
-
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.util.Log;
+
+import java.util.List;
 
 public class Preferences_Edit extends PreferenceActivity {
 	@Override
@@ -16,11 +16,8 @@ public class Preferences_Edit extends PreferenceActivity {
 
 	@Override
 	protected boolean isValidFragment(String fragmentName) {
-		if (First.class.getName().equals(fragmentName) || Second.class.getName().equals(fragmentName)) {
-			return (true);
-		}
-		return (false);
-	}
+        return First.class.getName().equals(fragmentName) || Second.class.getName().equals(fragmentName);
+    }
 
 	public static class First extends PreferenceFragment {
 		@Override

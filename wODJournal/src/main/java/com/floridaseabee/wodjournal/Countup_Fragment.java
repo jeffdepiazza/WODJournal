@@ -1,16 +1,17 @@
 package com.floridaseabee.wodjournal;
 
-import java.util.Calendar;
-import java.util.Locale;
-
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+
+import androidx.fragment.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+
+import java.util.Calendar;
+import java.util.Locale;
 
 public class Countup_Fragment extends Fragment implements OnClickListener {
 	static Boolean Arewecounting = false;
@@ -38,16 +39,16 @@ public class Countup_Fragment extends Fragment implements OnClickListener {
 		View result = inflater.inflate(R.layout.countup_timer_layout,
 				container, false);
 
-		tv = (AutoResizeTextView) result
+        tv = result
 				.findViewById(R.id.countuptimer_textview);
 		tv.resizeText();
 
-		ThreetwooneGO = (AutoResizeTextView) result
+        ThreetwooneGO = result
 				.findViewById(R.id.timer_countup_text);
-		Reset = (ImageButton) result.findViewById(R.id.reset);
-		StartPausecount = (ImageButton) result
+        Reset = result.findViewById(R.id.reset);
+        StartPausecount = result
 				.findViewById(R.id.startpausecount);
-		Stopcount = (ImageButton) result.findViewById(R.id.stopcount);
+        Stopcount = result.findViewById(R.id.stopcount);
 		Stopcount.setEnabled(false);
 		Reset.setOnClickListener(this);
 		StartPausecount.setOnClickListener(this);

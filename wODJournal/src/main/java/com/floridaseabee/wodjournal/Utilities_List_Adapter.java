@@ -20,10 +20,10 @@ public class Utilities_List_Adapter extends ArrayAdapter<String> {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View row = super.getView(position, convertView, parent);
-		TextView title_tv = (TextView) row.findViewById(R.id.utilities_title);
+        TextView title_tv = row.findViewById(R.id.utilities_title);
 		title_tv.setText(title[position]);
 
-		TextView summary_tv = (TextView) row.findViewById(R.id.utilities_summary);
+        TextView summary_tv = row.findViewById(R.id.utilities_summary);
 		summary_tv.setText(summary[position]);
 
 		return row;

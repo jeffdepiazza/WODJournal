@@ -1,7 +1,5 @@
 package com.floridaseabee.wodjournal;
 
-import java.util.Calendar;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -12,6 +10,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import java.util.Calendar;
 
 public class Utilities_File_Picker_Dialog extends DialogFragment implements AdapterView.OnItemSelectedListener, OnClickListener {
 
@@ -35,9 +35,9 @@ public class Utilities_File_Picker_Dialog extends DialogFragment implements Adap
 	}
 
 	interface Send_back_clicks {
-		public void send_back_ok(String filename);
+        void send_back_ok(String filename);
 
-		public void send_back_cancel();
+        void send_back_cancel();
 	}
 
 	@Override
@@ -47,8 +47,8 @@ public class Utilities_File_Picker_Dialog extends DialogFragment implements Adap
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		Calendar currentdate = Calendar.getInstance();
 
-		directory_view = (TextView) v.findViewById(R.id.utilities_directory);
-		filename = (EditText) v.findViewById(R.id.utilities_file_name);
+        directory_view = v.findViewById(R.id.utilities_directory);
+        filename = v.findViewById(R.id.utilities_file_name);
 
 		if (getArguments().getString(Type_Of_Dialog, "") == "xml")
 			filename.setText(getResources().getString(R.string.backup_filename_beginning) + currentdate.get(Calendar.YEAR) + "-"

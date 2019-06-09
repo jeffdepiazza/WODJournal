@@ -2,7 +2,8 @@ package com.floridaseabee.wodjournal;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+
+import androidx.fragment.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,7 +13,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,12 +49,12 @@ public class Workout_Search_Activity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.workout_search);
 
-		reps = (EditText) findViewById(R.id.search_reps);
-		reps_dynamic = (EditText) findViewById(R.id.search_reps_dynamic);
+        reps = findViewById(R.id.search_reps);
+        reps_dynamic = findViewById(R.id.search_reps_dynamic);
 
 		ArrayAdapter<String> wod = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, wod_types);
 		wod.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		wod_type_spinner = (Spinner) findViewById(R.id.search_container_type_spinner);
+        wod_type_spinner = findViewById(R.id.search_container_type_spinner);
 		wod_type_spinner.setAdapter(wod);
 		wod_type_spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 
@@ -63,28 +63,28 @@ public class Workout_Search_Activity extends FragmentActivity {
 				switch (position) {
 
 				case 0:
-					((LinearLayout) findViewById(R.id.search_wod_timed_container)).setVisibility(View.VISIBLE);
-					((LinearLayout) findViewById(R.id.search_wod_timed_container2)).setVisibility(View.VISIBLE);
-					((LinearLayout) findViewById(R.id.search_rounds_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_staggered_container)).setVisibility(View.GONE);
+                    findViewById(R.id.search_wod_timed_container).setVisibility(View.VISIBLE);
+                    findViewById(R.id.search_wod_timed_container2).setVisibility(View.VISIBLE);
+                    findViewById(R.id.search_rounds_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_staggered_container).setVisibility(View.GONE);
 					break;
 				case 1:
-					((LinearLayout) findViewById(R.id.search_wod_timed_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_wod_timed_container2)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_rounds_container)).setVisibility(View.VISIBLE);
-					((LinearLayout) findViewById(R.id.search_staggered_container)).setVisibility(View.GONE);
+                    findViewById(R.id.search_wod_timed_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_wod_timed_container2).setVisibility(View.GONE);
+                    findViewById(R.id.search_rounds_container).setVisibility(View.VISIBLE);
+                    findViewById(R.id.search_staggered_container).setVisibility(View.GONE);
 					break;
 				case 2:
-					((LinearLayout) findViewById(R.id.search_wod_timed_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_wod_timed_container2)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_rounds_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_staggered_container)).setVisibility(View.VISIBLE);
+                    findViewById(R.id.search_wod_timed_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_wod_timed_container2).setVisibility(View.GONE);
+                    findViewById(R.id.search_rounds_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_staggered_container).setVisibility(View.VISIBLE);
 					break;
 				case 3:
-					((LinearLayout) findViewById(R.id.search_wod_timed_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_wod_timed_container2)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_rounds_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_staggered_container)).setVisibility(View.GONE);
+                    findViewById(R.id.search_wod_timed_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_wod_timed_container2).setVisibility(View.GONE);
+                    findViewById(R.id.search_rounds_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_staggered_container).setVisibility(View.GONE);
 					break;
 				}
 
@@ -97,7 +97,7 @@ public class Workout_Search_Activity extends FragmentActivity {
 
 		});
 
-		movement_type_spinner = (Spinner) findViewById(R.id.search_movement_type_spinner);
+        movement_type_spinner = findViewById(R.id.search_movement_type_spinner);
 		ArrayAdapter<String> mv = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, movement_types);
 		mv.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		movement_type_spinner.setAdapter(mv);
@@ -107,47 +107,47 @@ public class Workout_Search_Activity extends FragmentActivity {
 			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 				switch (position) {
 				case 0:
-					((LinearLayout) findViewById(R.id.search_sets_reps_container)).setVisibility(View.VISIBLE);
-					((LinearLayout) findViewById(R.id.search_length_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_repmax_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_timed_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_movement_number_container)).setVisibility(View.GONE);
+                    findViewById(R.id.search_sets_reps_container).setVisibility(View.VISIBLE);
+                    findViewById(R.id.search_length_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_repmax_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_timed_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_movement_number_container).setVisibility(View.GONE);
 					break;
 				case 1:
-					((LinearLayout) findViewById(R.id.search_sets_reps_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_length_container)).setVisibility(View.VISIBLE);
-					((LinearLayout) findViewById(R.id.search_repmax_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_timed_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_movement_number_container)).setVisibility(View.GONE);
+                    findViewById(R.id.search_sets_reps_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_length_container).setVisibility(View.VISIBLE);
+                    findViewById(R.id.search_repmax_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_timed_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_movement_number_container).setVisibility(View.GONE);
 					break;
 				case 2: // amrap is the same as staggered
 				case 6:
-					((LinearLayout) findViewById(R.id.search_sets_reps_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_length_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_repmax_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_timed_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_movement_number_container)).setVisibility(View.GONE);
+                    findViewById(R.id.search_sets_reps_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_length_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_repmax_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_timed_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_movement_number_container).setVisibility(View.GONE);
 					break;
 				case 3:
-					((LinearLayout) findViewById(R.id.search_sets_reps_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_length_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_repmax_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_timed_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_movement_number_container)).setVisibility(View.VISIBLE);
+                    findViewById(R.id.search_sets_reps_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_length_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_repmax_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_timed_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_movement_number_container).setVisibility(View.VISIBLE);
 					break;
 				case 4:
-					((LinearLayout) findViewById(R.id.search_sets_reps_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_length_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_repmax_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_timed_container)).setVisibility(View.VISIBLE);
-					((LinearLayout) findViewById(R.id.search_movement_number_container)).setVisibility(View.GONE);
+                    findViewById(R.id.search_sets_reps_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_length_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_repmax_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_timed_container).setVisibility(View.VISIBLE);
+                    findViewById(R.id.search_movement_number_container).setVisibility(View.GONE);
 					break;
 				case 5:
-					((LinearLayout) findViewById(R.id.search_sets_reps_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_length_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_repmax_container)).setVisibility(View.VISIBLE);
-					((LinearLayout) findViewById(R.id.search_timed_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_movement_number_container)).setVisibility(View.GONE);
+                    findViewById(R.id.search_sets_reps_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_length_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_repmax_container).setVisibility(View.VISIBLE);
+                    findViewById(R.id.search_timed_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_movement_number_container).setVisibility(View.GONE);
 					break;
 				}
 			}
@@ -160,7 +160,7 @@ public class Workout_Search_Activity extends FragmentActivity {
 		});
 		ArrayAdapter<String> type = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, search_types);
 		type.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		search_types_spinner = (Spinner) findViewById(R.id.search_type_spinner);
+        search_types_spinner = findViewById(R.id.search_type_spinner);
 		search_types_spinner.setAdapter(type);
 		search_types_spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 
@@ -168,18 +168,18 @@ public class Workout_Search_Activity extends FragmentActivity {
 			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 				if (position == 0) {
 					movement_type_spinner.setVisibility(View.GONE);
-					((TextView) findViewById(R.id.search_movement_type_textview)).setVisibility(View.GONE);
-					((TextView) findViewById(R.id.search_container_type_textview)).setVisibility(View.VISIBLE);
-					((LinearLayout) findViewById(R.id.search_movement_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_wod_container)).setVisibility(View.VISIBLE);
+                    findViewById(R.id.search_movement_type_textview).setVisibility(View.GONE);
+                    findViewById(R.id.search_container_type_textview).setVisibility(View.VISIBLE);
+                    findViewById(R.id.search_movement_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_wod_container).setVisibility(View.VISIBLE);
 					wod_type_spinner.setVisibility(View.VISIBLE);
 				} else {
 					movement_type_spinner.setVisibility(View.VISIBLE);
-					((TextView) findViewById(R.id.search_movement_type_textview)).setVisibility(View.VISIBLE);
-					((TextView) findViewById(R.id.search_container_type_textview)).setVisibility(View.GONE);
+                    findViewById(R.id.search_movement_type_textview).setVisibility(View.VISIBLE);
+                    findViewById(R.id.search_container_type_textview).setVisibility(View.GONE);
 					wod_type_spinner.setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_wod_container)).setVisibility(View.GONE);
-					((LinearLayout) findViewById(R.id.search_movement_container)).setVisibility(View.VISIBLE);
+                    findViewById(R.id.search_wod_container).setVisibility(View.GONE);
+                    findViewById(R.id.search_movement_container).setVisibility(View.VISIBLE);
 				}
 			}
 
@@ -192,39 +192,39 @@ public class Workout_Search_Activity extends FragmentActivity {
 		});
 
 		// populate the timed units spinner
-		timed_units_text = (Spinner) findViewById(R.id.search_timed_units_spinner);
+        timed_units_text = findViewById(R.id.search_timed_units_spinner);
 		ArrayAdapter<String> tm = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, time_unit_types);
 		tm.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		timed_units_text.setAdapter(tm);
 
 		// populate the length units spinner
-		length_units_text = (Spinner) findViewById(R.id.search_length_units_spinner);
+        length_units_text = findViewById(R.id.search_length_units_spinner);
 		ArrayAdapter<String> le = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,
 				length_unit_types);
 		le.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		length_units_text.setAdapter(le);
 
 		// populate the weights units spinners
-		weight_units_text = (Spinner) findViewById(R.id.search_weight_units_spinner);
+        weight_units_text = findViewById(R.id.search_weight_units_spinner);
 		ArrayAdapter<String> we = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,
 				weight_unit_types);
 		we.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		weight_units_text.setAdapter(we);
 
 		// populate the set/reps dynamic spinner
-		rep_type_text = (Spinner) findViewById(R.id.search_movement_reps_type_spinner);
+        rep_type_text = findViewById(R.id.search_movement_reps_type_spinner);
 		ArrayAdapter<String> rt = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, rep_types);
 		rt.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		rep_type_text.setAdapter(rt);
 
 		// populate the greater than less than or equal to spinner
-		gle_weight = (Spinner) findViewById(R.id.search_gle_weight);
+        gle_weight = findViewById(R.id.search_gle_weight);
 		ArrayAdapter<String> gw = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, gle_types);
 		gw.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		gle_weight.setAdapter(gw);
 
 		// populate the set/reps dynamic spinner
-		gle_percentage = (Spinner) findViewById(R.id.search_gle_percentage);
+        gle_percentage = findViewById(R.id.search_gle_percentage);
 		ArrayAdapter<String> ge = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, gle_types);
 		ge.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		gle_percentage.setAdapter(ge);
@@ -258,7 +258,7 @@ public class Workout_Search_Activity extends FragmentActivity {
 
 			}
 		});
-		General_Search_IB = (ImageButton) findViewById(R.id.workout_general_search_go);
+        General_Search_IB = findViewById(R.id.workout_general_search_go);
 		General_Search_IB.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 
@@ -277,7 +277,7 @@ public class Workout_Search_Activity extends FragmentActivity {
 
 		});
 
-		Button advanced_button_go = (Button) findViewById(R.id.search_advanced_go);
+        Button advanced_button_go = findViewById(R.id.search_advanced_go);
 		advanced_button_go.setOnClickListener(new OnClickListener() {
 
 			@Override

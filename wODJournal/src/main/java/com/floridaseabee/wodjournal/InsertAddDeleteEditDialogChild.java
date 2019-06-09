@@ -27,7 +27,7 @@ public class InsertAddDeleteEditDialogChild extends DialogFragment implements
 		View v = inflater.inflate(R.layout.insert_add_edit_delete_dialog,
 				container, false);
 		getDialog().setTitle("Movement Options");
-		add_entry = (Button) v.findViewById(R.id.add_entry);
+        add_entry = v.findViewById(R.id.add_entry);
 		add_entry.setText(getResources().getString(R.string.add_movement));
 		add_entry.setOnClickListener(new Button.OnClickListener() {
 
@@ -38,8 +38,8 @@ public class InsertAddDeleteEditDialogChild extends DialogFragment implements
 
 			}
 		});
-		
-		insert_entry = (Button) v.findViewById(R.id.insert_entry);
+
+        insert_entry = v.findViewById(R.id.insert_entry);
 		insert_entry.setText(getResources().getString(R.string.insert_movement));
 		insert_entry.setOnClickListener(new Button.OnClickListener() {
 
@@ -49,7 +49,7 @@ public class InsertAddDeleteEditDialogChild extends DialogFragment implements
 				Log.v("iaed dialog child", "insert entry");
 			}
 		});
-		edit_entry = (Button) v.findViewById(R.id.edit_entry);
+        edit_entry = v.findViewById(R.id.edit_entry);
 		edit_entry.setText(getResources().getString(R.string.edit_movement));
 		edit_entry.setOnClickListener(new Button.OnClickListener() {
 
@@ -60,7 +60,7 @@ public class InsertAddDeleteEditDialogChild extends DialogFragment implements
 			}
 
 		});
-		delete_entry = (Button) v.findViewById(R.id.delete_entry);
+        delete_entry = v.findViewById(R.id.delete_entry);
 		delete_entry.setText(getResources().getString(R.string.delete_movement));
 		delete_entry.setOnClickListener(new Button.OnClickListener() {
 
@@ -72,7 +72,7 @@ public class InsertAddDeleteEditDialogChild extends DialogFragment implements
 			}
 
 		});
-		copy_entry = (Button) v.findViewById(R.id.copy_entry);
+        copy_entry = v.findViewById(R.id.copy_entry);
 		copy_entry.setText(getResources().getString(R.string.copy_movement));
 		copy_entry.setOnClickListener(new Button.OnClickListener() {
 
@@ -95,15 +95,15 @@ public class InsertAddDeleteEditDialogChild extends DialogFragment implements
 	}
 
 	interface Child_Return_Clicks {
-		public void return_child_edit();
+        void return_child_edit();
 
-		public void return_child_delete();
+        void return_child_delete();
 
-		public void return_child_add();
-		
-		public void return_child_insert();
+        void return_child_add();
 
-		public void return_child_copy();
+        void return_child_insert();
+
+        void return_child_copy();
 	}
 
 	public static InsertAddDeleteEditDialogChild newInstance() {

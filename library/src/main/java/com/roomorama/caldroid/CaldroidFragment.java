@@ -6,16 +6,21 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.ViewPager.OnPageChangeListener;
 import android.text.format.DateUtils;
 import android.text.format.Time;
 import android.util.Log;
-import android.view.*;
+import android.view.ContextThemeWrapper;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
@@ -31,8 +36,8 @@ import java.lang.reflect.Field;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Formatter;
 import java.util.HashMap;
 import java.util.List;
@@ -1278,7 +1283,7 @@ public class CaldroidFragment extends DialogFragment {
 		View view = localInflater.inflate(R.layout.calendar_view, container, false);
 
 		// For the monthTitleTextView
-		monthTitleTextView = (TextView) view
+        monthTitleTextView = view
 				.findViewById(R.id.calendar_month_year_textview);
 
 		monthTitleTextView.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
@@ -1297,8 +1302,8 @@ public class CaldroidFragment extends DialogFragment {
 		});
 
 		// For the left arrow button
-		leftArrowButton = (Button) view.findViewById(R.id.calendar_left_arrow);
-		rightArrowButton = (Button) view
+        leftArrowButton = view.findViewById(R.id.calendar_left_arrow);
+        rightArrowButton = view
 				.findViewById(R.id.calendar_right_arrow);
 
 		// Navigate to previous month when user click
@@ -1323,7 +1328,7 @@ public class CaldroidFragment extends DialogFragment {
 		setShowNavigationArrows(showNavigationArrows);
 
 		// For the weekday gridview ("SUN, MON, TUE, WED, THU, FRI, SAT")
-		weekdayGridView = (GridView) view.findViewById(R.id.weekday_gridview);
+        weekdayGridView = view.findViewById(R.id.weekday_gridview);
 		weekdayGridView.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
 			@Override
 			public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int OldBottom) {
@@ -1438,7 +1443,7 @@ public class CaldroidFragment extends DialogFragment {
 		// Setup InfiniteViewPager and InfinitePagerAdapter. The
 		// InfinitePagerAdapter is responsible
 		// for reuse the fragments
-		dateViewPager = (InfiniteViewPager) view
+        dateViewPager = view
 				.findViewById(R.id.months_infinite_pager);
 
 		// Set enable swipe

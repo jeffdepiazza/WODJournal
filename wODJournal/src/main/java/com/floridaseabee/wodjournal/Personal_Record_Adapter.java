@@ -1,12 +1,12 @@
 package com.floridaseabee.wodjournal;
 
-import java.util.ArrayList;
-
 import android.content.Context;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+
+import java.util.ArrayList;
 
 public class Personal_Record_Adapter extends ArrayAdapter<Personal_Record_Holder> {
 	private ArrayList<Personal_Record_Holder> pcr;

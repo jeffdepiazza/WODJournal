@@ -1,16 +1,16 @@
 package com.floridaseabee.wodjournal;
 
-import hirondelle.date4j.DateTime;
-
-import java.util.Date;
-import java.util.HashMap;
-
 import android.os.AsyncTask;
 import android.os.Build;
 import android.util.Log;
 
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CalendarHelper;
+
+import java.util.Date;
+import java.util.HashMap;
+
+import hirondelle.date4j.DateTime;
 
 public class WODCalendarFragment extends CaldroidFragment implements
 		DatabaseHelper.WOD_DB_Listener {

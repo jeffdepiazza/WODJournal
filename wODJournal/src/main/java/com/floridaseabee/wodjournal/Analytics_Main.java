@@ -1,8 +1,5 @@
 package com.floridaseabee.wodjournal;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-
 import android.app.Activity;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -17,11 +14,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.jjoe64.graphview.CustomLabelFormatter;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.GraphView.GraphViewData;
 import com.jjoe64.graphview.GraphViewSeries;
 import com.jjoe64.graphview.LineGraphView;
+
+import java.util.ArrayList;
+import java.util.Calendar;
 
 public class Analytics_Main extends Activity {
 
@@ -57,10 +56,10 @@ public class Analytics_Main extends Activity {
 
 		ahf.setListener(analytics_listener);
 
-		nothingToDisplay = (TextView) findViewById(R.id.analytics_nothing_to_display);
-		rep_max_spinner = (Spinner) findViewById(R.id.analytics_rep_max_spinner);
-		gv = (LinearLayout) findViewById(R.id.analytics_graph);
-		go_graph = (Button) findViewById(R.id.analytics_go);
+        nothingToDisplay = findViewById(R.id.analytics_nothing_to_display);
+        rep_max_spinner = findViewById(R.id.analytics_rep_max_spinner);
+        gv = findViewById(R.id.analytics_graph);
+        go_graph = findViewById(R.id.analytics_go);
 		go_graph.setOnClickListener(new OnClickListener() {
 
 			@Override

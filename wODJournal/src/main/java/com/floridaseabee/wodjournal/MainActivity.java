@@ -20,7 +20,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		GridView g = (GridView) findViewById(R.id.grid);
+        GridView g = findViewById(R.id.grid);
 		g.setAdapter(new ImageAdapter(this));
 		g.setOnItemClickListener(this);
 

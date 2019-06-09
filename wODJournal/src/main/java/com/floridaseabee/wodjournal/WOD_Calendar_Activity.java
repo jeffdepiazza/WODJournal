@@ -1,12 +1,10 @@
 package com.floridaseabee.wodjournal;
 
-import java.util.Calendar;
-import java.util.Date;
-
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+
+import androidx.fragment.app.FragmentActivity;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
@@ -15,6 +13,8 @@ import android.view.Window;
 
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
+
+import java.util.Calendar;
 
 public class WOD_Calendar_Activity extends FragmentActivity implements Calendar_Delete_Dialog.Calendar_Delete_dialog_Listener{
 

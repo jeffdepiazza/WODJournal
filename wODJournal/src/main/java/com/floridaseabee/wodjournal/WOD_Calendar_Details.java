@@ -1,17 +1,18 @@
 package com.floridaseabee.wodjournal;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+
+import androidx.fragment.app.FragmentActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class WOD_Calendar_Details extends FragmentActivity implements
 		InsertAddDeleteEditDialogChild.Child_Return_Clicks,
@@ -56,7 +57,7 @@ public class WOD_Calendar_Details extends FragmentActivity implements
 		// the listener that the Details Activity gave it (as they share the
 		// same DB_Day_Listener), sends the data to the
 		// activity.
-		current_date_view = (TextView) findViewById(R.id.current_date_text);
+        current_date_view = findViewById(R.id.current_date_text);
 		current_date_view.setText(current_date);
 		Year = getIntent().getIntExtra(YEAR, 1970);
 		current_date = Year.toString();
@@ -76,7 +77,7 @@ public class WOD_Calendar_Details extends FragmentActivity implements
 
 		Log.v("WodCal Details OnCreate", "current date= "
 				+ current_date);
-		current_date_view = (TextView) findViewById(R.id.current_date_text);
+        current_date_view = findViewById(R.id.current_date_text);
 		SimpleDateFormat simpledate = new SimpleDateFormat("yyyy-MM-dd");
 		Date date = null;
 		try {

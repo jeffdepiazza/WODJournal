@@ -51,11 +51,11 @@ public class ImageAdapter extends BaseAdapter {
         }
 
 
-        TextView tv = (TextView) myView.findViewById(R.id.grid_item_text);
+        TextView tv = myView.findViewById(R.id.grid_item_text);
         /*Log.v("D:<",String.valueOf(Caption.length) +" y: "+ String.valueOf(position)); */
         tv.setText(Caption[position]);
 
-        ImageView iv = (ImageView) myView.findViewById(R.id.grid_item_image);
+        ImageView iv = myView.findViewById(R.id.grid_item_image);
         /*Log.v("D:<",String.valueOf(mThumbIds.length) +" y: "+ String.valueOf(position)); */
         iv.setImageResource(mThumbIds[position]);
 

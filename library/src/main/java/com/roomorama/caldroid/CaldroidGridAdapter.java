@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
-import android.graphics.Typeface;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
@@ -357,7 +355,7 @@ public class CaldroidGridAdapter extends BaseAdapter {
 
         }
         CellView cal_view;
-        cal_view = (CellView) cellView.findViewById(R.id.calendar_tv);
+        cal_view = cellView.findViewById(R.id.calendar_tv);
 
         customizeTextView(position, cellView, cal_view); //edited as our version of this requires
         // a custom view.

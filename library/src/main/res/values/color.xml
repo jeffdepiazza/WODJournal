@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-
     <color name="caldroid_white">#FFFFFF</color>
     <color name="caldroid_black">#000000</color>
     <color name="caldroid_transparent">#00000000</color>

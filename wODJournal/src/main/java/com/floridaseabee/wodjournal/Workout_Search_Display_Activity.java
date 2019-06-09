@@ -1,10 +1,10 @@
 package com.floridaseabee.wodjournal;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+
+import java.util.ArrayList;
 
 public class Workout_Search_Display_Activity extends Activity {
 	private final String search_string = "SEARCH_STRING";

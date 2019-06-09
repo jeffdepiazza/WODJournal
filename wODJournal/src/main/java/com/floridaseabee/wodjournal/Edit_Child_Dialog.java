@@ -139,7 +139,7 @@ public class Edit_Child_Dialog extends DialogFragment implements
 
         nf = NumberFormat.getInstance();  // see description in the declaration
 
-		movement_type_spinner = (Spinner) v
+        movement_type_spinner = v
 				.findViewById(R.id.edit_movement_type_spinner);
 		mv = new ArrayAdapter<String>(getActivity(),
 				android.R.layout.simple_spinner_item, movement_types);
@@ -148,7 +148,7 @@ public class Edit_Child_Dialog extends DialogFragment implements
 		movement_type_spinner.setOnItemSelectedListener(this);
 
 		// populate the timed units spinner
-		timed_units_text = (Spinner) v
+        timed_units_text = v
 				.findViewById(R.id.edit_timed_units_spinner);
 		tm = new ArrayAdapter<String>(getActivity(),
 				android.R.layout.simple_spinner_item, time_unit_types);
@@ -156,7 +156,7 @@ public class Edit_Child_Dialog extends DialogFragment implements
 		timed_units_text.setAdapter(tm);
 
 		// populate the length units spinner
-		length_units_text = (Spinner) v
+        length_units_text = v
 				.findViewById(R.id.edit_length_units_spinner);
 		le = new ArrayAdapter<String>(getActivity(),
 				android.R.layout.simple_spinner_item, length_unit_types);
@@ -164,7 +164,7 @@ public class Edit_Child_Dialog extends DialogFragment implements
 		length_units_text.setAdapter(le);
 
 		// populate the weights units spinners
-		weight_units_text = (Spinner) v
+        weight_units_text = v
 				.findViewById(R.id.edit_weight_units_spinner);
 		we = new ArrayAdapter<String>(getActivity(),
 				android.R.layout.simple_spinner_item, weight_unit_types);
@@ -172,7 +172,7 @@ public class Edit_Child_Dialog extends DialogFragment implements
 		weight_units_text.setAdapter(we);
 
 		// populate the set/reps dynamic spinner
-		rep_type_text = (Spinner) v
+        rep_type_text = v
 				.findViewById(R.id.edit_movement_reps_type_spinner);
 
 		rt = new ArrayAdapter<String>(getActivity(),
@@ -260,38 +260,38 @@ public class Edit_Child_Dialog extends DialogFragment implements
 			timed_units_text.setSelection(0);
 		}
 
-		sets = (EditText) v.findViewById(R.id.edit_sets);
+        sets = v.findViewById(R.id.edit_sets);
         sets.setText(nf.format(movement_container_edit.return_sets()));
 
-        sets_text = (TextView) v.findViewById(R.id.edit_sets_text);
-		reps = (EditText) v.findViewById(R.id.edit_reps);
+        sets_text = v.findViewById(R.id.edit_sets_text);
+        reps = v.findViewById(R.id.edit_reps);
         reps.setText(nf.format(movement_container_edit.return_reps()));
-        reps_dynamic = (EditText) v.findViewById(R.id.edit_reps_dynamic);
+        reps_dynamic = v.findViewById(R.id.edit_reps_dynamic);
 		reps_dynamic.setText(movement_container_edit.return_reps_dynamic());
-		reps_text = (TextView) v.findViewById(R.id.edit_reps_text);
-		movement = (EditText) v.findViewById(R.id.edit_movement);
+        reps_text = v.findViewById(R.id.edit_reps_text);
+        movement = v.findViewById(R.id.edit_movement);
 		movement.setText(movement_container_edit.return_Movement());
 
-		timed = (EditText) v.findViewById(R.id.edit_timed);
+        timed = v.findViewById(R.id.edit_timed);
         timed.setText(nf.format(movement_container_edit.return_Time_of_Movement()));
 
-		percentage = (EditText) v.findViewById(R.id.edit_percentage);
+        percentage = v.findViewById(R.id.edit_percentage);
         percentage.setText(nf.format(movement_container_edit.return_Percentage()));
-        rep_max = (EditText) v.findViewById(R.id.edit_rep_max);
+        rep_max = v.findViewById(R.id.edit_rep_max);
         rep_max.setText(nf.format(movement_container_edit.return_Rep_Max()));
-        rep_max_text = (TextView) v.findViewById(R.id.edit_rep_max_text);
-		length = (EditText) v.findViewById(R.id.edit_length);
+        rep_max_text = v.findViewById(R.id.edit_rep_max_text);
+        length = v.findViewById(R.id.edit_length);
         length.setText(nf.format(movement_container_edit.return_length()));
-        length_text = (TextView) v.findViewById(R.id.edit_length_text);
-		weight = (EditText) v.findViewById(R.id.edit_weight);
+        length_text = v.findViewById(R.id.edit_length_text);
+        weight = v.findViewById(R.id.edit_weight);
         weight.setText(nf.format(movement_container_edit.return_weight()));
         Log.v("weight units", movement_container_edit.return_weight_units());
-        edit_AMRAP = (TextView) v.findViewById(R.id.edit_AMRAP_text);
-		comments = (EditText) v.findViewById(R.id.edit_comments);
+        edit_AMRAP = v.findViewById(R.id.edit_AMRAP_text);
+        comments = v.findViewById(R.id.edit_comments);
         comments.setText(movement_container_edit.return_Comments());
-        movement_number_text = (TextView) v
+        movement_number_text = v
 				.findViewById(R.id.edit_movement_number_text);
-		movement_number = (EditText) v.findViewById(R.id.edit_movement_number);
+        movement_number = v.findViewById(R.id.edit_movement_number);
         movement_number.setText(nf.format(movement_container_edit.return_Movement_Number()));
 
 	

@@ -11,11 +11,11 @@ public class Personal_Record_View_Holder {
 	TextView comments;
 	
 	Personal_Record_View_Holder(View row) {
-		this.movement = (TextView) row.findViewById(R.id.pr_movement);
-		this.weight = (TextView) row.findViewById(R.id.pr_weight);
-		this.weight_units = (TextView) row.findViewById(R.id.pr_weight_units);
-		this.date = (TextView) row.findViewById(R.id.pr_date);
-		this.comments= (TextView) row.findViewById(R.id.pr_comments);
+        this.movement = row.findViewById(R.id.pr_movement);
+        this.weight = row.findViewById(R.id.pr_weight);
+        this.weight_units = row.findViewById(R.id.pr_weight_units);
+        this.date = row.findViewById(R.id.pr_date);
+        this.comments = row.findViewById(R.id.pr_comments);
 		
 	}
 }

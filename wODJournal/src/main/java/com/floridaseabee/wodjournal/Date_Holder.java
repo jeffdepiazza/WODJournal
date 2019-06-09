@@ -1,9 +1,9 @@
 package com.floridaseabee.wodjournal;
 
-import java.util.ArrayList;
-
 import android.database.Cursor;
 import android.util.Log;
+
+import java.util.ArrayList;
 
 public class Date_Holder {
 

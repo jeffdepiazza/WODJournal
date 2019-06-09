@@ -82,8 +82,8 @@ public class Edit_Parent_Dialog extends DialogFragment implements
 	}
 
 	interface WOD_Container_Edit_Listener {
-		public void send_back_edited_wod_container(
-				WOD_Container_Holder WOD_container_edit);
+        void send_back_edited_wod_container(
+                WOD_Container_Holder WOD_container_edit);
 
 	}
 
@@ -93,7 +93,7 @@ public class Edit_Parent_Dialog extends DialogFragment implements
 				R.layout.wod_container_edit, null);
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
-		wod_type_spinner = (Spinner) v.findViewById(R.id.edit_wod_type_spinner);
+        wod_type_spinner = v.findViewById(R.id.edit_wod_type_spinner);
 		wod = new ArrayAdapter<String>(getActivity(),
 				android.R.layout.simple_spinner_item, wod_types);
 		wod.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -122,26 +122,26 @@ public class Edit_Parent_Dialog extends DialogFragment implements
 		wod_container_edit.set_Staggered_Rounds(getArguments().getString(
 				Staggered_Rounds, ""));
 
-		timed = (EditText) v.findViewById(R.id.edit_wod_Timed);
+        timed = v.findViewById(R.id.edit_wod_Timed);
 		timed.setText("" + wod_container_edit.get_Timed() + "");
 
-		timed_type_units = (TextView) v
+        timed_type_units = v
 				.findViewById(R.id.edit_wod_Timed_time_units);
 
-		timed_type = (EditText) v.findViewById(R.id.edit_wod_Timed_Type);
+        timed_type = v.findViewById(R.id.edit_wod_Timed_Type);
 		timed_type.setText(wod_container_edit.get_Timed_Type());
 
-		timed_rounds_completed_text = (TextView) v
+        timed_rounds_completed_text = v
 				.findViewById(R.id.edit_Timed_Rounds_Completed_text);
 
-		timed_type_rounds_completed = (EditText) v
+        timed_type_rounds_completed = v
 				.findViewById(R.id.edit_Timed_Rounds_Completed);
 		timed_type_rounds_completed.setText(""
 				+ wod_container_edit.get_Rounds_Finished() + "");
 
-		rounds = (EditText) v.findViewById(R.id.edit_wod_Rounds);
+        rounds = v.findViewById(R.id.edit_wod_Rounds);
 		rounds.setText("" + wod_container_edit.get_Rounds() + "");
-		rounds_text = (TextView) v.findViewById(R.id.edit_wod_Rounds_text);
+        rounds_text = v.findViewById(R.id.edit_wod_Rounds_text);
 
 		// the rounds time completed is a special case where we are expecting to
 		// see the format in a HH:MM:SS and we need to ensure that the user is
@@ -150,16 +150,16 @@ public class Edit_Parent_Dialog extends DialogFragment implements
 		// addresses, which is similar to our date time format....so the code
 		// works the same and we are just using it now.
 
-		rounds_time_completed_text = (TextView) v
+        rounds_time_completed_text = v
 				.findViewById(R.id.edit_Rounds_Time_Completed_text);
 
-		rounds_time_completed = (EditText) v
+        rounds_time_completed = v
 				.findViewById(R.id.edit_Rounds_Time_Completed);
 		rounds_time_completed.setText(wod_container_edit.get_Finish_Time());
-		staggered_rounds = (EditText) v
+        staggered_rounds = v
 				.findViewById(R.id.edit_wod_staggered_rounds);
 		staggered_rounds.setText(wod_container_edit.get_Staggered_Rounds());
-		staggered_rounds_text = (TextView) v
+        staggered_rounds_text = v
 				.findViewById(R.id.edit_wod_staggered_rounds_text);
 
 		// BORROWED CODE BEGINS HERE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -216,7 +216,7 @@ public class Edit_Parent_Dialog extends DialogFragment implements
 			 * @return String containing MAC-allowed characters.
 			 */
 			private String clearNonTimeCharacters(String time) {
-				return time.toString().replaceAll("[^0-9]", "");
+                return time.replaceAll("[^0-9]", "");
 			}
 
 			/**
@@ -318,15 +318,15 @@ public class Edit_Parent_Dialog extends DialogFragment implements
 			}
 		});
 		// BORROWED CODE ENDS HERE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-		named_text = (TextView) v.findViewById(R.id.edit_wod_named);
+        named_text = v.findViewById(R.id.edit_wod_named);
 
-		named = (EditText) v.findViewById(R.id.edit_wod_named_text);
+        named = v.findViewById(R.id.edit_wod_named_text);
 		named.setText(wod_container_edit.get_Workout_Name());
 
-		comments = (EditText) v.findViewById(R.id.edit_wod_comments);
+        comments = v.findViewById(R.id.edit_wod_comments);
 		comments.setText(wod_container_edit.get_Comments());
 
-		weight_only = (TextView) v.findViewById(R.id.edit_wod_weightonly);
+        weight_only = v.findViewById(R.id.edit_wod_weightonly);
 
 		if (!(wod_container_edit.get_Timed() == 0)) {
 			// this is a timed container
@@ -578,7 +578,7 @@ public class Edit_Parent_Dialog extends DialogFragment implements
 							// it after this point
 		AlertDialog d = (AlertDialog) getDialog();
 		if (d != null) {
-			Button positiveButton = (Button) d
+            Button positiveButton = d
 					.getButton(Dialog.BUTTON_POSITIVE);
 			positiveButton.setOnClickListener(new View.OnClickListener() {
 				@Override

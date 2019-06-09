@@ -1,12 +1,11 @@
 //Jeff DePiazza
 package com.floridaseabee.wodjournal;
 
-import java.util.Calendar;
-
 import android.app.TimePickerDialog;
 import android.graphics.LightingColorFilter;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+
+import androidx.fragment.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +14,8 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
+import java.util.Calendar;
 
 public class Countdown_Fragment extends Fragment implements OnClickListener {
 	Calendar CountdownTime = Calendar.getInstance();
@@ -109,7 +110,7 @@ public class Countdown_Fragment extends Fragment implements OnClickListener {
 
 		View result = inflater.inflate(R.layout.countdown_timer_layout,
 				container, false);
-		tv = (AutoResizeTextView) result.findViewById(R.id.timer_textview);
+        tv = result.findViewById(R.id.timer_textview);
 
 		tv.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -119,19 +120,19 @@ public class Countdown_Fragment extends Fragment implements OnClickListener {
 		});
 		tv.resizeText();
 
-		ThreetwooneGO = (AutoResizeTextView) result
+        ThreetwooneGO = result
 				.findViewById(R.id.timer_countdown_text);
 
-		HoursUp = (ImageButton) result.findViewById(R.id.hours_up);
-		HoursDown = (ImageButton) result.findViewById(R.id.hours_down);
-		MinutesUp = (ImageButton) result.findViewById(R.id.minutes_up);
-		MinutesDown = (ImageButton) result.findViewById(R.id.minutes_down);
-		SecondsUp = (ImageButton) result.findViewById(R.id.seconds_up);
-		SecondsDown = (ImageButton) result.findViewById(R.id.seconds_down);
-		Reset = (ImageButton) result.findViewById(R.id.reset);
-		StartPausecount = (ImageButton) result
+        HoursUp = result.findViewById(R.id.hours_up);
+        HoursDown = result.findViewById(R.id.hours_down);
+        MinutesUp = result.findViewById(R.id.minutes_up);
+        MinutesDown = result.findViewById(R.id.minutes_down);
+        SecondsUp = result.findViewById(R.id.seconds_up);
+        SecondsDown = result.findViewById(R.id.seconds_down);
+        Reset = result.findViewById(R.id.reset);
+        StartPausecount = result
 				.findViewById(R.id.startpausecount);
-		Stopcount = (ImageButton) result.findViewById(R.id.stopcount);
+        Stopcount = result.findViewById(R.id.stopcount);
 		Stopcount.setEnabled(false);
 		HoursUp.setOnClickListener(this);
 		HoursDown.setOnClickListener(this);

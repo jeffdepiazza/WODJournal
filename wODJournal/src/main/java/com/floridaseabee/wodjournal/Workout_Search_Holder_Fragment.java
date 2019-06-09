@@ -1,12 +1,12 @@
 package com.floridaseabee.wodjournal;
 
-import java.util.ArrayList;
-
 import android.app.Fragment;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+
+import java.util.ArrayList;
 
 public class Workout_Search_Holder_Fragment extends Fragment implements
 		DatabaseHelper.Workout_Search_Listener {
